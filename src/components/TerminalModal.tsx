@@ -57,8 +57,35 @@ export default function TerminalModal() {
       return;
     }
     if (trimmed === "linkedin") {
-      window.open("https://linkedin.com/", "_blank");
+      window.open("https://linkedin.com/in/benjaminmaciel", "_blank");
       setLines([...newLines, { text: "  ✓ Opening LinkedIn...", type: "output" }]);
+      scrollBottom();
+      return;
+    }
+    if (trimmed === "history") {
+      const histLines: TermLine[] = history.length === 0
+        ? [{ text: "  (no commands in history yet)", type: "output" }]
+        : history.map((h, i) => ({ text: `  ${String(i + 1).padStart(3, " ")}  ${h}`, type: "output" as const }));
+      setLines([...newLines, ...histLines, { text: "", type: "blank" }]);
+      scrollBottom();
+      return;
+    }
+    if (trimmed === "ls" || trimmed === "ls -la") {
+      setLines([...newLines,
+        { text: "  about.md   skills.json   projects/   contact.txt", type: "output" },
+        { text: "", type: "blank" },
+      ]);
+      scrollBottom();
+      return;
+    }
+    if (trimmed === "pwd") {
+      setLines([...newLines, { text: "  /home/benjamin/portfolio", type: "output" }, { text: "", type: "blank" }]);
+      scrollBottom();
+      return;
+    }
+    if (trimmed.startsWith("echo ")) {
+      const msg = cmd.trim().slice(5);
+      setLines([...newLines, { text: `  ${msg}`, type: "output" }, { text: "", type: "blank" }]);
       scrollBottom();
       return;
     }
@@ -174,7 +201,6 @@ export default function TerminalModal() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={onKeyDown}
               className="flex-1 bg-transparent border-none outline-none text-white font-mono text-sm caret-[#00d4ff]"
-              style={{ cursor: "none" }}
               spellCheck={false}
               autoComplete="off"
             />
