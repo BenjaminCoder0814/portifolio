@@ -3,11 +3,13 @@
 import { useEffect, useRef } from "react";
 import { personal } from "@/data";
 import { useTypingEffect } from "@/hooks";
+import { useI18n } from "@/lib/i18n";
 
 export default function Hero() {
+  const { t, lang } = useI18n();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef   = useRef<number>(0);
-  const role      = useTypingEffect(personal.roles);
+  const role      = useTypingEffect(t.hero.roles);
 
   // Code Rain canvas
   useEffect(() => {
@@ -108,11 +110,11 @@ export default function Hero() {
         {/* Available badge */}
         <div className="inline-flex items-center gap-2 px-3 py-[6px] rounded-full border border-[rgba(0,255,136,0.3)] bg-[rgba(0,255,136,0.06)] font-mono text-[11px] text-[#00ff88] mb-6 animate-[fadeInUp_0.6s_0.2s_both]">
           <span className="w-[6px] h-[6px] rounded-full bg-[#00ff88] animate-[pulse-green_2s_infinite]" />
-          Available for opportunities
+          {t.badge}
         </div>
 
         <p className="font-mono text-sm text-[#8b949e] mb-2 tracking-[0.05em] animate-[fadeInUp_0.6s_0.35s_both]">
-          Olá, mundo. Eu sou
+          {t.hero.greeting}
         </p>
 
         <h1 className="font-sans font-black leading-[0.95] tracking-[-0.04em] mb-6 animate-[fadeInUp_0.6s_0.5s_both]"
@@ -136,11 +138,11 @@ export default function Hero() {
 
         {/* Meta */}
         <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-[#4d5866] mb-6 animate-[fadeInUp_0.6s_0.8s_both]">
-          <span><span className="text-[#4d5866]">Idade</span> <span className="text-[#8b949e]">{"// "}{personal.age} anos</span></span>
+          <span><span className="text-[#4d5866]">{t.hero.age}</span> <span className="text-[#8b949e]">{"// "}{personal.age} anos</span></span>
           <span className="text-[#4d5866]">·</span>
-          <span><span className="text-[#4d5866]">Local</span> <span className="text-[#8b949e]">{"// "}{personal.location}</span></span>
+          <span><span className="text-[#4d5866]">{t.hero.location}</span> <span className="text-[#8b949e]">{"// "}{personal.location}</span></span>
           <span className="text-[#4d5866]">·</span>
-          <span><span className="text-[#4d5866]">Status</span> <span className="text-[#00ff88]">{"// "} Online ●</span></span>
+          <span><span className="text-[#4d5866]">{t.hero.status}</span> <span className="text-[#00ff88]">{"// "} {t.hero.online} ●</span></span>
         </div>
 
         {/* Tagline */}
@@ -156,23 +158,23 @@ export default function Hero() {
             href="#projects"
             className="inline-flex items-center gap-2 px-7 py-3 bg-[#00d4ff] text-[#0a0a0a] font-bold rounded-lg text-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,212,255,0.35)]"
           >
-            Ver Projetos
+            {t.hero.cta_portfolio}
           </a>
           <a
-            href="/curriculo"
+            href={`/${lang}/curriculo`}
             className="inline-flex items-center gap-2 px-7 py-3 bg-[rgba(124,58,237,0.12)] text-[#a78bfa] border border-[rgba(124,58,237,0.4)] rounded-lg text-sm font-semibold transition-all duration-200 hover:-translate-y-1 hover:bg-[rgba(124,58,237,0.22)] hover:border-[#7c3aed] hover:shadow-[0_8px_30px_rgba(124,58,237,0.25)]"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
               <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
             </svg>
-            Ver Currículo
+            {t.hero.cta_resume}
           </a>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-7 py-3 bg-transparent text-white border border-[rgba(255,255,255,0.1)] rounded-lg text-sm font-semibold transition-all duration-200 hover:border-[#00d4ff] hover:text-[#00d4ff] hover:bg-[rgba(0,212,255,0.06)]"
           >
-            Entrar em contato
+            {t.hero.cta_contact}
           </a>
         </div>
 

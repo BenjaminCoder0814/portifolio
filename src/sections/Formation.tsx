@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
 import { skills, education } from "@/data";
+import { useI18n } from "@/lib/i18n";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -18,6 +19,7 @@ const categoryColor: Record<string, string> = {
 };
 
 export default function Formation() {
+  const { t } = useI18n();
   const ref    = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [animated, setAnimated] = useState(false);
@@ -25,6 +27,14 @@ export default function Formation() {
   useEffect(() => {
     if (inView) setAnimated(true);
   }, [inView]);
+
+  // Map data status strings to i18n keys
+  const statusLabel = (status: string | undefined) => {
+    if (!status) return null;
+    if (status === "cursando" || status === "in progress" || status === "en curso") return t.formation.current;
+    if (status === "concluído" || status === "completed" || status === "completado") return t.formation.completed;
+    return t.formation.inProgress;
+  };
 
   return (
     <section ref={ref} id="formation" className="py-28 relative">
@@ -36,12 +46,12 @@ export default function Formation() {
         <motion.div variants={stagger} initial="hidden" animate={inView ? "show" : "hidden"}
           className="flex flex-col gap-2 mb-16">
           <motion.p variants={fadeUp} className="font-mono text-[#00d4ff] text-sm tracking-[0.15em] uppercase">
-            02. Formação
+            {t.sections.formation.num} {t.nav.formation}
           </motion.p>
           <motion.h2 variants={fadeUp}
             className="font-sans font-black text-white tracking-[-0.03em]"
             style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
-            Skills & Educação
+            {t.formation.skillsHeading}
           </motion.h2>
           <motion.div variants={fadeUp} className="w-12 h-[3px] bg-[#7c3aed] rounded-full" />
         </motion.div>
@@ -104,7 +114,7 @@ export default function Formation() {
                     style={{ color: edu.status === "cursando" ? "#00ff88" : "#8b949e" }}>
                     <span className="w-[5px] h-[5px] rounded-full"
                       style={{ backgroundColor: edu.status === "cursando" ? "#00ff88" : "#8b949e" }} />
-                    {edu.status}
+                    {statusLabel(edu.status)}
                   </div>
                 )}
               </motion.div>

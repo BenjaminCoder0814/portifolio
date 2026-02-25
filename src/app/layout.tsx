@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { personal } from "@/data";
-import { I18nProvider } from "@/lib/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -87,7 +86,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#0a0a0a] text-[#f0f6fc]`}
       >
-        <I18nProvider>{children}</I18nProvider>
+        {children}
       </body>
     </html>
   );

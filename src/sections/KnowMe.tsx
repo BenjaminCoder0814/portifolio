@@ -1,8 +1,9 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
-import { knowMe, personal } from "@/data";
+import { personal } from "@/data";
+import { useI18n } from "@/lib/i18n";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -11,6 +12,7 @@ const fadeUp: Variants = {
 const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 
 export default function KnowMe() {
+  const { t } = useI18n();
   const ref    = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -24,12 +26,12 @@ export default function KnowMe() {
         <motion.div variants={stagger} initial="hidden" animate={inView ? "show" : "hidden"}
           className="flex flex-col gap-2 mb-16">
           <motion.p variants={fadeUp} className="font-mono text-[#00d4ff] text-sm tracking-[0.15em] uppercase">
-            04. Know Me
+            {t.sections.knowme.num} {t.nav.knowme}
           </motion.p>
           <motion.h2 variants={fadeUp}
             className="font-sans font-black text-white tracking-[-0.03em]"
             style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
-            Além do código
+            {t.sections.knowme.heading}
           </motion.h2>
           <motion.div variants={fadeUp} className="w-12 h-[3px] bg-[#00ff88] rounded-full" />
         </motion.div>
@@ -37,12 +39,12 @@ export default function KnowMe() {
         {/* Cards grid */}
         <motion.div variants={stagger} initial="hidden" animate={inView ? "show" : "hidden"}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
-          {knowMe.map((item, idx) => (
+          {t.knowme.cards.map((item, idx) => (
             <motion.div key={idx} variants={fadeUp}
               className="p-6 rounded-xl border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] hover:border-[rgba(0,255,136,0.2)] hover:bg-[rgba(0,255,136,0.02)] transition-all group">
-              <div className="text-3xl mb-4">{item.emoji}</div>
+              <div className="text-3xl mb-4">{item.icon}</div>
               <h3 className="font-bold text-white mb-2 group-hover:text-[#00ff88] transition-colors">{item.title}</h3>
-              <p className="text-sm text-[#6e7681] leading-relaxed">{item.description}</p>
+              <p className="text-sm text-[#6e7681] leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -58,7 +60,7 @@ export default function KnowMe() {
             <p className="text-[#c9d1d9] text-xl font-medium italic leading-relaxed mb-4 relative z-[1]">
               {personal.philosophy}
             </p>
-            <cite className="font-mono text-sm text-[#4d5866] not-italic">— {personal.firstName} {personal.lastName}</cite>
+            <cite className="font-mono text-sm text-[#4d5866] not-italic">â€” {personal.firstName} {personal.lastName}</cite>
           </motion.blockquote>
         )}
       </div>

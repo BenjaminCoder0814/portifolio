@@ -25,27 +25,34 @@ const I18nContext = createContext<I18nContextValue>({
 
 const STORAGE_KEY = 'portfolio_lang';
 
-export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('pt');
+interface I18nProviderProps {
+  children: React.ReactNode;
+  /** Pass the [lang] route param to initialize from URL */
+  initialLang?: Lang;
+}
+
+export function I18nProvider({ children, initialLang }: I18nProviderProps) {
+  const [lang, setLangState] = useState<Lang>(initialLang ?? 'pt');
 
   useEffect(() => {
+    // If a route-based lang was passed, it is authoritative — persist it
+    if (initialLang) {
+      setLangState(initialLang);
+      try { localStorage.setItem(STORAGE_KEY, initialLang); } catch { /* ignore */ }
+      return;
+    }
+    // Fallback: read from localStorage
     try {
       const stored = localStorage.getItem(STORAGE_KEY) as Lang | null;
       if (stored && ['pt', 'en', 'es'].includes(stored)) {
         setLangState(stored);
       }
-    } catch {
-      // localStorage not available (SSR / private browsing)
-    }
-  }, []);
+    } catch { /* ignore */ }
+  }, [initialLang]);
 
   const setLang = useCallback((next: Lang) => {
     setLangState(next);
-    try {
-      localStorage.setItem(STORAGE_KEY, next);
-    } catch {
-      // ignore
-    }
+    try { localStorage.setItem(STORAGE_KEY, next); } catch { /* ignore */ }
   }, []);
 
   return (
@@ -59,8 +66,8 @@ export function useI18n(): I18nContextValue {
   return useContext(I18nContext);
 }
 
-/** Convenience helper — returns the correct string for the current lang. */
 export function useLangString(strings: Record<Lang, string>): string {
   const { lang } = useI18n();
   return strings[lang];
 }
+

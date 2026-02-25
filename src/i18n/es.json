@@ -1,5 +1,13 @@
 {
   "lang": "es",
+  "badge": "Disponible para oportunidades",
+  "sections": {
+    "about":     { "num": "01.", "heading": "¿Quién soy?" },
+    "formation": { "num": "02.", "heading": "Habilidades & Formación" },
+    "projects":  { "num": "03.", "heading": "Trabajo con impacto real" },
+    "knowme":    { "num": "04.", "heading": "Más allá del código" },
+    "contact":   { "num": "05.", "heading": "Hablemos" }
+  },
   "nav": {
     "about": "Sobre mí",
     "formation": "Trayectoria",
@@ -17,8 +25,13 @@
     "roles": ["Desarrollador Front-End", "Diseñador UI/UX", "Marketing Digital", "Arquitecto de Sistemas"],
     "bio": "Desarrollador Front-End con 3 años de experiencia real en proyectos empresariales. Especializado en interfaces que convierten.",
     "cta_portfolio": "Ver Proyectos",
+    "cta_resume": "Ver Currículum",
     "cta_contact": "Contactar",
-    "scroll": "Desplázate para explorar"
+    "scroll": "Desplázate para explorar",
+    "age": "Edad",
+    "location": "Ubicación",
+    "status": "Estado",
+    "online": "En línea"
   },
   "about": {
     "title": "Sobre mí",
@@ -36,6 +49,10 @@
   "formation": {
     "title": "Trayectoria",
     "subtitle": "Mi camino de aprendizaje",
+    "skillsHeading": "Habilidades & Formación",
+    "current": "en curso",
+    "completed": "completado",
+    "inProgress": "en progreso",
     "timeline": [
       { "year": "2020", "title": "Primeros pasos en código", "desc": "Aprendió programación con Scratch y Codebuddy a los 12 años en UNASP-EC." },
       { "year": "2022", "title": "Robótica LEGO", "desc": "Compitió en torneos de robótica con kits LEGO, desarrollando lógica y trabajo en equipo." },
@@ -50,6 +67,7 @@
     "subtitle": "Trabajo con impacto real",
     "viewCode": "Ver Código",
     "viewDemo": "Ver Demo",
+    "featured": "destacado",
     "items": [
       {
         "name": "Plataforma Interna Zenith",
@@ -97,14 +115,32 @@
     "title": "Contacto",
     "subtitle": "Hablemos",
     "cta": "Estoy abierto a pasantías, freelance y proyectos. Envíame un mensaje.",
+    "ctaSub": "Respondo en menos de 24 horas.",
     "email": "Email",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "availability": "Disponibilidad: lunes a viernes (horarios a convenir).",
     "sendMessage": "Enviar mensaje",
+    "sending": "Enviando…",
+    "sent": "¡Mensaje enviado! Me pongo en contacto pronto.",
+    "nameLabel": "Nombre",
+    "emailLabel": "Email",
+    "msgLabel": "Mensaje",
     "namePlaceholder": "Tu nombre",
     "emailPlaceholder": "tu@email.com",
-    "msgPlaceholder": "Hola Benjamin, me gustaría hablar sobre..."
+    "msgPlaceholder": "Hola Benjamin, me gustaría hablar sobre…",
+    "messageSent": "¡Mensaje enviado!",
+    "thankYou": "Gracias por tu mensaje. Te responderé pronto.",
+    "anotherSend": "Enviar otro →"
+  },
+  "footer": {
+    "developed": "Desarrollado con",
+    "intention": "intención",
+    "by": "por",
+    "backTop": "↑ Inicio",
+    "curriculum": "📄 Currículum PDF",
+    "linkedinKit": "💼 LinkedIn Kit",
+    "erp": "🛠️ Sistema ERP"
   },
   "resume": {
     "short": {

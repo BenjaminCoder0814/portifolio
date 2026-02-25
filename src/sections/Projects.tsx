@@ -1,8 +1,9 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
 import { projects } from "@/data";
+import { useI18n } from "@/lib/i18n";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
@@ -22,6 +23,7 @@ interface Project {
 }
 
 function ProjectCard({ project, featured = false, index }: { project: Project; featured?: boolean; index: number }) {
+  const { t } = useI18n();
   return (
     <motion.article
       variants={fadeUp}
@@ -44,7 +46,7 @@ function ProjectCard({ project, featured = false, index }: { project: Project; f
           <div className="flex items-center gap-2">
             {featured && (
               <span className="font-mono text-[10px] text-[#00d4ff] border border-[rgba(0,212,255,0.3)] px-2 py-[2px] rounded tracking-[0.08em]">
-                featured
+                {t.projects.featured}
               </span>
             )}
             <span className="font-mono text-[#4d5866] text-[11px]">
@@ -71,10 +73,10 @@ function ProjectCard({ project, featured = false, index }: { project: Project; f
 
           {/* Stack */}
           <div className="flex flex-wrap gap-2">
-            {project.stack.map((t) => (
-              <span key={t}
+            {project.stack.map((tech) => (
+              <span key={tech}
                 className="font-mono text-[11px] px-2 py-[3px] rounded bg-[rgba(255,255,255,0.04)] text-[#8b949e] border border-[rgba(255,255,255,0.06)]">
-                {t}
+                {tech}
               </span>
             ))}
           </div>
@@ -87,7 +89,7 @@ function ProjectCard({ project, featured = false, index }: { project: Project; f
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                 </svg>
-                demo ↗
+                {t.projects.viewDemo} â†—
               </a>
             )}
             {project.repo && (
@@ -96,7 +98,7 @@ function ProjectCard({ project, featured = false, index }: { project: Project; f
                 <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                 </svg>
-                código
+                {t.projects.viewCode}
               </a>
             )}
           </div>
@@ -135,11 +137,19 @@ function ProjectCard({ project, featured = false, index }: { project: Project; f
 }
 
 export default function Projects() {
+  const { t } = useI18n();
   const ref    = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
-  const featured    = projects.find((p) => p.featured) as Project | undefined;
-  const nonFeatured = projects.filter((p) => !p.featured) as Project[];
+  // Merge data projects with translated names/descriptions
+  const translatedProjects = projects.map((p, i) => ({
+    ...p,
+    title:       t.projects.items[i]?.name       ?? p.title,
+    description: t.projects.items[i]?.desc       ?? p.description,
+  })) as Project[];
+
+  const featured    = translatedProjects.find((p) => p.featured);
+  const nonFeatured = translatedProjects.filter((p) => !p.featured);
 
   return (
     <section ref={ref} id="projects" className="py-28 relative">
@@ -151,12 +161,12 @@ export default function Projects() {
         <motion.div variants={stagger} initial="hidden" animate={inView ? "show" : "hidden"}
           className="flex flex-col gap-2 mb-16">
           <motion.p variants={fadeUp} className="font-mono text-[#00d4ff] text-sm tracking-[0.15em] uppercase">
-            03. Projetos
+            {t.sections.projects.num} {t.nav.projects}
           </motion.p>
           <motion.h2 variants={fadeUp}
             className="font-sans font-black text-white tracking-[-0.03em]"
             style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
-            O que construí
+            {t.sections.projects.heading}
           </motion.h2>
           <motion.div variants={fadeUp} className="w-12 h-[3px] bg-[#00d4ff] rounded-full" />
         </motion.div>
