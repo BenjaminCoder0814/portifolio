@@ -1,14 +1,14 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, type Variants } from "framer-motion";
 import { skills, education } from "@/data";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
 };
-const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
+const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
 const categoryColor: Record<string, string> = {
   frontend: "#00d4ff",

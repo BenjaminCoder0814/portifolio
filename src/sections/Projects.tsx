@@ -1,27 +1,27 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, type Variants } from "framer-motion";
 import { projects } from "@/data";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
-const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
+const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
 
 interface Project {
   title: string;
   description: string;
   stack: string[];
   metrics?: Array<{ label: string; value: string }>;
-  link?: string;
+  link?: string | null | undefined;
   repo?: string;
   featured?: boolean;
   preview?: string[];
 }
 
-function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
+function ProjectCard({ project, featured = false, index }: { project: Project; featured?: boolean; index: number }) {
   return (
     <motion.article
       variants={fadeUp}
@@ -48,7 +48,7 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
               </span>
             )}
             <span className="font-mono text-[#4d5866] text-[11px]">
-              {String(projects.indexOf(project) + 1).padStart(2, "0")}
+              {String(index + 1).padStart(2, "0")}
             </span>
           </div>
 
@@ -138,8 +138,8 @@ export default function Projects() {
   const ref    = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
-  const featured    = projects.find((p) => p.featured);
-  const nonFeatured = projects.filter((p) => !p.featured);
+  const featured    = projects.find((p) => p.featured) as Project | undefined;
+  const nonFeatured = projects.filter((p) => !p.featured) as Project[];
 
   return (
     <section ref={ref} id="projects" className="py-28 relative">
@@ -163,8 +163,8 @@ export default function Projects() {
 
         <motion.div variants={stagger} initial="hidden" animate={inView ? "show" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {featured && <ProjectCard project={featured} featured />}
-          {nonFeatured.map((p, i) => <ProjectCard key={i} project={p} />)}
+          {featured && <ProjectCard project={featured} featured index={0} />}
+          {nonFeatured.map((p, i) => <ProjectCard key={i} project={p} index={i + 1} />)}
         </motion.div>
       </div>
     </section>
