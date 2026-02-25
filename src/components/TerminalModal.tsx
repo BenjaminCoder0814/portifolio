@@ -41,6 +41,25 @@ export default function TerminalModal() {
     const trimmed = cmd.trim().toLowerCase();
     const newLines: TermLine[] = [...lines, { text: `benjamin@portfolio:~$ ${cmd}`, type: "cmd" }];
 
+    if (trimmed === "sudo hire-benjamin") {
+      setLines([
+        ...newLines,
+        { text: "  [sudo] password for hiring-manager: \u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022", type: "output" },
+        { text: "  Verifying credentials...", type: "output" },
+        { text: "", type: "blank" },
+        { text: "  \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 ACCESS GRANTED", type: "output" },
+        { text: "", type: "blank" },
+        { text: "  Welcome. Let\u2019s build something scalable.", type: "output" },
+        { text: "", type: "blank" },
+        { text: "  📧  benjaminmaciel0814@gmail.com", type: "output" },
+        { text: "  🔗  linkedin.com/in/benjaminmaciel", type: "output" },
+        { text: "", type: "blank" },
+        { text: "  Status: [AVAILABLE] Open to opportunities", type: "output" },
+        { text: "", type: "blank" },
+      ]);
+      scrollBottom();
+      return;
+    }
     if (trimmed === "clear") {
       setLines([...WELCOME]);
       return;

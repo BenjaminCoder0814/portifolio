@@ -6,7 +6,11 @@
     "formation": { "num": "02.", "heading": "Habilidades & Formación" },
     "projects":  { "num": "03.", "heading": "Trabajo con impacto real" },
     "knowme":    { "num": "04.", "heading": "Más allá del código" },
-    "contact":   { "num": "05.", "heading": "Hablemos" }
+    "contact":   { "num": "05.", "heading": "Hablemos" },
+    "mindset":   { "heading": "Engineering Mindset" },
+    "techstack": { "heading": "Tech Stack" },
+    "casestudy": { "heading": "Case Study" },
+    "now":       { "heading": "Ahora" }
   },
   "nav": {
     "about": "Sobre mí",
@@ -141,6 +145,56 @@
     "curriculum": "📄 Currículum PDF",
     "linkedinKit": "💼 LinkedIn Kit",
     "erp": "🛠️ Sistema ERP"
+  },
+  "mindset": {
+    "headline": "Construyo interfaces que resuelven problemas de negocio — no solo se ven bien.",
+    "sub": "Cada componente está diseñado con rendimiento, usabilidad y escalabilidad en mente.",
+    "global": "Business trips across 17 countries — international market exposure since age 15.",
+    "cards": [
+      { "icon": "🔬", "title": "Identificación de Problemas", "desc": "Antes de escribir código, mapeo el proceso. Identifico el gap, su costo y el impacto potencial de la solución." },
+      { "icon": "🏗️", "title": "Estructuración de Soluciones", "desc": "Divido el problema en módulos. Defino el MVP, la arquitectura mínima y la secuencia de implementación." },
+      { "icon": "⚡", "title": "Performance Primero", "desc": "Carga optimizada, lazy loading, memoización. El rendimiento no es optimización — es requisito mínimo." },
+      { "icon": "🎯", "title": "UX + Conversión", "desc": "Cada botón, espaciado y jerarquía visual existe con intención. Una interfaz que convierte vende más." }
+    ]
+  },
+  "techstack": {
+    "sub": "Qué uso, por qué lo uso y qué construyo con cada tecnología.",
+    "items": [
+      { "name": "React", "category": "Frontend", "desc": "Arquitectura component-driven, hooks, gestión de estado y re-renders optimizados." },
+      { "name": "Next.js", "category": "Framework", "desc": "App Router, SSR, SSG, optimización de imágenes y rutas internacionalizadas (este portfolio)." },
+      { "name": "TypeScript", "category": "Language", "desc": "Tipado estático para sistemas escalables con menos bugs en producción." },
+      { "name": "Tailwind CSS", "category": "Styling", "desc": "Utility-first styling. Sistema de diseño consistente y responsive a escala de proyecto." },
+      { "name": "Node.js", "category": "Backend", "desc": "REST APIs, WebSocket y lógica de negocio en el servidor (sistema ERP)." },
+      { "name": "MySQL", "category": "Database", "desc": "Modelado relacional, queries optimizadas, control multi-CNPJ en producción activa." },
+      { "name": "Figma", "category": "Design", "desc": "Prototipado, design system, flujos de UX y handoff para desarrollo." },
+      { "name": "Git", "category": "DevOps", "desc": "Control de versiones, branching estratégico y colaboración en proyectos reales." }
+    ]
+  },
+  "casestudy": {
+    "label": "Case Study",
+    "title": "Marketplace Growth — Zenith Lacres",
+    "steps": [
+      { "step": "01", "label": "Problema", "desc": "Empresa de 22 años sin presencia digital. Catálogo inexistente en línea. R$0 en ventas digitales." },
+      { "step": "02", "label": "Estrategia", "desc": "Rebranding visual completo + estandarización de catálogo fotográfico + selección de 5 plataformas por ROI." },
+      { "step": "03", "label": "Implementación", "desc": "Estudio fotográfico interno, 200+ artículos catalogados, listings optimizados, identidad visual unificada." },
+      { "step": "04", "label": "Resultado", "desc": "De R$0 a R$10.000 en ventas en 3 meses. Operación autosostenible. Marca renovada en 5 marketplaces." }
+    ],
+    "metrics": [
+      { "value": "R$10k", "label": "Ingresos en 3 meses" },
+      { "value": "5", "label": "Marketplaces activos" },
+      { "value": "3", "label": "Meses para resultado" },
+      { "value": "R$0", "label": "Inversión externa" }
+    ]
+  },
+  "now": {
+    "sub": "Actualizado en febrero de 2026.",
+    "items": [
+      { "label": "Construyendo", "value": "Sistema ERP interno multi-CNPJ para Zenith Lacres" },
+      { "label": "Estudiando", "value": "Arquitectura de Sistemas — BSc. Sistemas de Información (UNASP-EC)" },
+      { "label": "Mejorando", "value": "Fluidez en inglés — nivel intermedio/avanzado (Wizard W8)" }
+    ],
+    "lighthouse": "Lighthouse Score",
+    "available": "Disponible para oportunidades"
   },
   "resume": {
     "short": {

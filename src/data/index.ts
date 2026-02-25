@@ -228,6 +228,8 @@ export const terminalCommands: Record<string, string[]> = {
     "  clear        Limpa o terminal",
     "  exit         Fecha o terminal",
     "",
+    "  🤫  sudo hire-benjamin   (try it)",
+    "",
   ],
   whoami: [
     "> RUNNING: identify --user current",

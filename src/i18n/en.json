@@ -6,7 +6,11 @@
     "formation": { "num": "02.", "heading": "Skills & Education" },
     "projects":  { "num": "03.", "heading": "Real impact work" },
     "knowme":    { "num": "04.", "heading": "Beyond the code" },
-    "contact":   { "num": "05.", "heading": "Let's talk" }
+    "contact":   { "num": "05.", "heading": "Let's talk" },
+    "mindset":   { "heading": "Engineering Mindset" },
+    "techstack": { "heading": "Tech Stack" },
+    "casestudy": { "heading": "Case Study" },
+    "now":       { "heading": "Now" }
   },
   "nav": {
     "about": "About",
@@ -141,6 +145,56 @@
     "curriculum": "📄 Resume PDF",
     "linkedinKit": "💼 LinkedIn Kit",
     "erp": "🛠️ ERP System"
+  },
+  "mindset": {
+    "headline": "I build interfaces that solve business problems — not just look good.",
+    "sub": "Every component is designed with performance, usability and scalability in mind.",
+    "global": "Business trips across 17 countries — international market exposure since age 15.",
+    "cards": [
+      { "icon": "🔬", "title": "Problem Identification", "desc": "Before writing code, I map the process. I identify the gap, its cost, and the potential impact of the solution." },
+      { "icon": "🏗️", "title": "Solution Structuring", "desc": "I break the problem into modules. Define the MVP, the minimal architecture, and the implementation sequence." },
+      { "icon": "⚡", "title": "Performance First", "desc": "Optimized loading, lazy loading, memoization. Performance isn't optimization — it's a minimum requirement." },
+      { "icon": "🎯", "title": "UX + Conversion", "desc": "Every button, spacing, and visual hierarchy exists with intent. Interface that converts sells more." }
+    ]
+  },
+  "techstack": {
+    "sub": "What I use, why I use it, and what I build with each technology.",
+    "items": [
+      { "name": "React", "category": "Frontend", "desc": "Component-driven architecture, hooks, state management, and optimized re-renders." },
+      { "name": "Next.js", "category": "Framework", "desc": "App Router, SSR, SSG, image optimization, and internationalized routes (this portfolio)." },
+      { "name": "TypeScript", "category": "Language", "desc": "Static typing for scalable systems with fewer production bugs." },
+      { "name": "Tailwind CSS", "category": "Styling", "desc": "Utility-first styling. Consistent, responsive design system at project scale." },
+      { "name": "Node.js", "category": "Backend", "desc": "REST APIs, WebSocket, and server-side business logic (ERP system)." },
+      { "name": "MySQL", "category": "Database", "desc": "Relational modeling, optimized queries, multi-CNPJ control in active production." },
+      { "name": "Figma", "category": "Design", "desc": "Prototyping, design systems, UX flows, and dev handoff." },
+      { "name": "Git", "category": "DevOps", "desc": "Version control, strategic branching, and collaboration in real projects." }
+    ]
+  },
+  "casestudy": {
+    "label": "Case Study",
+    "title": "Marketplace Growth — Zenith Lacres",
+    "steps": [
+      { "step": "01", "label": "Problem", "desc": "A 22-year-old company with zero digital presence. Product catalog didn't exist online. R$0 in digital revenue." },
+      { "step": "02", "label": "Strategy", "desc": "Full visual rebranding + product photo catalog standardization + 5-platform selection based on ROI potential." },
+      { "step": "03", "label": "Implementation", "desc": "In-house photo studio built, 200+ items cataloged, optimized listings, brand identity unified across all channels." },
+      { "step": "04", "label": "Result", "desc": "R$0 to R$10,000 in sales in 3 months. Self-sustaining operation. Brand renewed across 5 marketplaces." }
+    ],
+    "metrics": [
+      { "value": "R$10k", "label": "Revenue in 3 months" },
+      { "value": "5", "label": "Active marketplaces" },
+      { "value": "3", "label": "Months to result" },
+      { "value": "R$0", "label": "External investment" }
+    ]
+  },
+  "now": {
+    "sub": "Updated February 2026.",
+    "items": [
+      { "label": "Building", "value": "Internal multi-CNPJ ERP system for Zenith Lacres" },
+      { "label": "Studying", "value": "Systems Architecture — B.Sc. Information Systems (UNASP-EC)" },
+      { "label": "Improving", "value": "English fluency — intermediate/advanced level (Wizard W8)" }
+    ],
+    "lighthouse": "Lighthouse Score",
+    "available": "Available for opportunities"
   },
   "resume": {
     "short": {
