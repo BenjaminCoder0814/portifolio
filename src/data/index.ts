@@ -8,10 +8,13 @@ export const personal = {
   lastName:  "Maciel",
   age:       18,
   birthdate: "20/02/2008",
-  location:  "Engenheiro Coelho  SP ",
+  location:  "Engenheiro Coelho – SP",
   email:     "benjaminmaciel0814@gmail.com",
+  emailWork: "vendas@zenithlacres.com.br",
   github:    "https://github.com/BenjaminCoder0814",
-  linkedin:  "https://linkedin.com/in/benjaminmaciel",
+  linkedin:  "https://linkedin.com/in/benjamin-maciel-1ba2563a2",
+  instagram: "https://instagram.com/benjamin_maciel_",
+  whatsapp:  "+5519971003115",
   roles: [
     "Full Stack Developer",
     "System Architect",
@@ -93,28 +96,29 @@ export const timeline = [
 
 export const skills = {
   frontend: [
-    { name: "HTML / CSS",    level: 92 },
-    { name: "JavaScript",    level: 85 },
-    { name: "React",         level: 80 },
-    { name: "UI/UX Design",  level: 88 },
+    { name: "HTML5 / CSS3",  level: 92, desc: "Semantic markup, animations & responsive layout" },
+    { name: "JavaScript",    level: 85, desc: "DOM manipulation, async/await, ES6+ patterns" },
+    { name: "React",         level: 80, desc: "Component-driven architecture, hooks & state management" },
+    { name: "TypeScript",    level: 75, desc: "Static typing for scalable, maintainable codebases" },
+    { name: "Tailwind CSS",  level: 85, desc: "Utility-first styling, responsive design systems" },
+    { name: "Next.js",       level: 78, desc: "App Router, SSR/SSG & internationalized routing" },
   ],
-  backend: [
-    { name: "Node.js",       level: 75 },
-    { name: "REST APIs",     level: 80 },
-    { name: "MySQL",         level: 78 },
-    { name: "Lógica de Sistemas", level: 85 },
-  ],
-  database: [
-    { name: "MySQL",         level: 78 },
-    { name: "Modelagem ER",  level: 80 },
-    { name: "Gestão de Dados", level: 72 },
-    { name: "Integração Multi-CNPJ", level: 75 },
+  uiPerf: [
+    { name: "Responsive Design",        level: 88, desc: "Mobile-first layouts for every viewport" },
+    { name: "Component Architecture",   level: 82, desc: "Reusable, composable UI building blocks" },
+    { name: "Performance Optimization", level: 80, desc: "Lighthouse 95+, lazy loading, code splitting" },
+    { name: "UX Focus",                 level: 85, desc: "Interfaces designed for conversion & usability" },
   ],
   tools: [
-    { name: "Git / GitHub",  level: 82 },
-    { name: "Figma",         level: 85 },
-    { name: "Edição de Vídeo", level: 88 },
-    { name: "Marketplaces",  level: 90 },
+    { name: "Git & GitHub",  level: 82, desc: "Version control & branching for real projects" },
+    { name: "Figma",         level: 85, desc: "Prototyping, design systems & UX flows" },
+    { name: "Netlify",       level: 80, desc: "CI/CD deployment & environment management" },
+    { name: "VS Code",       level: 90, desc: "Primary development environment" },
+  ],
+  backend: [
+    { name: "Node.js",   level: 75, desc: "REST APIs, WebSocket & server-side business logic" },
+    { name: "MySQL",     level: 78, desc: "Relational modeling & multi-CNPJ production database" },
+    { name: "REST APIs", level: 80, desc: "Design, integration & HTTP endpoint consumption" },
   ],
 };
 

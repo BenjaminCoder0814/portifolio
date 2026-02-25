@@ -49,13 +49,17 @@ export default function About() {
           <motion.div variants={stagger} initial="hidden" animate={inView ? "show" : "hidden"}
             className="flex flex-col gap-5">
             <motion.p variants={fadeUp}
-              className="text-[#c9d1d9] leading-relaxed"
-              style={{ fontSize: "clamp(1rem,1.8vw,1.1rem)" }}>
+              className="text-[#c9d1d9] leading-relaxed whitespace-pre-line"
+              style={{ fontSize: "clamp(1.05rem,1.8vw,1.15rem)", fontStyle: "italic", fontWeight: 600 }}>
               {t.about.bio1}
             </motion.p>
             <motion.p variants={fadeUp}
               className="text-[#8b949e] leading-relaxed text-sm">
               {t.about.bio2}
+            </motion.p>
+            <motion.p variants={fadeUp}
+              className="text-[#6e7681] leading-relaxed text-sm">
+              {t.about.bio3}
             </motion.p>
 
             {/* Stack tags */}
@@ -70,11 +74,23 @@ export default function About() {
 
             {/* Quick stats */}
             <motion.div variants={fadeUp}
-              className="grid grid-cols-3 gap-4 mt-4 p-4 rounded-xl border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)]">
+              className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 p-4 rounded-xl border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)]">
               {t.about.stats.map(({ label, value }) => (
                 <div key={label} className="text-center">
                   <div className="font-mono text-2xl font-bold text-[#00d4ff]">{value}</div>
                   <div className="font-mono text-[10px] text-[#4d5866] uppercase tracking-[0.1em] mt-1">{label}</div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Languages */}
+            <motion.div variants={fadeUp}
+              className="flex flex-wrap gap-3 pt-1">
+              {t.languages.map((item) => (
+                <div key={item.lang}
+                  className="flex items-center gap-2 px-3 py-[5px] rounded-full border border-[rgba(255,255,255,0.07)] bg-[rgba(255,255,255,0.03)]">
+                  <span className="font-mono text-xs text-white font-semibold">{item.lang}</span>
+                  <span className="font-mono text-[10px] text-[#4d5866]">— {item.level}</span>
                 </div>
               ))}
             </motion.div>

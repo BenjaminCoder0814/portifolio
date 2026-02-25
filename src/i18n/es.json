@@ -1,6 +1,6 @@
 {
   "lang": "es",
-  "badge": "Disponible para oportunidades",
+  "badge": "Disponible para Oportunidades Frontend",
   "sections": {
     "about":     { "num": "01.", "heading": "¿Quién soy?" },
     "formation": { "num": "02.", "heading": "Habilidades & Formación" },
@@ -26,6 +26,9 @@
   "hero": {
     "greeting": "Hola, soy",
     "name": "Benjamin Maciel",
+    "subtitle": "Desarrollador Front-End enfocado en rendimiento, usabilidad e impacto real en el negocio.",
+    "tagline2": "18 a\u00f1os • Brasil • Mentalidad global • Construyendo interfaces escalables.",
+    "ageSuffix": "a\u00f1os",
     "roles": ["Desarrollador Front-End", "Diseñador UI/UX", "Marketing Digital", "Arquitecto de Sistemas"],
     "bio": "Desarrollador Front-End con 3 años de experiencia real en proyectos empresariales. Especializado en interfaces que convierten.",
     "cta_portfolio": "Ver Proyectos",
@@ -40,8 +43,9 @@
   "about": {
     "title": "Sobre mí",
     "subtitle": "¿Quién es Benjamin Maciel?",
-    "bio1": "A los 18 años, ya tengo 3 años de experiencia real en Zenith Lacres — empresa industrial con 22 años en el mercado — como desarrollador Front-End, diseñador y estratega de marketing digital.",
-    "bio2": "Mi diferencial es combinar habilidades técnicas con visión de negocio: no solo codifico interfaces, sino que entiendo el proceso completo, desde identificar el problema hasta entregar impacto medible.",
+    "bio1": "No empecé simplemente aprendiendo código.\nEmpecé intentando entender sistemas.",
+    "bio2": "Desde temprano, mi foco siempre fue entender cómo la tecnología puede resolver problemas reales de negocio. No me interesa solo construir interfaces bonitas — me interesa construir soluciones que funcionen, rindan bien y generen impacto.",
+    "bio3": "Tengo 18 a\u00f1os, formaci\u00f3n técnica en TI y experiencia práctica en entorno empresarial. He trabajado en desarrollo de interfaces, estructuraci\u00f3n de marketplaces, sistemas internos y mejoras operacionales. Hoy mi foco es Front-End, pero con visi\u00f3n de producto y negocio.",
     "bio3": "Enfoque en rendimiento, usabilidad y conversión. Cada línea de CSS y cada componente React existe por una razón.",
     "stats": [
       { "value": "3+", "label": "años de experiencia" },
@@ -123,6 +127,8 @@
     "email": "Email",
     "linkedin": "LinkedIn",
     "github": "GitHub",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
     "availability": "Disponibilidad: lunes a viernes (horarios a convenir).",
     "sendMessage": "Enviar mensaje",
     "sending": "Enviando…",
@@ -146,6 +152,11 @@
     "linkedinKit": "💼 LinkedIn Kit",
     "erp": "🛠️ Sistema ERP"
   },
+  "languages": [
+    { "lang": "Portugués", "level": "Nativo" },
+    { "lang": "Inglés", "level": "Intermedio / Avanzado" },
+    { "lang": "Español", "level": "Intermedio" }
+  ],
   "mindset": {
     "headline": "Construyo interfaces que resuelven problemas de negocio — no solo se ven bien.",
     "sub": "Cada componente está diseñado con rendimiento, usabilidad y escalabilidad en mente.",

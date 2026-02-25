@@ -138,7 +138,7 @@ export default function Hero() {
 
         {/* Meta */}
         <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-[#4d5866] mb-6 animate-[fadeInUp_0.6s_0.8s_both]">
-          <span><span className="text-[#4d5866]">{t.hero.age}</span> <span className="text-[#8b949e]">{"// "}{personal.age} anos</span></span>
+          <span><span className="text-[#4d5866]">{t.hero.age}</span> <span className="text-[#8b949e]">{"// "}{personal.age} {t.hero.ageSuffix}</span></span>
           <span className="text-[#4d5866]">·</span>
           <span><span className="text-[#4d5866]">{t.hero.location}</span> <span className="text-[#8b949e]">{"// "}{personal.location}</span></span>
           <span className="text-[#4d5866]">·</span>
@@ -146,10 +146,10 @@ export default function Hero() {
         </div>
 
         {/* Tagline */}
-        <p className="text-[#8b949e] mb-10 max-w-[540px] animate-[fadeInUp_0.6s_0.95s_both]"
-          style={{ fontSize: "clamp(1rem,2vw,1.2rem)", lineHeight: 1.7 }}>
-          {personal.tagline}<br />
-          <span className="text-[#8b949e]">{personal.subTagline}</span>
+        <p className="text-[#8b949e] mb-10 max-w-[580px] animate-[fadeInUp_0.6s_0.95s_both]"
+          style={{ fontSize: "clamp(1rem,2vw,1.1rem)", lineHeight: 1.7 }}>
+          {t.hero.subtitle}<br />
+          <span className="font-mono text-sm text-[#4d5866]">{t.hero.tagline2}</span>
         </p>
 
         {/* CTAs */}

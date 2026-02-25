@@ -1,6 +1,6 @@
 {
   "lang": "en",
-  "badge": "Available for opportunities",
+  "badge": "Available for Front-End Opportunities",
   "sections": {
     "about":     { "num": "01.", "heading": "Who I am" },
     "formation": { "num": "02.", "heading": "Skills & Education" },
@@ -26,6 +26,9 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Benjamin Maciel",
+    "subtitle": "Front-End Developer focused on performance, usability and real business impact.",
+    "tagline2": "18 years old • Brazil • Global mindset • Building scalable interfaces.",
+    "ageSuffix": "years old",
     "roles": ["Front-End Developer", "UI/UX Designer", "Digital Marketing", "System Architect"],
     "bio": "Front-End Developer with 3 years of real business experience. Specialized in interfaces that convert.",
     "cta_portfolio": "View Projects",
@@ -40,8 +43,9 @@
   "about": {
     "title": "About me",
     "subtitle": "Who is Benjamin Maciel",
-    "bio1": "At 18, I already have 3 years of real experience at Zenith Lacres — an industrial company with 22 years in the market — as a Front-End developer, designer, and digital marketing strategist.",
-    "bio2": "My edge is combining technical skills with business vision: I don't just code interfaces — I understand the whole process, from identifying the problem to delivering measurable impact.",
+    "bio1": "I didn\u2019t start by just learning to code.\nI started by trying to understand systems.",
+    "bio2": "From an early age, my focus was on understanding how technology can solve real business problems. I\u2019m not interested in just building beautiful interfaces \u2014 I want to build solutions that work, perform well, and generate real impact.",
+    "bio3": "I\u2019m 18, hold a technical IT degree, and have hands-on experience in a real business environment. I\u2019ve worked on interface development, marketplace structuring, internal systems, and operational improvements. My focus today is Front-End \u2014 with product and business vision.",
     "bio3": "Focus on performance, usability, and conversion. Every CSS line and every React component exists for a reason.",
     "stats": [
       { "value": "3+", "label": "years of experience" },
@@ -123,6 +127,8 @@
     "email": "Email",
     "linkedin": "LinkedIn",
     "github": "GitHub",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
     "availability": "Availability: Monday to Friday (hours to be agreed).",
     "sendMessage": "Send message",
     "sending": "Sending…",
@@ -146,6 +152,11 @@
     "linkedinKit": "💼 LinkedIn Kit",
     "erp": "🛠️ ERP System"
   },
+  "languages": [
+    { "lang": "Portuguese", "level": "Native" },
+    { "lang": "English", "level": "Intermediate / Advanced" },
+    { "lang": "Spanish", "level": "Intermediate" }
+  ],
   "mindset": {
     "headline": "I build interfaces that solve business problems — not just look good.",
     "sub": "Every component is designed with performance, usability and scalability in mind.",

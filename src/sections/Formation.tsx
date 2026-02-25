@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
 import { skills, education } from "@/data";
 import { useI18n } from "@/lib/i18n";
@@ -13,20 +13,22 @@ const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0
 
 const categoryColor: Record<string, string> = {
   frontend: "#00d4ff",
-  backend:  "#7c3aed",
-  database: "#00ff88",
+  uiPerf:   "#00ff88",
   tools:    "#f59e0b",
+  backend:  "#7c3aed",
+};
+
+const categoryLabel: Record<string, string> = {
+  frontend: "Frontend",
+  uiPerf:   "UI & Performance",
+  tools:    "Tools",
+  backend:  "Backend (intermediate)",
 };
 
 export default function Formation() {
   const { t } = useI18n();
   const ref    = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
-  const [animated, setAnimated] = useState(false);
-
-  useEffect(() => {
-    if (inView) setAnimated(true);
-  }, [inView]);
 
   // Map data status strings to i18n keys
   const statusLabel = (status: string | undefined) => {
@@ -64,26 +66,24 @@ export default function Formation() {
               <motion.div key={cat} variants={fadeUp}>
                 <h3 className="font-mono text-xs uppercase tracking-[0.15em] mb-4"
                   style={{ color: categoryColor[cat] ?? "#00d4ff" }}>
-                  {cat}
+                  {categoryLabel[cat] ?? cat}
                 </h3>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-4">
                   {items.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between font-mono text-xs text-[#8b949e] mb-1">
-                        <span>{skill.name}</span>
-                        <span style={{ color: categoryColor[cat] ?? "#00d4ff" }}>{skill.level}%</span>
+                    <div key={skill.name} className="flex flex-col gap-[3px] group">
+                      <div className="flex items-center gap-2">
+                        <span
+                          className="font-mono text-xs font-semibold transition-colors"
+                          style={{ color: categoryColor[cat] ?? "#00d4ff" }}>
+                          {skill.name}
+                        </span>
+                        <div className="flex-1 h-px bg-[rgba(255,255,255,0.05)]" />
                       </div>
-                      <div className="h-1 w-full bg-[rgba(255,255,255,0.05)] rounded-full overflow-hidden">
-                        <div
-                          className="h-full rounded-full transition-all duration-1000 ease-out"
-                          style={{
-                            width: animated ? `${skill.level}%` : "0%",
-                            background: `linear-gradient(to right, ${categoryColor[cat] ?? "#00d4ff"}, ${categoryColor[cat] ?? "#00d4ff"}88)`,
-                            boxShadow: `0 0 8px ${categoryColor[cat] ?? "#00d4ff"}66`,
-                            transitionDelay: `${skill.level * 5}ms`,
-                          }}
-                        />
-                      </div>
+                      {"desc" in skill && (
+                        <p className="font-mono text-[11px] text-[#4d5866] leading-relaxed">
+                          {(skill as typeof skill & { desc: string }).desc}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
