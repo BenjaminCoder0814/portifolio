@@ -1,9 +1,7 @@
 "use client";
 
 import { useScrollY } from "@/hooks";
-import Link from "next/link";
 import { useState, useEffect } from "react";
-import { personal } from "@/data";
 
 const NAV_ITEMS = [
   { label: "Sobre",     href: "#about"     },

@@ -54,7 +54,7 @@ export default function KnowMe() {
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             className="relative max-w-[700px] mx-auto text-center">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 font-mono text-6xl text-[#00ff88] opacity-20 select-none leading-none">"</div>
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 font-mono text-6xl text-[#00ff88] opacity-20 select-none leading-none">{String.fromCharCode(34)}</div>
             <p className="text-[#c9d1d9] text-xl font-medium italic leading-relaxed mb-4 relative z-[1]">
               {personal.philosophy}
             </p>

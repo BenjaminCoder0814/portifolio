@@ -136,11 +136,11 @@ export default function Hero() {
 
         {/* Meta */}
         <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-[#4d5866] mb-6 animate-[fadeInUp_0.6s_0.8s_both]">
-          <span><span className="text-[#4d5866]">Idade</span> <span className="text-[#8b949e]">// {personal.age} anos</span></span>
+          <span><span className="text-[#4d5866]">Idade</span> <span className="text-[#8b949e]">{"// "}{personal.age} anos</span></span>
           <span className="text-[#4d5866]">·</span>
-          <span><span className="text-[#4d5866]">Local</span> <span className="text-[#8b949e]">// {personal.location}</span></span>
+          <span><span className="text-[#4d5866]">Local</span> <span className="text-[#8b949e]">{"// "}{personal.location}</span></span>
           <span className="text-[#4d5866]">·</span>
-          <span><span className="text-[#4d5866]">Status</span> <span className="text-[#00ff88]">// Online ●</span></span>
+          <span><span className="text-[#4d5866]">Status</span> <span className="text-[#00ff88]">{"// "} Online ●</span></span>
         </div>
 
         {/* Tagline */}
