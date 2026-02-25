@@ -1,13 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
 import { useI18n, type Lang } from '@/lib/i18n';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
 
-// Configure PDF.js worker once (CDN)
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+const LANG_LABELS: Record<Lang, string> = { pt: 'PT', en: 'EN', es: 'ES' };
 
 interface PdfViewerModalProps {
   isOpen: boolean;
@@ -15,23 +11,23 @@ interface PdfViewerModalProps {
 }
 
 export default function PdfViewerModal({ isOpen, onClose }: PdfViewerModalProps) {
-  const { lang, t } = useI18n();
-  const [numPages, setNumPages] = useState<number>(0);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [scale, setScale] = useState<number>(1.0);
-  const [loading, setLoading] = useState<boolean>(true);
+  const { lang, setLang, t } = useI18n();
+  const [iframeLoaded, setIframeLoaded] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
 
-  const pdfSrc = `/resume/benjamin_resume_short_${lang}.pdf`;
+  const resumeUrl = `/resume/short?lang=${lang}`;
+  const downloadUrl = `/resume/benjamin_resume_short_${lang}.pdf`;
   const fileName = `benjamin_maciel_resume_${lang}.pdf`;
 
-  // Reset state when language or modal changes
+  // Reset loaded state when lang changes
   useEffect(() => {
-    if (isOpen) {
-      setCurrentPage(1);
-      setLoading(true);
-    }
-  }, [isOpen, lang]);
+    setIframeLoaded(false);
+  }, [lang]);
+
+  // Reset when modal opens
+  useEffect(() => {
+    if (isOpen) setIframeLoaded(false);
+  }, [isOpen]);
 
   // Close on Escape
   useEffect(() => {
@@ -43,161 +39,150 @@ export default function PdfViewerModal({ isOpen, onClose }: PdfViewerModalProps)
     return () => document.removeEventListener('keydown', handler);
   }, [isOpen, onClose]);
 
-  // Lock body scroll when open
+  // Lock body scroll
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
-
-  const handleDocumentLoadSuccess = useCallback(({ numPages }: { numPages: number }) => {
-    setNumPages(numPages);
-    setLoading(false);
-  }, []);
 
   const handleOverlayClick = useCallback((e: React.MouseEvent) => {
     if (e.target === overlayRef.current) onClose();
   }, [onClose]);
 
-  const zoomIn = () => setScale((s) => Math.min(s + 0.2, 2.5));
-  const zoomOut = () => setScale((s) => Math.max(s - 0.2, 0.5));
-  const resetZoom = () => setScale(1.0);
-
   if (!isOpen) return null;
-
-  const langLabels: Record<Lang, string> = { pt: 'PT', en: 'EN', es: 'ES' };
 
   return (
     <div
       ref={overlayRef}
       onClick={handleOverlayClick}
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-3 sm:p-6"
       aria-modal="true"
       role="dialog"
-      aria-label="PDF Viewer"
+      aria-label="Resume Viewer"
     >
-      {/* Modal container */}
-      <div className="relative flex flex-col w-full max-w-3xl max-h-[95vh] bg-[#0d0d0d] border border-white/10 rounded-xl shadow-2xl overflow-hidden">
+      <div className="relative flex flex-col w-full max-w-4xl h-[95vh] bg-[#0d0d0d] border border-white/10 rounded-xl shadow-2xl overflow-hidden">
 
         {/* ── Header ── */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-[#111]">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/10 bg-[#111] shrink-0">
           <div className="flex items-center gap-3">
-            {/* Traffic light dots */}
             <div className="flex gap-1.5">
               <button
                 onClick={onClose}
                 className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors"
                 aria-label="Fechar"
               />
-              <span className="w-3 h-3 rounded-full bg-yellow-500/50" />
-              <span className="w-3 h-3 rounded-full bg-green-500/50" />
+              <span className="w-3 h-3 rounded-full bg-yellow-500/40" />
+              <span className="w-3 h-3 rounded-full bg-green-500/40" />
             </div>
-            <span className="font-mono text-xs text-gray-300">
-              {fileName}
+            <span className="font-mono text-[11px] text-gray-400 hidden sm:block">
+              curriculum.pdf — Benjamin Maciel
             </span>
           </div>
 
-          {/* Controls */}
           <div className="flex items-center gap-2">
-            {/* Zoom */}
-            <div className="flex items-center gap-1 rounded border border-white/10 overflow-hidden">
-              <button
-                onClick={zoomOut}
-                className="px-2 py-1 text-xs text-gray-400 hover:text-white hover:bg-white/5 transition-colors font-mono"
-                aria-label="Zoom out"
-              >−</button>
-              <button
-                onClick={resetZoom}
-                className="px-2 py-1 text-xs text-gray-300 hover:text-white hover:bg-white/5 transition-colors font-mono min-w-[3.5rem] text-center"
-                aria-label="Reset zoom"
-              >
-                {Math.round(scale * 100)}%
-              </button>
-              <button
-                onClick={zoomIn}
-                className="px-2 py-1 text-xs text-gray-400 hover:text-white hover:bg-white/5 transition-colors font-mono"
-                aria-label="Zoom in"
-              >+</button>
+            {/* Language switcher */}
+            <div className="flex rounded border border-white/10 overflow-hidden">
+              {(['pt', 'en', 'es'] as Lang[]).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`px-2.5 py-1 text-[11px] font-mono font-bold uppercase transition-all duration-150 ${
+                    lang === l
+                      ? 'bg-[#00d4ff] text-black'
+                      : 'text-gray-400 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {LANG_LABELS[l]}
+                </button>
+              ))}
             </div>
 
-            {/* Download */}
+            {/* Open in new tab */}
             <a
-              href={pdfSrc}
-              download={fileName}
-              className="px-3 py-1.5 text-xs font-mono font-semibold text-black bg-[#00d4ff] hover:bg-[#00d4ff]/90 rounded transition-colors"
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-mono text-gray-400 border border-white/10 rounded hover:text-white hover:border-white/30 transition-colors"
             >
+              <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              Abrir
+            </a>
+
+            {/* Print / Save as PDF */}
+            <button
+              onClick={() => {
+                const w = window.open(resumeUrl, '_blank');
+                if (w) setTimeout(() => w.print(), 1200);
+              }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-mono font-semibold text-[#00d4ff] border border-[rgba(0,212,255,0.3)] rounded hover:bg-[rgba(0,212,255,0.08)] transition-colors"
+            >
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="6 9 6 2 18 2 18 9"/>
+                <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+                <rect x="6" y="14" width="12" height="8"/>
+              </svg>
+              <span className="hidden sm:inline">Imprimir PDF</span>
+              <span className="sm:hidden">PDF</span>
+            </button>
+
+            {/* Download pre-generated PDF */}
+            <a
+              href={downloadUrl}
+              download={fileName}
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-mono font-semibold text-black bg-[#00d4ff] rounded hover:bg-[#00d4ff]/90 transition-colors"
+            >
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
               {t.nav.downloadPdf}
             </a>
 
             {/* Close */}
             <button
               onClick={onClose}
-              className="px-2 py-1.5 text-xs text-gray-400 hover:text-white transition-colors font-mono"
-              aria-label="Close modal"
+              className="p-1.5 text-gray-500 hover:text-white transition-colors rounded"
+              aria-label="Fechar modal"
             >
-              ✕
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
             </button>
           </div>
         </div>
 
-        {/* ── PDF Content ── */}
-        <div className="flex-1 overflow-auto flex justify-center py-6 px-4 bg-[#1a1a1a]">
-          {loading && (
-            <div className="flex flex-col items-center justify-center gap-4 text-gray-400">
-              <div className="w-8 h-8 border-2 border-[#00d4ff] border-t-transparent rounded-full animate-spin" />
-              <span className="font-mono text-sm">Loading PDF…</span>
-              <p className="text-xs text-gray-500 text-center max-w-xs">
-                Run <code className="text-[#00d4ff]">npm run generate:pdfs</code> first to create PDF exports.
-              </p>
+        {/* ── iframe ── */}
+        <div className="relative flex-1 overflow-hidden bg-[#050a0f]">
+          {!iframeLoaded && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-10">
+              <div className="w-7 h-7 border-2 border-[#00d4ff] border-t-transparent rounded-full animate-spin" />
+              <span className="font-mono text-xs text-gray-500">Carregando…</span>
             </div>
           )}
-
-          <Document
-            file={pdfSrc}
-            onLoadSuccess={handleDocumentLoadSuccess}
-            onLoadError={() => setLoading(false)}
-            loading={null}
-            className="flex flex-col items-center gap-4"
-          >
-            {!loading &&
-              Array.from({ length: numPages }, (_, i) => i + 1).map((page) => (
-                <Page
-                  key={`page_${page}`}
-                  pageNumber={page}
-                  scale={scale}
-                  className="shadow-lg rounded overflow-hidden"
-                  renderTextLayer={true}
-                  renderAnnotationLayer={false}
-                />
-              ))}
-          </Document>
+          <iframe
+            key={`resume-${lang}`}
+            src={resumeUrl}
+            title={`Benjamin Maciel — Resume (${lang.toUpperCase()})`}
+            className={`w-full h-full border-none transition-opacity duration-300 ${iframeLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setIframeLoaded(true)}
+          />
         </div>
 
-        {/* ── Footer ── */}
-        {numPages > 1 && (
-          <div className="flex items-center justify-center gap-4 px-4 py-2 border-t border-white/10 bg-[#111]">
-            <button
-              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              disabled={currentPage <= 1}
-              className="px-3 py-1 text-xs font-mono text-gray-400 hover:text-white disabled:opacity-30 transition-colors"
-            >
-              ← Prev
-            </button>
-            <span className="font-mono text-xs text-gray-300">
-              {currentPage} / {numPages}
-            </span>
-            <button
-              onClick={() => setCurrentPage((p) => Math.min(numPages, p + 1))}
-              disabled={currentPage >= numPages}
-              className="px-3 py-1 text-xs font-mono text-gray-400 hover:text-white disabled:opacity-30 transition-colors"
-            >
-              Next →
-            </button>
-          </div>
-        )}
+        {/* ── Footer hint ── */}
+        <div className="shrink-0 px-4 py-2 border-t border-white/[0.06] bg-[#0d0d0d] flex items-center justify-between gap-4">
+          <p className="font-mono text-[10px] text-gray-600">
+            Clique em <span className="text-[#00d4ff]">Imprimir PDF</span> → <em>Salvar como PDF</em> para exportar.
+          </p>
+          <a
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 font-mono text-[10px] text-[#7c3aed] hover:text-[#a78bfa] transition-colors"
+          >
+            Ver página completa ↗
+          </a>
+        </div>
       </div>
     </div>
   );

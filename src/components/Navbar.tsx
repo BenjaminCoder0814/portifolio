@@ -1,7 +1,7 @@
 "use client";
 
 import { useScrollY } from "@/hooks";
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { useI18n } from "@/lib/i18n";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import dynamic from "next/dynamic";
