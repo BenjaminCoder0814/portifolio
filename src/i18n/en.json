@@ -1,0 +1,141 @@
+{
+  "lang": "en",
+  "nav": {
+    "about": "About",
+    "formation": "Journey",
+    "projects": "Projects",
+    "knowme": "Know Me",
+    "contact": "Contact",
+    "devMode": "Dev Mode",
+    "resumeBtn": "Resume",
+    "downloadPdf": "Download PDF",
+    "viewResume": "View Resume"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Benjamin Maciel",
+    "roles": ["Front-End Developer", "UI/UX Designer", "Digital Marketing", "System Architect"],
+    "bio": "Front-End Developer with 3 years of real business experience. Specialized in interfaces that convert.",
+    "cta_portfolio": "View Projects",
+    "cta_contact": "Get in Touch",
+    "scroll": "Scroll to explore"
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "Who is Benjamin Maciel",
+    "bio1": "At 18, I already have 3 years of real experience at Zenith Lacres — an industrial company with 22 years in the market — as a Front-End developer, designer, and digital marketing strategist.",
+    "bio2": "My edge is combining technical skills with business vision: I don't just code interfaces — I understand the whole process, from identifying the problem to delivering measurable impact.",
+    "bio3": "Focus on performance, usability, and conversion. Every CSS line and every React component exists for a reason.",
+    "stats": [
+      { "value": "3+", "label": "years of experience" },
+      { "value": "R$10k", "label": "sales growth achieved" },
+      { "value": "17", "label": "countries visited" },
+      { "value": "100%", "label": "projects delivered" }
+    ]
+  },
+  "formation": {
+    "title": "Journey",
+    "subtitle": "My learning path",
+    "timeline": [
+      { "year": "2020", "title": "First steps in code", "desc": "Learned programming with Scratch and Codebuddy at age 12 at UNASP-EC." },
+      { "year": "2022", "title": "LEGO Robotics", "desc": "Competed in robotics competitions using LEGO kits, developing logic and teamwork." },
+      { "year": "2023", "title": "Technical IT Degree + Rebranding", "desc": "Started IT technical course at UNASP-EC and executed the full rebranding of Zenith Lacres." },
+      { "year": "2024", "title": "Drone + Marketplaces", "desc": "Certified as drone operator by Futuriste Drone. Launched the company on 5 marketplaces." },
+      { "year": "2025", "title": "Graduation Project", "desc": "Developed the final technical project 100% solo — design, frontend, and backend. Top grade achieved." },
+      { "year": "2026", "title": "ERP + Information Systems Degree", "desc": "Building an internal multi-CNPJ management platform and starting B.Sc. in Information Systems." }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Work with real impact",
+    "viewCode": "View Code",
+    "viewDemo": "View Demo",
+    "items": [
+      {
+        "name": "Zenith Internal Platform",
+        "desc": "Custom ERP with multi-CNPJ inventory control, internal corporate chat, and automated price management. In active production.",
+        "tags": ["React", "Node.js", "MySQL", "WebSocket"],
+        "year": "2026",
+        "impact": "Active system · 3 CNPJs unified"
+      },
+      {
+        "name": "Rebranding & Marketplaces",
+        "desc": "Full visual identity overhaul for Zenith Lacres and launch on 5 digital marketplaces. Result: R$0 to R$10,000 in sales in 3 months.",
+        "tags": ["Figma", "Digital Marketing", "UI/UX"],
+        "year": "2023–2024",
+        "impact": "R$0 → R$10,000 in 3 months"
+      },
+      {
+        "name": "Graduation Project — Full Stack",
+        "desc": "Technical graduation project developed entirely solo. Design, frontend, and backend from scratch. Achieved top grade.",
+        "tags": ["HTML", "CSS", "JavaScript", "Node.js", "MySQL"],
+        "year": "2025",
+        "impact": "Top grade · 100% autonomous"
+      },
+      {
+        "name": "Personal Portfolio",
+        "desc": "Interactive portfolio with Framer Motion animations, simulated terminal, boot loader, and custom design system. Trilingual (PT/EN/ES).",
+        "tags": ["Next.js 14", "React", "TypeScript", "Tailwind"],
+        "year": "2026",
+        "impact": "Live in production"
+      }
+    ]
+  },
+  "knowme": {
+    "title": "Know Me",
+    "subtitle": "Beyond the code",
+    "cards": [
+      { "icon": "🔍", "title": "Gap Analyst", "desc": "I observe processes to identify inefficiencies before writing a single line of code." },
+      { "icon": "🌎", "title": "Global Vision", "desc": "17 countries visited. I bring international perspective to design, UX, and digital strategy." },
+      { "icon": "⚡", "title": "Real Execution", "desc": "I'm not theoretical: everything I learn goes into real production with measurable impact." },
+      { "icon": "🏗️", "title": "Multidisciplinary", "desc": "Code + design + marketing + operations. I understand the whole product, not just my layer." },
+      { "icon": "🚀", "title": "Early by Choice", "desc": "I chose real experience over theory. 3 years at a company before turning 18." },
+      { "icon": "📈", "title": "Speed Learner", "desc": "I learn frameworks in days, not months. I prefer official documentation in English." }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's talk",
+    "cta": "I'm open to internships, freelance work, and projects. Send me a message.",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "availability": "Availability: Monday to Friday (hours to be agreed).",
+    "sendMessage": "Send message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "msgPlaceholder": "Hi Benjamin, I'd like to talk about..."
+  },
+  "resume": {
+    "short": {
+      "title": "Front-End Developer | UI/UX | Digital Marketing",
+      "objective": "To work as a Front-End Developer contributing to modern, performant, and conversion-driven interfaces.",
+      "summary": "Front-End Developer with a technical IT degree. Real experience in interfaces, rebranding, marketplaces, and internal systems. Focus on performance, usability, and commercial impact.",
+      "skills": {
+        "frontend": "HTML5 · CSS3 · JavaScript · React · TypeScript · Tailwind CSS",
+        "design": "Figma · Design System · UI/UX · Canva Pro",
+        "tools": "Git · GitHub · VS Code · Next.js",
+        "marketing": "Marketplaces · Visual Identity · Conversion Strategy",
+        "backend": "Node.js · REST APIs · MySQL · WebSocket"
+      },
+      "experience": [
+        {
+          "company": "Zenith Lacres",
+          "role": "Front-End Developer & Digital Marketing",
+          "period": "2023 – present",
+          "bullets": [
+            "Built frontend of internal multi-CNPJ management platform",
+            "Led full company rebranding and visual identity management",
+            "R$0 → R$10,000 in digital sales in 3 months",
+            "Launched on 5 marketplaces + set up in-house photography studio"
+          ]
+        }
+      ],
+      "education": [
+        { "degree": "B.Sc. Information Systems (in progress)", "school": "UNASP-EC", "period": "2026–" },
+        { "degree": "Technical Degree in IT", "school": "UNASP-EC", "period": "2023–2025" }
+      ],
+      "languages": ["Portuguese – Native", "English – Intermediate/Advanced", "Spanish – Intermediate"]
+    }
+  }
+}

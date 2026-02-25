@@ -1,22 +1,29 @@
 "use client";
 
 import { useScrollY } from "@/hooks";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
+import { useI18n } from "@/lib/i18n";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import dynamic from "next/dynamic";
 
-const NAV_ITEMS = [
-  { label: "Sobre",     href: "#about"     },
-  { label: "Formação",  href: "#formation" },
-  { label: "Projetos",  href: "#projects"  },
-  { label: "Conheça eu",href: "#know-me"   },
-  { label: "Contato",   href: "#contact"   },
-];
+const PdfViewerModal = dynamic(() => import("@/components/PdfViewerModal"), { ssr: false });
 
 export default function Navbar() {
   const scrollY = useScrollY();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const [pdfOpen, setPdfOpen] = useState(false);
+  const { t } = useI18n();
 
   const scrolled = scrollY > 20;
+
+  const NAV_ITEMS = [
+    { label: t.nav.about,     href: "#about"     },
+    { label: t.nav.formation, href: "#formation" },
+    { label: t.nav.projects,  href: "#projects"  },
+    { label: t.nav.knowme,    href: "#know-me"   },
+    { label: t.nav.contact,   href: "#contact"   },
+  ];
 
   // Active section detection
   useEffect(() => {
@@ -71,12 +78,25 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+
+            {/* Resume PDF button */}
+            <button
+              onClick={() => setPdfOpen(true)}
+              className="hidden sm:flex items-center gap-1.5 px-3 py-2 border border-[rgba(124,58,237,0.4)] rounded-lg font-mono text-xs font-semibold text-[#7c3aed] transition-all duration-200 hover:bg-[rgba(124,58,237,0.12)] hover:border-[#7c3aed]"
+            >
+              <span>📄</span>
+              <span>{t.nav.resumeBtn}</span>
+            </button>
+
+            {/* Dev Mode terminal */}
             <button
               onClick={openTerminal}
               className="hidden sm:flex items-center gap-2 px-4 py-2 border border-[rgba(0,212,255,0.2)] rounded-lg font-mono text-xs font-semibold text-[#00d4ff] transition-all duration-200 hover:bg-[rgba(0,212,255,0.1)] hover:border-[#00d4ff]"
             >
               <span>&gt;_</span>
-              <span>Dev Mode</span>
+              <span>{t.nav.devMode}</span>
             </button>
 
             {/* Mobile burger */}
@@ -106,14 +126,26 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
+          <div className="flex items-center gap-3 mt-2">
+            <LanguageSwitcher />
+          </div>
+          <button
+            onClick={() => { setOpen(false); setPdfOpen(true); }}
+            className="px-6 py-3 border border-[rgba(124,58,237,0.4)] rounded-lg font-mono text-sm text-[#7c3aed]"
+          >
+            📄 {t.nav.resumeBtn}
+          </button>
           <button
             onClick={() => { setOpen(false); openTerminal(); }}
-            className="mt-4 px-6 py-3 border border-[rgba(0,212,255,0.3)] rounded-lg font-mono text-sm text-[#00d4ff]"
+            className="px-6 py-3 border border-[rgba(0,212,255,0.3)] rounded-lg font-mono text-sm text-[#00d4ff]"
           >
-            &gt;_ Dev Mode
+            &gt;_ {t.nav.devMode}
           </button>
         </div>
       )}
+
+      {/* PDF Viewer Modal */}
+      <PdfViewerModal isOpen={pdfOpen} onClose={() => setPdfOpen(false)} />
     </>
   );
 }
