@@ -50,7 +50,7 @@
     "stats": [
       { "value": "3+", "label": "years of experience" },
       { "value": "R$10k", "label": "sales growth achieved" },
-      { "value": "17", "label": "countries visited" },
+      { "value": "13", "label": "countries visited" },
       { "value": "100%", "label": "projects delivered" }
     ]
   },
@@ -62,10 +62,10 @@
     "completed": "completed",
     "inProgress": "ongoing",
     "timeline": [
-      { "year": "2020", "title": "First steps in code", "desc": "Learned programming with Scratch and Codebuddy at age 12 at UNASP-EC." },
+      { "year": "2020", "title": "First steps in code", "desc": "Started programming at 12 with SuperGeeks; continued with Byju's FutureSchool (ex-Codebuddy) through 9th grade." },
       { "year": "2022", "title": "LEGO Robotics", "desc": "Competed in robotics competitions using LEGO kits, developing logic and teamwork." },
       { "year": "2023", "title": "Technical IT Degree + Rebranding", "desc": "Started IT technical course at UNASP-EC and executed the full rebranding of Zenith Lacres." },
-      { "year": "2024", "title": "Drone + Marketplaces", "desc": "Certified as drone operator by Futuriste Drone. Launched the company on 5 marketplaces." },
+      { "year": "2024", "title": "Professional Drone Operator", "desc": "Certified by Futuriste Drone. Delivers aerial footage and pro visuals for coverage and content." },
       { "year": "2025", "title": "Graduation Project", "desc": "Developed the final technical project 100% solo — design, frontend, and backend. Top grade achieved." },
       { "year": "2026", "title": "ERP + Information Systems Degree", "desc": "Building an internal multi-CNPJ management platform and starting B.Sc. in Information Systems." }
     ]
@@ -112,7 +112,7 @@
     "subtitle": "Beyond the code",
     "cards": [
       { "icon": "🔍", "title": "Gap Analyst", "desc": "I observe processes to identify inefficiencies before writing a single line of code." },
-      { "icon": "🌎", "title": "Global Vision", "desc": "17 countries visited. I bring international perspective to design, UX, and digital strategy." },
+      { "icon": "🌎", "title": "Global Vision", "desc": "13 countries visited (Brazil, France, Egypt, Argentina, Paraguay, Palestine, Israel, Uruguay, Colombia, USA, Peru, Chile, Bolivia). I bring international perspective to design, UX, and digital strategy." },
       { "icon": "⚡", "title": "Real Execution", "desc": "I'm not theoretical: everything I learn goes into real production with measurable impact." },
       { "icon": "🏗️", "title": "Multidisciplinary", "desc": "Code + design + marketing + operations. I understand the whole product, not just my layer." },
       { "icon": "🚀", "title": "Early by Choice", "desc": "I chose real experience over theory. 3 years at a company before turning 18." },
@@ -160,7 +160,7 @@
   "mindset": {
     "headline": "I build interfaces that solve business problems — not just look good.",
     "sub": "Every component is designed with performance, usability and scalability in mind.",
-    "global": "Business trips across 17 countries — international market exposure since age 15.",
+    "global": "Business trips across 13 countries — Brazil, France, Egypt, Argentina, Paraguay, Palestine, Israel, Uruguay, Colombia, USA, Peru, Chile, Bolivia — market exposure since age 15.",
     "cards": [
       { "icon": "🔬", "title": "Problem Identification", "desc": "Before writing code, I map the process. I identify the gap, its cost, and the potential impact of the solution." },
       { "icon": "🏗️", "title": "Solution Structuring", "desc": "I break the problem into modules. Define the MVP, the minimal architecture, and the implementation sequence." },

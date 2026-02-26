@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
+import benjaminFoto from "@/benjaminfoto.png";
 
 // ─── TRANSLATIONS ────────────────────────────────────────────────────────────
 
@@ -99,7 +101,7 @@ const t = {
       { lang: "Espanhol", level: "Intermediário" },
     ],
     sIntl: "Internacional",
-    intl: "17 países visitados. Leitura fluente de documentação técnica em inglês (React, MDN, Node.js).",
+    intl: "13 países visitados (Brasil, França, Egito, Argentina, Paraguai, Palestina, Israel, Uruguai, Colômbia, EUA, Peru, Chile, Bolívia). Leitura fluente de documentação técnica em inglês (React, MDN, Node.js).",
   },
 
   en: {
@@ -196,7 +198,7 @@ const t = {
       { lang: "Spanish", level: "Intermediate" },
     ],
     sIntl: "International",
-    intl: "17 countries visited. Fluent reading of technical documentation in English (React, MDN, Node.js).",
+    intl: "13 countries visited (Brazil, France, Egypt, Argentina, Paraguay, Palestine, Israel, Uruguay, Colombia, USA, Peru, Chile, Bolivia). Fluent reading of technical documentation in English (React, MDN, Node.js).",
   },
 
   es: {
@@ -293,7 +295,7 @@ const t = {
       { lang: "Español", level: "Intermedio" },
     ],
     sIntl: "Internacional",
-    intl: "17 países visitados. Lectura fluida de documentación técnica en inglés (React, MDN, Node.js).",
+    intl: "13 países visitados (Brasil, Francia, Egipto, Argentina, Paraguay, Palestina, Israel, Uruguay, Colombia, EE.UU., Perú, Chile, Bolivia). Lectura fluida de documentación técnica en inglés (React, MDN, Node.js).",
   },
 };
 
@@ -376,14 +378,19 @@ export default function Curriculo() {
 
           {/* HEADER */}
           <header className="mb-10">
-            <div className="flex items-end justify-between gap-6 flex-wrap">
-              <div>
-                <h1 className="text-5xl font-black tracking-tight uppercase leading-none">
-                  Benjamin<br />
-                  <span className="text-[#00d4ff]">Maciel</span>
-                </h1>
-                <p className="text-sm font-semibold text-[#8b949e] mt-3 tracking-widest uppercase">{c.title}</p>
-                <p className="text-xs text-[#525960] mt-1">{c.location}</p>
+            <div className="flex flex-wrap items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <div className="relative w-24 h-24 rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-[#050505]">
+                  <Image src={benjaminFoto} alt="Benjamin Maciel" className="object-cover" fill sizes="96px" />
+                </div>
+                <div>
+                  <h1 className="text-5xl font-black tracking-tight uppercase leading-none">
+                    Benjamin<br />
+                    <span className="text-[#00d4ff]">Maciel</span>
+                  </h1>
+                  <p className="text-sm font-semibold text-[#8b949e] mt-3 tracking-widest uppercase">{c.title}</p>
+                  <p className="text-xs text-[#525960] mt-1">{c.location}</p>
+                </div>
               </div>
               <div className="text-xs text-[#8b949e] font-mono space-y-1 text-right">
                 <p>benjaminmaciel0814@gmail.com</p>
@@ -400,26 +407,31 @@ export default function Curriculo() {
             <p className="text-sm text-[#c9d1d9] leading-relaxed">{c.objective}</p>
           </Section>
 
-          {/* SUMMARY */}
-          <Section label={c.sSummary} accent="#7c3aed">
-            <p className="text-sm text-[#c9d1d9] leading-relaxed">{c.summary}</p>
-          </Section>
-
-          {/* SKILLS */}
-          <Section label={c.sSkills} accent="#00ff88">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {c.skills.map((s) => (
-                <div key={s.cat} className="rounded-lg border border-white/[0.07] bg-white/[0.03] p-3">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#00d4ff] mb-2">{s.cat}</p>
-                  <p className="text-xs text-[#8b949e] leading-relaxed">{s.items}</p>
+          {/* HEADER */}
+          <header className="mb-10">
+            <div className="flex flex-wrap items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <div className="relative w-24 h-24 rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-[#050505]">
+                  <Image src={benjaminFoto} alt="Benjamin Maciel" className="object-cover" fill sizes="96px" />
                 </div>
-              ))}
+                <div>
+                  <h1 className="text-5xl font-black tracking-tight uppercase leading-none">
+                    Benjamin<br />
+                    <span className="text-[#00d4ff]">Maciel</span>
+                  </h1>
+                  <p className="text-sm font-semibold text-[#8b949e] mt-3 tracking-widest uppercase">{c.title}</p>
+                  <p className="text-xs text-[#525960] mt-1">{c.location}</p>
+                </div>
+              </div>
+              <div className="text-xs text-[#8b949e] font-mono space-y-1 text-right">
+                <p>benjaminmaciel0814@gmail.com</p>
+                <p>linkedin.com/in/benjaminmaciel</p>
+                <p>github.com/BenjaminCoder0814</p>
+                <p className="text-[#00d4ff]">preeminent-sopapillas-b24cad.netlify.app</p>
+              </div>
             </div>
-          </Section>
-
-          {/* EXPERIENCE */}
-          <Section label={c.sExperience} accent="#00d4ff">
-            <div className="flex flex-col gap-7">
+            <div className="h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent mt-6" />
+          </header>
               {c.exp.map((e) => (
                 <div key={e.company} className="border-l-2 border-[#00d4ff]/30 pl-4">
                   <div className="flex justify-between items-baseline flex-wrap gap-2 mb-[2px]">
@@ -507,6 +519,9 @@ export default function Curriculo() {
               <h1 className="pdf-name">Benjamin Maciel</h1>
               <p className="pdf-role">{c.title}</p>
               <p className="pdf-loc">{c.location} · {c.birth}</p>
+            </div>
+            <div className="pdf-header-photo">
+              <img src={benjaminFoto.src} alt="Benjamin Maciel" />
             </div>
             <div className="pdf-header-right">
               <p>benjaminmaciel0814@gmail.com</p>
@@ -637,7 +652,7 @@ export default function Curriculo() {
             padding: 20pt 22pt 16pt;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             gap: 14pt;
           }
           .pdf-header-left { flex: 1; }
@@ -667,6 +682,23 @@ export default function Curriculo() {
             font-family: 'Courier New', monospace;
           }
           .pdf-header-right p { margin: 0; }
+
+          .pdf-header-photo {
+            width: 72pt;
+            height: 72pt;
+            border-radius: 12pt;
+            overflow: hidden;
+            border: 1pt solid rgba(255,255,255,0.12);
+            box-shadow: 0 10pt 28pt rgba(0,0,0,0.35);
+            background: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(124,58,237,0.18));
+            flex-shrink: 0;
+          }
+          .pdf-header-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
 
           /* BODY WRAP */
           .pdf-body-wrap { padding: 0 22pt; }
