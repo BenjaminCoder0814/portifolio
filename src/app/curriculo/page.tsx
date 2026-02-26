@@ -15,7 +15,7 @@ const t = {
     exportPdf: "↓ Exportar PDF",
     backPortfolio: "← Portfólio",
     sObjective: "Objetivo",
-    objective: "Atuar como Desenvolvedor Front-End contribuindo com interfaces modernas, performáticas e orientadas a conversão, integrando tecnologia e estratégia de marketing digital.",
+    objective: "Atuar como Desenvolvedor Front-End em modelo remoto/online, entregando interfaces modernas, performáticas e orientadas a conversão, integrando tecnologia e estratégia de marketing digital. Baseado em Engenheiro Coelho (interior de SP), disponível para idas pontuais à sede.",
     sSummary: "Resumo Profissional",
     summary: "Desenvolvedor Front-End com formação técnica em TI e experiência prática em projetos empresariais reais. Atuação em criação de interfaces modernas, reestruturação de identidade visual, marketplaces e desenvolvimento de sistemas internos. Forte foco em performance, usabilidade e impacto comercial.",
     sSkills: "Competências Técnicas",
@@ -112,7 +112,7 @@ const t = {
     exportPdf: "↓ Export PDF",
     backPortfolio: "← Portfolio",
     sObjective: "Objective",
-    objective: "To work as a Front-End Developer contributing to modern, performant, and conversion-driven interfaces, bridging technology and digital marketing strategy.",
+    objective: "To work remotely/online as a Front-End Developer, delivering modern, performant, conversion-driven interfaces, bridging technology and digital marketing strategy. Based in Engenheiro Coelho (São Paulo countryside), available for occasional on-site visits to HQ.",
     sSummary: "Professional Summary",
     summary: "Front-End Developer with a technical degree in IT and hands-on experience in real business projects. Skilled in building modern interfaces, visual identity overhauls, marketplace management, and internal system development. Strong focus on performance, usability, and commercial impact.",
     sSkills: "Technical Skills",
@@ -356,7 +356,7 @@ export default function Curriculo() {
             </button>
           ))}
         </div>
-        <a
+                  objective: "Actuar en modalidad remota/online como Desarrollador Front-End, entregando interfaces modernas, de alto rendimiento y orientadas a la conversión, integrando tecnología y estrategia de marketing digital. Resido en Engenheiro Coelho (interior de São Paulo) con disponibilidad para visitas puntuales a la sede.",
           href="/"
           className="px-3 py-2 text-xs font-mono bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white/20 transition-all"
         >
@@ -638,17 +638,18 @@ export default function Curriculo() {
             font-size: 8.5pt;
             width: 210mm;
             min-height: 297mm;
+            padding-bottom: 14pt;
           }
 
           /* HEADER */
           .pdf-header {
             background: #020617;
             border-bottom: 3px solid #00d4ff;
-            padding: 20pt 22pt 16pt;
+            padding: 20pt 22pt 18pt;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 14pt;
+            gap: 16pt;
           }
           .pdf-header-left { flex: 1; }
           .pdf-name {
@@ -696,10 +697,10 @@ export default function Curriculo() {
           }
 
           /* BODY WRAP */
-          .pdf-body-wrap { padding: 0 22pt; }
+          .pdf-body-wrap { padding: 6pt 26pt 22pt; }
 
           /* SECTION */
-          .pdf-section      { margin-top: 10pt; }
+          .pdf-section      { margin-top: 14pt; }
           .pdf-section-nm   { margin-top: 0; }
           .pdf-sec-head {
             display: flex;
@@ -724,19 +725,20 @@ export default function Curriculo() {
           .pdf-purple-line { background: rgba(167,139,250,0.2); }
           .pdf-green-line  { background: rgba(52,211,153,0.2); }
 
-          .pdf-text { color: #cbd5e1; line-height: 1.5; margin: 0; }
+          .pdf-text { color: #cbd5e1; line-height: 1.6; margin: 0; }
 
           /* SKILLS */
           .pdf-skills {
             display: grid;
             grid-template-columns: repeat(3,1fr);
-            gap: 4pt;
+            gap: 6pt;
           }
           .pdf-skill-card {
             background: rgba(255,255,255,0.04);
             border: 0.5pt solid rgba(255,255,255,0.08);
             border-radius: 3pt;
-            padding: 5pt 6pt;
+            padding: 6pt 7pt;
+            min-height: 32pt;
           }
           .pdf-skill-cat {
             font-size: 6pt;
@@ -751,8 +753,8 @@ export default function Curriculo() {
           /* EXPERIENCE */
           .pdf-exp {
             border-left: 2pt solid rgba(0,212,255,0.35);
-            padding-left: 7pt;
-            margin-bottom: 7pt;
+            padding-left: 8pt;
+            margin-bottom: 10pt;
           }
           .pdf-exp:last-child { margin-bottom: 0; }
           .pdf-exp-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2pt; margin-bottom: 2pt; }
@@ -766,8 +768,8 @@ export default function Curriculo() {
             border: 0.5pt solid rgba(255,255,255,0.07);
             background: rgba(255,255,255,0.025);
             border-radius: 3pt;
-            padding: 5pt 7pt;
-            margin-bottom: 4pt;
+            padding: 6pt 8pt;
+            margin-bottom: 7pt;
           }
           .pdf-proj:last-child { margin-bottom: 0; }
           .pdf-proj-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1pt; }
@@ -777,7 +779,7 @@ export default function Curriculo() {
 
           /* SHARED LIST */
           .pdf-list { margin: 0; padding: 0; list-style: none; }
-          .pdf-list li { display: flex; gap: 4pt; color: #cbd5e1; margin-bottom: 2pt; line-height: 1.45; font-size: 8pt; }
+          .pdf-list li { display: flex; gap: 5pt; color: #cbd5e1; margin-bottom: 3pt; line-height: 1.55; font-size: 8pt; }
           .pdf-list li:last-child { margin-bottom: 0; }
           .pdf-mark-cyan   { color: #00d4ff; font-weight: 800; flex-shrink: 0; }
           .pdf-mark-purple { color: #a78bfa; font-weight: 800; flex-shrink: 0; }
