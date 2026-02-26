@@ -209,7 +209,7 @@ const t = {
     exportPdf: "↓ Exportar PDF",
     backPortfolio: "← Portafolio",
     sObjective: "Objetivo",
-    objective: "Trabajar como Desarrollador Front-End contribuyendo con interfaces modernas, performáticas y orientadas a la conversión, integrando tecnología y estrategia de marketing digital.",
+    objective: "Actuar en modalidad remota/online como Desarrollador Front-End, entregando interfaces modernas, de alto rendimiento y orientadas a la conversión, integrando tecnología y estrategia de marketing digital. Resido en Engenheiro Coelho (interior de São Paulo) con disponibilidad para visitas puntuales a la sede.",
     sSummary: "Resumen Profesional",
     summary: "Desarrollador Front-End con formación técnica en TI y experiencia práctica en proyectos empresariales reales. Especializado en creación de interfaces modernas, reestructuración de identidad visual, marketplaces y desarrollo de sistemas internos. Fuerte enfoque en rendimiento, usabilidad e impacto comercial.",
     sSkills: "Competencias Técnicas",
@@ -356,7 +356,7 @@ export default function Curriculo() {
             </button>
           ))}
         </div>
-                  objective: "Actuar en modalidad remota/online como Desarrollador Front-End, entregando interfaces modernas, de alto rendimiento y orientadas a la conversión, integrando tecnología y estrategia de marketing digital. Resido en Engenheiro Coelho (interior de São Paulo) con disponibilidad para visitas puntuales a la sede.",
+        <a
           href="/"
           className="px-3 py-2 text-xs font-mono bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white/20 transition-all"
         >
