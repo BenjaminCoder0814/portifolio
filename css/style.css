@@ -745,7 +745,7 @@ body.cursor-hover #cursor-dot {
 /* Skills tags */
 .skills-categories { display: flex; flex-direction: column; gap: 1.25rem; }
 
-.skill-category {}
+
 
 .skill-cat-label {
   display: block;
@@ -786,7 +786,7 @@ body.cursor-hover #cursor-dot {
 /* Skill bars */
 .skill-bars { display: flex; flex-direction: column; gap: 1.25rem; }
 
-.skill-bar-item {}
+
 
 .skill-bar-header {
   display: flex;
