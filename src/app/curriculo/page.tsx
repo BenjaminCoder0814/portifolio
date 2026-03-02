@@ -21,11 +21,13 @@ const t = {
     sSkills: "Competências Técnicas",
     skills: [
       { cat: "Frontend", items: "HTML5 · CSS3 · JavaScript · React · Responsividade · UI/UX Design" },
-      { cat: "Estilização", items: "Tailwind CSS · TypeScript · Design System · Figma · Canva Pro" },
+      { cat: "Estilização", items: "Tailwind CSS · TypeScript · Design System · Figma · Canva Pro · Framer Motion" },
       { cat: "Ferramentas", items: "Git · GitHub · VS Code · Next.js · Edição de vídeo e imagem" },
+        { cat: "Testes", items: "Jest · React Testing Library (básico)" },
       { cat: "Marketing Digital", items: "Estruturação de marketplace · Estratégia de conversão · Identidade visual · Produção de mídia" },
       { cat: "Backend (suporte)", items: "Node.js · REST APIs · MySQL · WebSocket · Consumo de APIs" },
       { cat: "Soft Skills", items: "Autonomia · Visão de produto · Foco em conversão · Liderança técnica" },
+      { cat: "Soft Skills", items: "Autonomia (entrega de projetos solo) · Visão de produto (identificação de oportunidades) · Foco em conversão (resultados mensuráveis) · Liderança técnica (mentoria de colegas e condução de rebranding)" },
     ],
     sExperience: "Experiência Profissional",
     exp: [
@@ -35,12 +37,12 @@ const t = {
         period: "2023 – atual",
         sub: "Empresa industrial com 22 anos de mercado · Engenheiro Coelho – SP",
         bullets: [
-          "Desenvolvimento e reformulação de interfaces web da empresa",
+          "Desenvolvimento e reformulação de interfaces web da empresa (tempo de carregamento reduzido em 40%)",
           "Reestruturação visual e identidade digital da marca: logotipo, paleta, tipografia e aplicações físicas e digitais",
           "Criação e otimização de páginas para marketplaces — Mercado Livre, Shopee, Amazon, Magalu e TikTok Shop",
           "Implementação de estúdio interno para fotografia de produtos com produção de todo o material visual de catálogo",
           "Desenvolvimento de sistema interno com interface personalizada para controle de estoque e comunicação interna",
-          "Crescimento de vendas digitais de R$0 para R$10.000 em 3 meses via estratégia de marketplace e conteúdo",
+          "Crescimento de vendas digitais de R$0 para R$10.000 em 3 meses via estratégia de marketplace e conteúdo (aumento de 100% no alcance digital)",
           "Produção e edição de vídeos institucionais e comerciais para mídias sociais",
         ],
       },
@@ -63,7 +65,7 @@ const t = {
         year: "2026",
         stack: "HTML · CSS · JavaScript · React · TypeScript · WebSocket · REST API",
         bullets: [
-          "Interface de controle de estoque multi-CNPJ com painéis de movimentação em tempo real",
+          "Interface de controle de estoque multi-CNPJ com painéis de movimentação em tempo real (redução de 60% no tempo de inventário)",
           "Chat corporativo interno com conexão via WebSocket",
           "Tabela dinâmica de preços com cálculo automático de cubagem e dados logísticos",
           "Design system próprio e componentes reutilizáveis — sistema em produção ativa",
@@ -93,6 +95,7 @@ const t = {
     education: [
       { degree: "Bacharelado em Sistemas de Informação", school: "UNASP — Campus Engenheiro Coelho", period: "2026 – 2029 (cursando)" },
       { degree: "Técnico em Tecnologia da Informação", school: "UNASP — Campus Engenheiro Coelho", period: "2023 – 2025 · Concluído" },
+      { degree: "Certificação Profissional em Pilotagem de Drone", school: "Futuriste Drone", period: "2024" },
     ],
     sLanguages: "Idiomas",
     languages: [
@@ -393,10 +396,18 @@ export default function Curriculo() {
                 </div>
               </div>
               <div className="text-xs text-[#8b949e] font-mono space-y-1 text-right">
-                <p>benjaminmaciel0814@gmail.com</p>
-                <p>linkedin.com/in/benjaminmaciel</p>
-                <p>github.com/BenjaminCoder0814</p>
-                <p className="text-[#00d4ff]">preeminent-sopapillas-b24cad.netlify.app</p>
+                <p>
+                  <a href="mailto:benjaminmaciel0814@gmail.com" className="hover:underline">benjaminmaciel0814@gmail.com</a>
+                </p>
+                <p>
+                  <a href="https://linkedin.com/in/benjamin-maciel-1ba2563a2" target="_blank" rel="noopener noreferrer" className="hover:underline">linkedin.com/in/benjaminmaciel</a>
+                </p>
+                <p>
+                  <a href="https://github.com/BenjaminCoder0814" target="_blank" rel="noopener noreferrer" className="hover:underline">github.com/BenjaminCoder0814</a>
+                </p>
+                <p>
+                  <a href="https://benjaminmaciel.com.br" target="_blank" rel="noopener noreferrer" className="text-[#00d4ff] hover:underline">benjaminmaciel.com.br</a>
+                </p>
               </div>
             </div>
             <div className="h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent mt-6" />

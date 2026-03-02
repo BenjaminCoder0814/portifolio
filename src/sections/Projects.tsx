@@ -3,6 +3,8 @@
 import { useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
 import { projects } from "@/data";
+import ProjectModal from "@/components/ProjectModal";
+import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 
 const fadeUp: Variants = {
@@ -140,6 +142,8 @@ export default function Projects() {
   const { t } = useI18n();
   const ref    = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   // Merge data projects with translated names/descriptions
   const translatedProjects = projects.map((p, i) => ({
@@ -150,6 +154,15 @@ export default function Projects() {
 
   const featured    = translatedProjects.find((p) => p.featured);
   const nonFeatured = translatedProjects.filter((p) => !p.featured);
+
+  const handleOpenModal = (project: Project) => {
+    setSelectedProject(project);
+    setModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedProject(null);
+  };
 
   return (
     <section ref={ref} id="projects" className="py-28 relative">
@@ -173,10 +186,21 @@ export default function Projects() {
 
         <motion.div variants={stagger} initial="hidden" animate={inView ? "show" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {featured && <ProjectCard project={featured} featured index={0} />}
-          {nonFeatured.map((p, i) => <ProjectCard key={i} project={p} index={i + 1} />)}
+          {featured && (
+            <div onClick={() => handleOpenModal(featured)} className="cursor-pointer">
+              <ProjectCard project={featured} featured index={0} />
+            </div>
+          )}
+          {nonFeatured.map((p, i) => (
+            <div key={i} onClick={() => handleOpenModal(p)} className="cursor-pointer">
+              <ProjectCard project={p} index={i + 1} />
+            </div>
+          ))}
         </motion.div>
       </div>
+      {selectedProject && (
+        <ProjectModal open={modalOpen} onClose={handleCloseModal} project={selectedProject} />
+      )}
     </section>
   );
 }
