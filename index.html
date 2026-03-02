@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benjamin Maciel — Developer &amp; System Architect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       BOOT LOADER SCREEN
+  ══════════════════════════════════════ -->
+  <div id="boot-screen">
+    <canvas id="rain-canvas-boot"></canvas>
+    <div class="boot-content">
+      <div class="boot-logo">&gt;_</div>
+      <div class="boot-lines" id="boot-lines"></div>
+      <div class="boot-cursor"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       TERMINAL MODE OVERLAY
+  ══════════════════════════════════════ -->
+  <div id="terminal-overlay" class="hidden">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="term-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <span class="term-title">benjamin@portfolio ~ bash</span>
+        <button class="term-close" id="term-close">✕ Exit Developer Mode</button>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="term-output" id="term-output"></div>
+        <div class="term-input-line">
+          <span class="term-prompt">benjamin@portfolio:~$&nbsp;</span>
+          <input type="text" id="term-input" class="term-input" spellcheck="false" autocomplete="off" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       CUSTOM CURSOR
+  ══════════════════════════════════════ -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-bracket">&lt;</span>BM<span class="brand-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" data-label="01">Sobre</a></li>
+        <li><a href="#formation" data-label="02">Formação</a></li>
+        <li><a href="#projects" data-label="03">Projetos</a></li>
+        <li><a href="#know-me" data-label="04">Conheça eu</a></li>
+        <li><a href="#contact" data-label="05">Contato</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="dev-mode-btn" class="btn-terminal" title="Enter Developer Mode">
+          <span class="btn-icon">&gt;_</span>
+          <span>Dev Mode</span>
+        </button>
+        <button class="nav-toggle" id="nav-toggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════ -->
+  <section id="hero">
+    <canvas id="rain-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for opportunities
+      </div>
+      <div class="hero-greeting">Olá, mundo. Eu sou</div>
+      <h1 class="hero-name">
+        <span class="name-first">Benjamin</span>
+        <span class="name-last">Maciel</span>
+      </h1>
+      <div class="hero-role">
+        <span class="role-prefix">~$ </span>
+        <span class="role-text" id="role-text"></span>
+        <span class="role-cursor">|</span>
+      </div>
+      <p class="hero-meta">
+        <span class="meta-item"><span class="meta-label">Idade</span><span class="meta-value">// 21 anos</span></span>
+        <span class="meta-sep">·</span>
+        <span class="meta-item"><span class="meta-label">Local</span><span class="meta-value">// Brasil</span></span>
+        <span class="meta-sep">·</span>
+        <span class="meta-item"><span class="meta-label">Status</span><span class="meta-value meta-green">// Online ●</span></span>
+      </p>
+      <p class="hero-tagline">
+        Construindo sistemas que <span class="highlight">escalam ideias.</span><br />
+        Arquitetando tecnologia com <span class="highlight">visão de negócio.</span>
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">Ver Projetos</a>
+        <a href="#contact" class="btn-ghost">Entrar em contato</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/" target="_blank" class="social-link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SOBRE / TIMELINE
+  ══════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 01</span>
+        <h2 class="section-title">Sobre <span class="accent">Mim</span></h2>
+        <p class="section-sub">A história por trás do código</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Não fui só estudar programação. <span class="accent">Eu comecei a pensar em sistemas</span> — em como as peças se conectam, em como uma linha de código pode resolver um problema real de negócio.</p>
+          <p>Desde o início, o que me moveu foi sempre a mesma pergunta:</p>
+          <blockquote class="about-quote">
+            "Como posso construir algo que realmente <span class="accent">funcione e escale</span>?"
+          </blockquote>
+          <p>Esse pensamento me levou do primeiro "Hello World" até arquiteturas ERP com controle multiusuário. E o caminho ainda está sendo construído.</p>
+          <div class="about-stack-row">
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">SQL</span>
+            <span class="stack-tag">REST APIs</span>
+            <span class="stack-tag">Git</span>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item" data-year="2019">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-year">2019</span>
+              <h4>Primeiro contato com código</h4>
+              <p>Curiosidade virou obsessão. Primeiras linhas, primeiros erros, primeiras soluções.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-year="2022">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-year">2022</span>
+              <h4>Curso Técnico em TI</h4>
+              <p>Fundamentos sólidos em redes, hardware, sistemas e desenvolvimento. Aprendendo a pensar como engenheiro.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-year="2024">
+            <div class="tl-dot tl-dot-accent"></div>
+            <div class="tl-content">
+              <span class="tl-year">2024</span>
+              <h4>Projeto Muscle Levels</h4>
+              <p>Primeiro sistema autoral de maior escala. Arquitetura pensada do zero, do backend ao front.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-year="2025">
+            <div class="tl-dot tl-dot-accent"></div>
+            <div class="tl-content">
+              <span class="tl-year">2025</span>
+              <h4>Sistemas de Informação</h4>
+              <p>Graduação iniciada. Teoria encontra prática. Visão de negócio + arquitetura de sistemas.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-year="NOW">
+            <div class="tl-dot tl-dot-active"></div>
+            <div class="tl-content">
+              <span class="tl-year tl-now">NOW</span>
+              <h4>Construindo o futuro</h4>
+              <p>Projetos reais, cliente real, impacto real. O stack evolui. A mentalidade de produto permanece.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FORMAÇÃO / SKILLS
+  ══════════════════════════════════════ -->
+  <section id="formation">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 02</span>
+        <h2 class="section-title">Formação &amp; <span class="accent">Skills</span></h2>
+        <p class="section-sub">Competências construídas com intenção, não por acaso</p>
+      </div>
+      <div class="formation-grid">
+        <!-- Education cards -->
+        <div class="edu-col">
+          <h3 class="col-title">Educação</h3>
+          <div class="edu-card">
+            <div class="edu-icon">🎓</div>
+            <div class="edu-info">
+              <h4>Bacharelado em Sistemas de Informação</h4>
+                <span class="edu-place">Universidade — Cursando</span>
+              <span class="edu-period">2025 → Presente</span>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon">📡</div>
+            <div class="edu-info">
+              <h4>Curso Técnico em Informática</h4>
+              <span class="edu-place">Instituto Técnico</span>
+              <span class="edu-period">2022 → 2024</span>
+            </div>
+          </div>
+        </div>
+        <!-- Skills -->
+        <div class="skills-col">
+          <h3 class="col-title">Stack Técnica</h3>
+          <div class="skills-categories">
+            <div class="skill-category">
+              <span class="skill-cat-label">Frontend</span>
+              <div class="skill-tags">
+                <span class="skill-t lvl-high">React</span>
+                <span class="skill-t lvl-high">HTML5</span>
+                <span class="skill-t lvl-high">CSS3 / Tailwind</span>
+                <span class="skill-t lvl-mid">Next.js</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <span class="skill-cat-label">Backend</span>
+              <div class="skill-tags">
+                <span class="skill-t lvl-high">Node.js</span>
+                <span class="skill-t lvl-mid">Python</span>
+                <span class="skill-t lvl-high">REST APIs</span>
+                <span class="skill-t lvl-mid">Express</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <span class="skill-cat-label">Database &amp; Arquitetura</span>
+              <div class="skill-tags">
+                <span class="skill-t lvl-high">MySQL / SQL</span>
+                <span class="skill-t lvl-mid">PostgreSQL</span>
+                <span class="skill-t lvl-high">Modelagem Relacional</span>
+                <span class="skill-t lvl-mid">MongoDB</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <span class="skill-cat-label">Tools &amp; DevOps</span>
+              <div class="skill-tags">
+                <span class="skill-t lvl-high">Git / GitHub</span>
+                <span class="skill-t lvl-mid">Docker</span>
+                <span class="skill-t lvl-mid">Linux</span>
+                <span class="skill-t lvl-high">VS Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Competency bars -->
+        <div class="bars-col">
+          <h3 class="col-title">Proficiência</h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>JavaScript / TypeScript</span><span class="bar-pct">88%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>React &amp; UI Architecture</span><span class="bar-pct">82%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>SQL &amp; Database Design</span><span class="bar-pct">85%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>Node.js / Backend</span><span class="bar-pct">75%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>Python</span><span class="bar-pct">70%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>System Architecture</span><span class="bar-pct">80%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PROJETOS
+  ══════════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 03</span>
+        <h2 class="section-title">Meus <span class="accent">Projetos</span></h2>
+        <p class="section-sub">Não prints — showcases de arquitetura e solução</p>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card featured">
+          <div class="project-mockup">
+            <div class="mockup-bar">
+              <span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span>
+              <span class="m-url">muscle-levels.app</span>
+            </div>
+            <div class="mockup-screen">
+              <div class="code-preview">
+                <span class="cp-line"><span class="cp-kw">const</span> <span class="cp-var">userLevel</span> = <span class="cp-fn">calculateLevel</span>(workouts);</span>
+                <span class="cp-line"><span class="cp-kw">if</span> (userLevel.<span class="cp-prop">xp</span> &gt;= <span class="cp-num">1000</span>) {</span>
+                <span class="cp-line">  <span class="cp-fn">unlockAchievement</span>(<span class="cp-str">'ELITE'</span>);</span>
+                <span class="cp-line">  <span class="cp-fn">notifyUser</span>(user.<span class="cp-prop">id</span>, badge);</span>
+                <span class="cp-line">}</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-number">01</div>
+            <h3 class="project-name">Muscle Levels</h3>
+            <p class="project-desc">Sistema de gamificação para academia com tracking de treinos, sistema de XP, conquistas desbloqueáveis e ranking entre usuários. Arquitetura pensada para escalar.</p>
+            <div class="project-metrics">
+              <div class="metric"><span class="metric-val">3k+</span><span class="metric-lbl">Usuários</span></div>
+              <div class="metric"><span class="metric-val">98%</span><span class="metric-lbl">Uptime</span></div>
+              <div class="metric"><span class="metric-val">0</span><span class="metric-lbl">Downtime Crítico</span></div>
+            </div>
+            <div class="project-stack">
+              <span>React</span><span>Node.js</span><span>MySQL</span><span>REST API</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Ver GitHub →</a>
+              <a href="#" class="project-link project-link-secondary">Live Demo →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-mockup small">
+            <div class="mockup-bar">
+              <span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span>
+              <span class="m-url">erp-system.local</span>
+            </div>
+            <div class="mockup-screen">
+              <div class="code-preview">
+                <span class="cp-line"><span class="cp-cm">// Controle de acesso multiusuário</span></span>
+                <span class="cp-line"><span class="cp-kw">async</span> <span class="cp-fn">lockRecord</span>(id, userId) {</span>
+                <span class="cp-line">  <span class="cp-kw">const</span> lock = <span class="cp-kw">await</span> db.<span class="cp-fn">acquire</span>(id);</span>
+                <span class="cp-line">  <span class="cp-kw">return</span> lock.<span class="cp-prop">owner</span> === userId;</span>
+                <span class="cp-line">}</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-number">02</div>
+            <h3 class="project-name">Sistema ERP</h3>
+            <p class="project-desc">ERP com controle de acesso simultâneo e bloqueio multiusuário em tempo real. Gerenciamento de estoque, financeiro e relatórios integrados.</p>
+            <div class="project-highlight">
+              <span class="ph-icon">⚡</span>
+              Controle de bloqueio record-level + concorrência resolvida via locking pessimista
+            </div>
+            <div class="project-stack">
+              <span>Node.js</span><span>React</span><span>PostgreSQL</span><span>WebSocket</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Ver GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-mockup small">
+            <div class="mockup-bar">
+              <span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span>
+              <span class="m-url">api-gateway.dev</span>
+            </div>
+            <div class="mockup-screen">
+              <div class="code-preview">
+                <span class="cp-line"><span class="cp-cm">// JWT Auth middleware</span></span>
+                <span class="cp-line"><span class="cp-fn">app</span>.<span class="cp-fn">use</span>(<span class="cp-str">'/api'</span>, authenticate);</span>
+                <span class="cp-line"><span class="cp-fn">router</span>.<span class="cp-fn">get</span>(<span class="cp-str">'/users'</span>, authorize(<span class="cp-str">'admin'</span>));</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-number">03</div>
+            <h3 class="project-name">API Gateway + Auth</h3>
+            <p class="project-desc">Gateway de autenticação com JWT, controle de roles e rate limiting. Base reutilizável para múltiplos projetos.</p>
+            <div class="project-stack">
+              <span>Node.js</span><span>JWT</span><span>Redis</span><span>Express</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Ver GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CONHEÇA EU
+  ══════════════════════════════════════ -->
+  <section id="know-me">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 04</span>
+        <h2 class="section-title">Conheça <span class="accent">Eu</span></h2>
+        <p class="section-sub">Além do código — o ser humano por trás do terminal</p>
+      </div>
+      <div class="knowme-grid">
+        <div class="knowme-card">
+          <div class="km-icon">🧠</div>
+          <h4>Mentalidade de Produto</h4>
+          <p>Não codifico features. Resolvo problemas. Cada linha tem propósito. Cada sistema tem visão.</p>
+        </div>
+        <div class="knowme-card">
+          <div class="km-icon">📐</div>
+          <h4>Arquiteto por Natureza</h4>
+          <p>Antes de escrever a primeira linha, já pensei na estrutura inteira. Escalabilidade não é detalhe.</p>
+        </div>
+        <div class="knowme-card">
+          <div class="km-icon">🚀</div>
+          <h4>Curioso Obsessivo</h4>
+          <p>Stack nova? Documentação aberta. Problema novo? Terminal aberto. Não espero — experimento.</p>
+        </div>
+        <div class="knowme-card">
+          <div class="km-icon">💡</div>
+          <h4>Visão de Negócio</h4>
+          <p>Tecnologia é meio, não fim. O verdadeiro valor está no impacto que o sistema gera para o usuário.</p>
+        </div>
+        <div class="knowme-card">
+          <div class="km-icon">🎮</div>
+          <h4>Fora do trabalho</h4>
+          <p>Games, música, esportes e conversas que desafiam perspectivas. Sou mais que meu GitHub.</p>
+        </div>
+        <div class="knowme-card">
+          <div class="km-icon">🤝</div>
+          <h4>Colaborativo</h4>
+          <p>Times funcionam quando há clareza e confiança. Código docs, code review, communicate first.</p>
+        </div>
+      </div>
+      <div class="philosophy-block">
+        <div class="phi-label">// Filosofia</div>
+        <blockquote class="phi-quote">
+          "O melhor código é aquele que você não precisa explicar.<br />
+          A melhor arquitetura é aquela que o time consegue <span class="accent">evoluir sem medo.</span>"
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CONTATO
+  ══════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 05</span>
+        <h2 class="section-title">Vamos <span class="accent">Conversar</span></h2>
+        <p class="section-sub">Oportunidade, projeto ou só trocar ideia — estou online</p>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <div class="contact-status">
+            <span class="status-dot"></span>
+            <span>Disponível para oportunidades</span>
+          </div>
+          <p>Se você tem um problema complexo, um sistema para construir ou uma ideia para discutir, <span class="accent">manda mensagem.</span></p>
+          <div class="contact-channels">
+            <a href="mailto:benjamin@email.com" class="channel">
+              <span class="ch-icon">📧</span>
+              <div>
+                <span class="ch-label">Email</span>
+                <span class="ch-value">benjamin@email.com</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com/" target="_blank" class="channel">
+              <span class="ch-icon">💼</span>
+              <div>
+                <span class="ch-label">LinkedIn</span>
+                <span class="ch-value">Benjamin Maciel</span>
+              </div>
+            </a>
+            <a href="https://github.com/" target="_blank" class="channel">
+              <span class="ch-icon">🐙</span>
+              <div>
+                <span class="ch-label">GitHub</span>
+                <span class="ch-value">@benjaminmaciel</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Seu nome" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" placeholder="Me conta sobre o projeto ou oportunidade..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">
+            <span>Enviar Mensagem</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="brand-bracket">&lt;</span>BM<span class="brand-bracket">/&gt;</span>
+        </div>
+        <p class="footer-copy">
+          Desenvolvido com <span class="accent">intenção</span> por Benjamin Maciel · 2025<br />
+          <span class="footer-tiny">Construído com HTML · CSS · JavaScript · Visão de produto</span>
+        </p>
+        <div class="footer-top-btn">
+          <a href="#hero" class="back-top">↑ Início</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/codeRain.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

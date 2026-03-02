@@ -1,0 +1,284 @@
+/* ═══════════════════════════════════════════════════
+   BENJAMIN MACIEL — PORTFOLIO
+   Keyframe Animations & Motion
+═══════════════════════════════════════════════════ */
+
+/* ── Core keyframes ────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(0, 255, 136, 0); }
+}
+
+@keyframes pulse-cyan {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.5), 0 0 12px var(--cyan-glow); }
+  50%       { box-shadow: 0 0 0 8px rgba(0, 212, 255, 0), 0 0 12px var(--cyan-glow); }
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50%       { opacity: 0.4; transform: scaleY(0.6); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes glow-text {
+  0%, 100% { text-shadow: 0 0 20px var(--cyan-glow), 0 0 60px rgba(0, 212, 255, 0.15); }
+  50%       { text-shadow: 0 0 40px var(--cyan-glow), 0 0 80px rgba(0, 212, 255, 0.3); }
+}
+
+@keyframes terminal-in {
+  0%   { opacity: 0; transform: scale(0.95) translateY(20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes fade-in-up {
+  0%   { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  0%   { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  0%   { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes border-run {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glitch-1 {
+  0%        { clip-path: inset(40% 0 61% 0); transform: skew(-0.2deg); }
+  20%       { clip-path: inset(92% 0 1% 0); transform: skew(0.5deg); }
+  40%       { clip-path: inset(43% 0 51% 0); transform: skew(-0.1deg); }
+  60%       { clip-path: inset(25% 0 58% 0); transform: skew(0.3deg); }
+  80%       { clip-path: inset(54% 0 7% 0); transform: skew(-0.6deg); }
+  100%      { clip-path: inset(58% 0 43% 0); transform: skew(0.1deg); }
+}
+
+@keyframes glitch-2 {
+  0%        { clip-path: inset(24% 0 29% 0); transform: skew(0.3deg); }
+  20%       { clip-path: inset(54% 0 23% 0); transform: skew(-0.4deg); }
+  40%       { clip-path: inset(83% 0 4% 0); transform: skew(0.1deg); }
+  60%       { clip-path: inset(12% 0 31% 0); transform: skew(-0.2deg); }
+  80%       { clip-path: inset(68% 0 11% 0); transform: skew(0.5deg); }
+  100%      { clip-path: inset(35% 0 5% 0); transform: skew(-0.1deg); }
+}
+
+/* ── Hero name glow animation ──────────────────── */
+.name-last {
+  animation: glow-text 4s ease-in-out infinite;
+}
+
+/* ── Hero content entrance ─────────────────────── */
+.hero-badge    { animation: fade-in-up 0.6s 0.2s both; }
+.hero-greeting { animation: fade-in-up 0.6s 0.35s both; }
+.hero-name     { animation: fade-in-up 0.6s 0.5s both; }
+.hero-role     { animation: fade-in-up 0.6s 0.65s both; }
+.hero-meta     { animation: fade-in-up 0.6s 0.8s both; }
+.hero-tagline  { animation: fade-in-up 0.6s 0.95s both; }
+.hero-cta      { animation: fade-in-up 0.6s 1.1s both; }
+.hero-socials  { animation: fade-in-up 0.6s 1.25s both; }
+.hero-scroll-hint { animation: fade-in 0.6s 1.6s both; }
+
+/* ── Glitch effect on name (hover) ─────────────── */
+.hero-name:hover .name-last::before,
+.hero-name:hover .name-last::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-name:hover .name-last::before {
+  color: var(--red);
+  animation: glitch-1 0.4s steps(1) infinite;
+  opacity: 0.7;
+}
+
+.hero-name:hover .name-last::after {
+  color: var(--purple);
+  animation: glitch-2 0.4s steps(1) infinite;
+  opacity: 0.7;
+}
+
+.name-last { position: relative; }
+
+/* ── Scan line overlay on hero ─────────────────── */
+#hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03) 0px,
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Shimmering border on featured card ─────────── */
+.project-card.featured {
+  position: relative;
+}
+
+.project-card.featured::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--cyan), var(--purple), var(--cyan));
+  background-size: 200% 200%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  animation: border-run 3s linear infinite;
+}
+
+.project-card.featured:hover::before { opacity: 1; }
+
+/* ── Section reveal (used by IntersectionObserver) */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* ── Particle/glow background dots ─────────────── */
+.bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-glow-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+  top: -200px; right: -100px;
+}
+
+.bg-glow-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+  bottom: -100px; left: -100px;
+}
+
+/* ── Code rain transition ───────────────────────── */
+#boot-screen.fade-out {
+  animation: fade-in 0.6s reverse both;
+}
+
+/* ── Page entrance after boot ───────────────────── */
+body.loaded #navbar {
+  animation: fade-in-up 0.5s 0.1s both;
+}
+
+/* ── Typing cursor blink in terminal ───────────── */
+.typing-done .role-cursor { animation: blink 0.8s step-end infinite; }
+
+/* ── Skill bar glow pulse  ──────────────────────── */
+.skill-bar-fill.animated {
+  animation: bar-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes bar-glow {
+  from { box-shadow: 0 0 6px var(--cyan-glow); }
+  to   { box-shadow: 0 0 16px var(--cyan-glow), 0 0 30px rgba(0, 212, 255, 0.15); }
+}
+
+/* ── Line scan on mockup hover ──────────────────── */
+.project-card:hover .mockup-screen::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  animation: scan-line 2s linear infinite;
+  pointer-events: none;
+}
+
+.mockup-screen { position: relative; overflow: hidden; }
+
+@keyframes scan-line {
+  0%   { top: 0; opacity: 0.6; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* ── Nav toggle open state ──────────────────────── */
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
