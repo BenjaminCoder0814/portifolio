@@ -11,7 +11,7 @@ const sections = [
   {
     id: "about",
     label: "About / Sobre",
-    content: `Desenvolvedor Full Stack com formação técnica em TI (UNASP-EC, 2025) e graduando em Sistemas de Informação.
+    content: `Desenvolvedor Full Stack com formação técnica em TI (UNASP-EC, 2025) e cursando Sistemas de Informação (conclusão prevista para 2029).
 
 Aos 18 anos, tenho 3 anos de atuação real na Zenith Lacres — empresa com 22 anos no mercado — onde atuei em tecnologia, operações, marketing digital e estratégia comercial.
 

@@ -183,7 +183,7 @@ export const projects = [
 
 export const education = [
   {
-    degree:      "Bacharelado em Sistemas de Informação",
+    degree:      "Bacharelado em Sistemas de Informação (cursando)",
     institution: "UNASP  Campus Engenheiro Coelho",
     period:      "2026  Presente",
     description: "Em 2 dias de aula entregou um sistema completo quando o professor pediu apenas 4 respostas escritas.",
@@ -317,7 +317,7 @@ export const terminalCommands: Record<string, string[]> = {
   education: [
     "> cat education.log",
     "",
-    "   Sistemas de Informação (2026  atual)",
+    "   Sistemas de Informação (2026 2029 - cursando)",
     "     UNASP  Campus Engenheiro Coelho",
     "     Em 2 dias entregou um sistema quando pediram 4 respostas.",
     "",

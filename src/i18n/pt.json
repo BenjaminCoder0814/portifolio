@@ -67,7 +67,7 @@
       { "year": "2023", "title": "Técnico em TI + Rebranding", "desc": "Iniciou o curso técnico em TI no UNASP-EC e executou o rebranding completo da Zenith Lacres." },
       { "year": "2024", "title": "Operador de Drone", "desc": "Certificado como operador de drone pela Futuriste Drone. Produção aérea e visual profissional para cobertura e conteúdos." },
       { "year": "2025", "title": "TCC & Conclusão Técnica", "desc": "Desenvolveu o TCC do curso técnico 100% solo — design, frontend e backend. Aprovado com nota máxima." },
-      { "year": "2026", "title": "ERP + Sistemas de Informação", "desc": "Desenvolve plataforma interna de gestão multi-CNPJ para a Zenith Lacres e ingressa no bacharelado em SI." }
+        { "year": "2026-2029", "title": "ERP + Sistemas de Informação", "desc": "Desenvolve plataforma interna de gestão multi-CNPJ para a Zenith Lacres e está cursando bacharelado em SI, com término previsto para 2029." }
     ]
   },
   "projects": {
@@ -233,7 +233,7 @@
         }
       ],
       "education": [
-        { "degree": "Sistemas de Informação (em andamento)", "school": "UNASP-EC", "period": "2026–" },
+        { "degree": "Sistemas de Informação (cursando)", "school": "UNASP-EC", "period": "2026–2029" },
         { "degree": "Técnico em TI", "school": "UNASP-EC", "period": "2023–2025" }
       ],
       "languages": ["Português – Nativo", "Inglês – Intermediário/Avançado", "Espanhol – Intermediário"]

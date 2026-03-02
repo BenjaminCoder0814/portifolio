@@ -91,7 +91,7 @@ const t = {
     ],
     sEducation: "Formação Acadêmica",
     education: [
-      { degree: "Bacharelado em Sistemas de Informação", school: "UNASP — Campus Engenheiro Coelho", period: "2026 – presente" },
+      { degree: "Bacharelado em Sistemas de Informação", school: "UNASP — Campus Engenheiro Coelho", period: "2026 – 2029 (cursando)" },
       { degree: "Técnico em Tecnologia da Informação", school: "UNASP — Campus Engenheiro Coelho", period: "2023 – 2025 · Concluído" },
     ],
     sLanguages: "Idiomas",
