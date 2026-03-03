@@ -133,7 +133,7 @@ export const projects = [
       { value: "R$0",   label: "Custo de chat interno" },
     ],
     repo:     "https://github.com/BenjaminCoder0814",
-    link:     undefined,
+    link:     "https://estoque-sistema.netlify.app/",
     featured: true,
     preview: [
       "// Controle de estoque multi-CNPJ",
