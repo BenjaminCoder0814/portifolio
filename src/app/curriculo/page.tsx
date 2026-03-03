@@ -38,6 +38,7 @@ const t = {
         sub: "Empresa industrial com 22 anos de mercado · Engenheiro Coelho – SP",
         bullets: [
           "Desenvolvimento e reformulação de interfaces web da empresa (tempo de carregamento reduzido em 40%)",
+          "Sistema interno multi-CNPJ disponível em: https://estoque-sistema.netlify.app/",
           "Reestruturação visual e identidade digital da marca: logotipo, paleta, tipografia e aplicações físicas e digitais",
           "Criação e otimização de páginas para marketplaces — Mercado Livre, Shopee, Amazon, Magalu e TikTok Shop",
           "Implementação de estúdio interno para fotografia de produtos com produção de todo o material visual de catálogo",
