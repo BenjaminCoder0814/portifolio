@@ -10,7 +10,7 @@ interface ProjectModalProps {
     stack: string[];
     year?: string;
     bullets?: string[];
-    link?: string;
+    link?: string | null;
     repo?: string;
   };
 }
