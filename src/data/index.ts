@@ -175,7 +175,7 @@ export const projects = [
       { value: "10",    label: "Nota final" },
     ],
     repo:     "https://github.com/BenjaminCoder0814",
-    link:     undefined,
+    link:     "https://tcc-muscle-levels.vercel.app/",
     featured: false,
     preview:  [],
   },
