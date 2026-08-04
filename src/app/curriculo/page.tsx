@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import benjaminFoto from "@/benjaminfoto.png";
 import { resume, contact, type Lang } from "./data";
 
 /* ── screen section helper ───────────────────────────────────────────────── */
@@ -91,7 +90,7 @@ export default function Curriculo() {
             <div className="flex flex-wrap items-center justify-between gap-6">
               <div className="flex items-center gap-4">
                 <div className="relative h-24 w-24 overflow-hidden rounded-2xl border border-white/10 bg-[#050505] shadow-lg">
-                  <Image src={benjaminFoto} alt="Benjamin Maciel" className="object-cover" fill sizes="96px" />
+                  <Image src="/benjamin-print.jpg" alt="Benjamin Maciel" className="object-cover" fill sizes="96px" />
                 </div>
                 <div>
                   <h1 className="text-5xl font-black uppercase leading-none tracking-tight">
@@ -229,8 +228,14 @@ export default function Curriculo() {
               <p className="pdf-loc">{c.location}</p>
             </div>
             <div className="pdf-header-photo">
+              {/*
+                Print-only copy of the photo: 260px JPEG (13 KB) instead of the
+                2 MB source PNG. The source is embedded byte-for-byte in the
+                generated PDF, which pushed each file to 3.4 MB — a size some
+                mail gateways reject and every recruiter waits for.
+              */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={benjaminFoto.src} alt="Benjamin Maciel" />
+              <img src="/benjamin-print.jpg" alt="Benjamin Maciel" />
             </div>
             <div className="pdf-header-right">
               <p className="pdf-phone">{contact.phone}</p>

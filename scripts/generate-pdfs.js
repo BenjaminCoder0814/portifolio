@@ -1,13 +1,15 @@
 /**
  * generate-pdfs.js
  * ─────────────────────────────────────────────────────────────
- * Generates trilingual PDF resumes from the /resume/short page.
+ * Generates trilingual PDF resumes from the /:lang/curriculo page —
+ * the same source as the on-screen resume, so the download and the site
+ * can never disagree.
  *
  * Usage:
  *   1. Start the dev/prod server:  npm run dev  OR  npm run start
  *   2. In another terminal:        npm run generate:pdfs
  *
- * Output: public/resume/benjamin_resume_short_{pt,en,es}.pdf
+ * Output: public/resume/benjamin_maciel_resume_{pt,en,es}.pdf
  * ─────────────────────────────────────────────────────────────
  */
 
@@ -36,8 +38,8 @@ async function generatePdfs() {
   });
 
   for (const lang of LANGS) {
-    const url = `${BASE_URL}/resume/short?lang=${lang}`;
-    const outputPath = path.join(OUTPUT_DIR, `benjamin_resume_short_${lang}.pdf`);
+    const url = `${BASE_URL}/${lang}/curriculo`;
+    const outputPath = path.join(OUTPUT_DIR, `benjamin_maciel_resume_${lang}.pdf`);
 
     console.log(`▶  Generating [${lang.toUpperCase()}]  ${url}`);
 
@@ -53,7 +55,8 @@ async function generatePdfs() {
       });
 
       // Wait for fonts and any animations to settle
-      await new Promise((r) => setTimeout(r, 1200));
+      await page.emulateMediaType('print');
+      await new Promise((r) => setTimeout(r, 1500));
 
       await page.pdf({
         path: outputPath,

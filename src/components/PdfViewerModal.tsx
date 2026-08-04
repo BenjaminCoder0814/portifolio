@@ -16,7 +16,7 @@ export default function PdfViewerModal({ isOpen, onClose }: PdfViewerModalProps)
   const overlayRef = useRef<HTMLDivElement>(null);
 
   const resumeUrl = `/${lang}/curriculo`;
-  const downloadUrl = `/resume/benjamin_resume_short_${lang}.pdf`;
+  const downloadUrl = `/resume/benjamin_maciel_resume_${lang}.pdf`;
   const fileName = `benjamin_maciel_resume_${lang}.pdf`;
 
   // Reset loaded state when lang changes
