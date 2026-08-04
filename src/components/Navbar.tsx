@@ -18,16 +18,16 @@ export default function Navbar() {
   const scrolled = scrollY > 20;
 
   const NAV_ITEMS = [
+    { label: t.nav.projects,  href: "#projects"  },
     { label: t.nav.about,     href: "#about"     },
     { label: t.nav.formation, href: "#formation" },
-    { label: t.nav.projects,  href: "#projects"  },
     { label: t.nav.knowme,    href: "#know-me"   },
     { label: t.nav.contact,   href: "#contact"   },
   ];
 
   // Active section detection
   useEffect(() => {
-    const ids = ["about","formation","projects","know-me","contact"];
+    const ids = ["projects","about","formation","know-me","contact"];
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) setActive("#" + e.target.id); });
     }, { threshold: 0.35 });

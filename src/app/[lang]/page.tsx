@@ -24,12 +24,12 @@ export default function LangHome() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <EngineeringMindset />
-        <Formation />
-        <TechStack />
         <Projects />
         <CaseStudy />
+        <EngineeringMindset />
+        <TechStack />
+        <About />
+        <Formation />
         <KnowMe />
         <NowSection />
         <Contact />

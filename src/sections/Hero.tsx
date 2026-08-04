@@ -142,19 +142,24 @@ export default function Hero() {
 
             {/* Meta */}
             <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-[#4d5866] mb-6 animate-[fadeInUp_0.6s_0.8s_both]">
-              <span><span className="text-[#4d5866]">{t.hero.age}</span> <span className="text-[#8b949e]">{"// "}{personal.age} {t.hero.ageSuffix}</span></span>
+              <span className="text-[#8b949e]">Director of IT @ Zenith Lacres</span>
               <span className="text-[#4d5866]">·</span>
               <span><span className="text-[#4d5866]">{t.hero.location}</span> <span className="text-[#8b949e]">{"// "}{personal.location}</span></span>
               <span className="text-[#4d5866]">·</span>
-              <span><span className="text-[#4d5866]">{t.hero.status}</span> <span className="text-[#00ff88]">{"// "} {t.hero.online} ●</span></span>
+              <span className="text-[#00ff88]">● {t.hero.online}</span>
             </div>
 
-            {/* Tagline */}
-            <p className="text-[#8b949e] mb-10 max-w-[580px] animate-[fadeInUp_0.6s_0.95s_both]"
-              style={{ fontSize: "clamp(1rem,2vw,1.1rem)", lineHeight: 1.7 }}>
-              {t.hero.subtitle}<br />
-              <span className="font-mono text-sm text-[#4d5866]">{t.hero.tagline2}</span>
-            </p>
+            {/* Headline + supporting line */}
+            <div className="mb-10 max-w-[580px] animate-[fadeInUp_0.6s_0.95s_both]">
+              <p className="text-white font-bold tracking-[-0.01em]"
+                style={{ fontSize: "clamp(1.25rem,2.6vw,1.6rem)", lineHeight: 1.35 }}>
+                {t.hero.subtitle}
+              </p>
+              <p className="text-[#8b949e] mt-3"
+                style={{ fontSize: "clamp(0.95rem,1.7vw,1.05rem)", lineHeight: 1.7 }}>
+                {t.hero.tagline2}
+              </p>
+            </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 mb-10 animate-[fadeInUp_0.6s_1.1s_both]">

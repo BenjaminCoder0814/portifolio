@@ -2,15 +2,38 @@
   "lang": "pt",
   "badge": "Disponível para Oportunidades Front-End",
   "sections": {
-    "about":     { "num": "01.", "heading": "Quem sou eu" },
-    "formation": { "num": "02.", "heading": "Skills & Educação" },
-    "projects":  { "num": "03.", "heading": "Trabalho real" },
-    "knowme":    { "num": "04.", "heading": "Além do código" },
-    "contact":   { "num": "05.", "heading": "Vamos conversar" },
-    "mindset":   { "heading": "Engineering Mindset" },
-    "techstack": { "heading": "Tech Stack" },
-    "casestudy": { "heading": "Case Study" },
-    "now":       { "heading": "Agora" }
+    "about": {
+      "num": "02.",
+      "heading": "Quem sou eu"
+    },
+    "formation": {
+      "num": "03.",
+      "heading": "Skills & Educação"
+    },
+    "projects": {
+      "num": "01.",
+      "heading": "Trabalho real"
+    },
+    "knowme": {
+      "num": "04.",
+      "heading": "Além do código"
+    },
+    "contact": {
+      "num": "05.",
+      "heading": "Vamos conversar"
+    },
+    "mindset": {
+      "heading": "Engineering Mindset"
+    },
+    "techstack": {
+      "heading": "Tech Stack"
+    },
+    "casestudy": {
+      "heading": "Case Study"
+    },
+    "now": {
+      "heading": "Agora"
+    }
   },
   "nav": {
     "about": "Sobre",
@@ -26,16 +49,19 @@
   "hero": {
     "greeting": "Olá, eu sou",
     "name": "Benjamin Maciel",
-    "subtitle": "Desenvolvedor Front-End focado em performance, usabilidade e impacto real de negócio.",
-    "tagline2": "18 anos • Brasil • Mentalidade global • Construindo interfaces escaláveis.",
-    "ageSuffix": "anos",
-    "roles": ["Desenvolvedor Front-End", "UI/UX Designer", "Marketing Digital", "System Architect"],
+    "subtitle": "Eu construo os sistemas internos que as empresas usam para operar.",
+    "tagline2": "Desenvolvedor Front-End em React.js e TypeScript. Construí e coloquei em produção o ERP que sustenta a operação diária da minha empresa — usado por toda a equipe operacional em três CNPJs. Hoje lidero sua automação com IA.",
+    "roles": [
+      "Desenvolvedor Front-End",
+      "Desenvolvedor de Sistemas Internos",
+      "Business Software Engineer",
+      "Automação com IA"
+    ],
     "bio": "Desenvolvedor Front-End com 3 anos de experiência real em projetos empresariais. Especialista em interfaces que convertem.",
-    "cta_portfolio": "Ver Projetos",
+    "cta_portfolio": "Veja o sistema que eu construí",
     "cta_resume": "Ver Currículo",
     "cta_contact": "Entrar em Contato",
     "scroll": "Role para ver mais",
-    "age": "Idade",
     "location": "Local",
     "status": "Status",
     "online": "Online"
@@ -43,15 +69,26 @@
   "about": {
     "title": "Sobre mim",
     "subtitle": "Quem é Benjamin Maciel",
-    "bio1": "Eu n\u00e3o comecei apenas aprendendo c\u00f3digo.\nComecei tentando entender sistemas.",
+    "bio1": "Eu não comecei apenas aprendendo código.\nComecei tentando entender sistemas.",
     "bio2": "Desde cedo, meu foco sempre foi compreender como tecnologia pode resolver problemas reais de negócio. Não me interessa apenas construir interfaces bonitas — me interessa construir soluções que funcionem, performem bem e gerem impacto.",
-    "bio3": "Tenho 18 anos, forma\u00e7\u00e3o t\u00e9cnica em TI e experi\u00eancia pr\u00e1tica em ambiente empresarial. J\u00e1 atuei com desenvolvimento de interfaces, estrutura\u00e7\u00e3o de marketplaces, cria\u00e7\u00e3o de sistema interno e implementa\u00e7\u00e3o de melhorias operacionais. Hoje meu foco \u00e9 Front-End, mas com vis\u00e3o de produto e neg\u00f3cio.",
-    "bio3": "Foco em performance, usabilidade e conversão. Cada linha de CSS e cada componente React existe por uma razão.",
+    "bio3": "Hoje sou Diretor de Tecnologia da Informação na empresa — e continuo escrevendo código em produção toda semana. Meu foco: interfaces em React e TypeScript para sistemas internos de negócio, e uma iniciativa de automação com IA construída sobre a plataforma que já roda em produção.",
     "stats": [
-      { "value": "3+", "label": "anos de experiência" },
-      { "value": "R$10k", "label": "crescimento em vendas" },
-      { "value": "13", "label": "países visitados" },
-      { "value": "100%", "label": "projetos entregues" }
+      {
+        "value": "3+",
+        "label": "anos de experiência"
+      },
+      {
+        "value": "R$10k",
+        "label": "crescimento em vendas"
+      },
+      {
+        "value": "13",
+        "label": "países visitados"
+      },
+      {
+        "value": "100%",
+        "label": "projetos entregues"
+      }
     ]
   },
   "formation": {
@@ -62,12 +99,36 @@
     "completed": "concluído",
     "inProgress": "em andamento",
     "timeline": [
-      { "year": "2020", "title": "Primeiros passos em código", "desc": "Iniciação em programação aos 12 anos na SuperGeeks; continuou com Byju's FutureSchool (ex-Codebuddy) até o 9º ano." },
-      { "year": "2022", "title": "Robótica LEGO", "desc": "Participou de competições de robótica com kits LEGO, desenvolvendo lógica e trabalho em equipe." },
-      { "year": "2023", "title": "Técnico em TI + Rebranding", "desc": "Iniciou o curso técnico em TI no UNASP-EC e executou o rebranding completo da Zenith Lacres." },
-      { "year": "2024", "title": "Operador de Drone", "desc": "Certificado como operador de drone pela Futuriste Drone. Produção aérea e visual profissional para cobertura e conteúdos." },
-      { "year": "2025", "title": "TCC & Conclusão Técnica", "desc": "Desenvolveu o TCC do curso técnico 100% solo — design, frontend e backend. Aprovado com nota máxima." },
-        { "year": "2026-2029", "title": "ERP + Sistemas de Informação", "desc": "Desenvolve plataforma interna de gestão multi-CNPJ para a Zenith Lacres e está cursando bacharelado em SI, com término previsto para 2029." }
+      {
+        "year": "2020",
+        "title": "Primeiros passos em código",
+        "desc": "Iniciação em programação aos 12 anos na SuperGeeks; continuou com Byju's FutureSchool (ex-Codebuddy) até o 9º ano."
+      },
+      {
+        "year": "2022",
+        "title": "Robótica LEGO",
+        "desc": "Participou de competições de robótica com kits LEGO, desenvolvendo lógica e trabalho em equipe."
+      },
+      {
+        "year": "2023",
+        "title": "Técnico em TI + Rebranding",
+        "desc": "Iniciou o curso técnico em TI no UNASP-EC e executou o rebranding completo da Zenith Lacres."
+      },
+      {
+        "year": "2024",
+        "title": "Operador de Drone",
+        "desc": "Certificado como operador de drone pela Futuriste Drone. Produção aérea e visual profissional para cobertura e conteúdos."
+      },
+      {
+        "year": "2025",
+        "title": "TCC & Conclusão Técnica",
+        "desc": "Desenvolveu o TCC do curso técnico 100% solo — design, frontend e backend. Aprovado com nota máxima."
+      },
+      {
+        "year": "2026-2029",
+        "title": "ERP + Sistemas de Informação",
+        "desc": "Desenvolve plataforma interna de gestão multi-CNPJ para a Zenith Lacres e está cursando bacharelado em SI, com término previsto para 2029."
+      }
     ]
   },
   "projects": {
@@ -80,28 +141,48 @@
       {
         "name": "Plataforma Interna Zenith",
         "desc": "ERP customizado com controle de estoque multi-CNPJ, chat corporativo interno e gestão de preços com cubagem automática. Sistema em produção ativa.",
-        "tags": ["React", "Node.js", "MySQL", "WebSocket"],
+        "tags": [
+          "React",
+          "Node.js",
+          "MySQL",
+          "WebSocket"
+        ],
         "year": "2026",
         "impact": "Sistema em uso ativo · 3 CNPJs unificados"
       },
       {
         "name": "Rebranding & Marketplaces",
         "desc": "Reestruturação completa da identidade visual da Zenith Lacres e implementação em 5 marketplaces. Resultado: R$0 para R$10.000 em vendas em 3 meses.",
-        "tags": ["Figma", "Marketing Digital", "UI/UX"],
+        "tags": [
+          "Figma",
+          "Marketing Digital",
+          "UI/UX"
+        ],
         "year": "2023–2024",
         "impact": "R$0 → R$10.000 em 3 meses"
       },
       {
         "name": "TCC — Sistema Web Full Stack",
         "desc": "Projeto de conclusão do curso técnico desenvolvido integralmente solo. Design, frontend e backend do zero. Aprovado com nota máxima.",
-        "tags": ["HTML", "CSS", "JavaScript", "Node.js", "MySQL"],
+        "tags": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Node.js",
+          "MySQL"
+        ],
         "year": "2025",
         "impact": "Nota máxima · 100% autônomo"
       },
       {
         "name": "Portfólio Pessoal",
         "desc": "Portfolio interativo com animações Framer Motion, terminal simulado, boot loader e design system personalizado. Trilíngue (PT/EN/ES).",
-        "tags": ["Next.js 14", "React", "TypeScript", "Tailwind"],
+        "tags": [
+          "Next.js 14",
+          "React",
+          "TypeScript",
+          "Tailwind"
+        ],
         "year": "2026",
         "impact": "Live em produção"
       }
@@ -111,12 +192,36 @@
     "title": "Conheça-me",
     "subtitle": "Além do código",
     "cards": [
-      { "icon": "🔍", "title": "Analista de Gaps", "desc": "Tenho o hábito de observar processos e identificar onde há ineficiências antes de escrever uma linha de código." },
-      { "icon": "🌎", "title": "Visão Global", "desc": "13 países visitados (Brasil, França, Egito, Argentina, Paraguai, Palestina, Israel, Uruguai, Colômbia, EUA, Peru, Chile, Bolívia). Trago perspectiva internacional para design, UX e estratégia digital." },
-      { "icon": "⚡", "title": "Execução Real", "desc": "Não sou teórico: tudo que aprendo vai para produção real com impacto mensurável." },
-      { "icon": "🏗️", "title": "Multidisciplinar", "desc": "Código + design + marketing + operações. Entendo o produto inteiro, não só minha camada." },
-      { "icon": "🚀", "title": "Precoce por Escolha", "desc": "Preferi experiência real a teoria. 3 anos de empresa antes de completar 18 anos." },
-      { "icon": "📈", "title": "Velocidade", "desc": "Aprendo frameworks em dias, não meses. Prefiro documentação oficial em inglês." }
+      {
+        "icon": "🔍",
+        "title": "Analista de Gaps",
+        "desc": "Tenho o hábito de observar processos e identificar onde há ineficiências antes de escrever uma linha de código."
+      },
+      {
+        "icon": "🌎",
+        "title": "Visão Global",
+        "desc": "13 países visitados (Brasil, França, Egito, Argentina, Paraguai, Palestina, Israel, Uruguai, Colômbia, EUA, Peru, Chile, Bolívia). Trago perspectiva internacional para design, UX e estratégia digital."
+      },
+      {
+        "icon": "⚡",
+        "title": "Execução Real",
+        "desc": "Não sou teórico: tudo que aprendo vai para produção real com impacto mensurável."
+      },
+      {
+        "icon": "🏗️",
+        "title": "Multidisciplinar",
+        "desc": "Código + design + marketing + operações. Entendo o produto inteiro, não só minha camada."
+      },
+      {
+        "icon": "🚀",
+        "title": "Precoce por Escolha",
+        "desc": "Preferi experiência real a teoria. 3 anos de empresa antes de completar 18 anos."
+      },
+      {
+        "icon": "📈",
+        "title": "Velocidade",
+        "desc": "Aprendo frameworks em dias, não meses. Prefiro documentação oficial em inglês."
+      }
     ]
   },
   "contact": {
@@ -153,56 +258,150 @@
     "erp": "🛠️ Sistema ERP"
   },
   "languages": [
-    { "lang": "Português", "level": "Nativo" },
-    { "lang": "Inglês", "level": "Intermediário / Avançado" },
-    { "lang": "Espanhol", "level": "Intermediário" }
+    {
+      "lang": "Português",
+      "level": "Nativo"
+    },
+    {
+      "lang": "Inglês",
+      "level": "Intermediário / Avançado"
+    },
+    {
+      "lang": "Espanhol",
+      "level": "Intermediário"
+    }
   ],
   "mindset": {
     "headline": "Construo interfaces que resolvem problemas de negócio — não só têm boa aparência.",
     "sub": "Cada componente é projetado com performance, usabilidade e escalabilidade em mente.",
     "global": "Viagens de negócios em 13 países — Brasil, França, Egito, Argentina, Paraguai, Palestina, Israel, Uruguai, Colômbia, EUA, Peru, Chile, Bolívia — exposição internacional desde os 15 anos.",
     "cards": [
-      { "icon": "🔬", "title": "Identificação de Problemas", "desc": "Antes de escrever código, mapeio o processo. Identifico o gap, o custo e o impacto potencial da solução." },
-      { "icon": "🏗️", "title": "Estruturação de Soluções", "desc": "Divido o problema em módulos. Defino o MVP, a arquitetura mínima e a sequência de implementação." },
-      { "icon": "⚡", "title": "Performance First", "desc": "Carregamento otimizado, lazy loading, memoização. Performance não é otimização — é requisito mínimo." },
-      { "icon": "🎯", "title": "UX + Conversão", "desc": "Cada botão, espaçamento e hierarquia visual existe com intenção. Interface que converte vende mais." }
+      {
+        "icon": "🔬",
+        "title": "Identificação de Problemas",
+        "desc": "Antes de escrever código, mapeio o processo. Identifico o gap, o custo e o impacto potencial da solução."
+      },
+      {
+        "icon": "🏗️",
+        "title": "Estruturação de Soluções",
+        "desc": "Divido o problema em módulos. Defino o MVP, a arquitetura mínima e a sequência de implementação."
+      },
+      {
+        "icon": "⚡",
+        "title": "Performance First",
+        "desc": "Carregamento otimizado, lazy loading, memoização. Performance não é otimização — é requisito mínimo."
+      },
+      {
+        "icon": "🎯",
+        "title": "UX + Conversão",
+        "desc": "Cada botão, espaçamento e hierarquia visual existe com intenção. Interface que converte vende mais."
+      }
     ]
   },
   "techstack": {
     "sub": "O que uso, por que uso e o que construo com cada tecnologia.",
     "items": [
-      { "name": "React", "category": "Frontend", "desc": "Component-driven architecture, hooks, state management e otimização de re-renders." },
-      { "name": "Next.js", "category": "Framework", "desc": "App Router, SSR, SSG, otimização de imagens e rotas internacionalizadas (este portfolio)." },
-      { "name": "TypeScript", "category": "Language", "desc": "Tipagem estática para sistemas escaláveis com menos bugs em produção." },
-      { "name": "Tailwind CSS", "category": "Styling", "desc": "Utility-first styling. Design system consistente e responsivo em escala de projeto." },
-      { "name": "Node.js", "category": "Backend", "desc": "REST APIs, WebSocket e lógica de negócio no servidor (sistema ERP)." },
-      { "name": "MySQL", "category": "Database", "desc": "Modelagem relacional, queries otimizadas, controle multi-CNPJ em produção ativa." },
-      { "name": "Figma", "category": "Design", "desc": "Prototipagem, design system, fluxos de UX e handoff para desenvolvimento." },
-      { "name": "Git", "category": "DevOps", "desc": "Controle de versão, branching estratégico e colaboração em projetos reais." }
+      {
+        "name": "React",
+        "category": "Frontend",
+        "desc": "Component-driven architecture, hooks, state management e otimização de re-renders."
+      },
+      {
+        "name": "Next.js",
+        "category": "Framework",
+        "desc": "App Router, SSR, SSG, otimização de imagens e rotas internacionalizadas (este portfolio)."
+      },
+      {
+        "name": "TypeScript",
+        "category": "Language",
+        "desc": "Tipagem estática para sistemas escaláveis com menos bugs em produção."
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling",
+        "desc": "Utility-first styling. Design system consistente e responsivo em escala de projeto."
+      },
+      {
+        "name": "Node.js",
+        "category": "Backend",
+        "desc": "REST APIs, WebSocket e lógica de negócio no servidor (sistema ERP)."
+      },
+      {
+        "name": "MySQL",
+        "category": "Database",
+        "desc": "Modelagem relacional, queries otimizadas, controle multi-CNPJ em produção ativa."
+      },
+      {
+        "name": "Figma",
+        "category": "Design",
+        "desc": "Prototipagem, design system, fluxos de UX e handoff para desenvolvimento."
+      },
+      {
+        "name": "Git",
+        "category": "DevOps",
+        "desc": "Controle de versão, branching estratégico e colaboração em projetos reais."
+      }
     ]
   },
   "casestudy": {
     "label": "Case Study",
     "title": "Marketplace Growth — Zenith Lacres",
     "steps": [
-      { "step": "01", "label": "Problema", "desc": "Empresa com 22 anos de mercado sem presença digital. Catálogo inexistente online. R$0 em vendas digitais." },
-      { "step": "02", "label": "Estratégia", "desc": "Rebranding visual completo + padronização de catálogo fotográfico + seleção de 5 plataformas por potencial de ROI." },
-      { "step": "03", "label": "Implementação", "desc": "Estúdio interno de fotografia, 200+ itens catalogados, listings otimizados, identidade visual unificada em todos os canais." },
-      { "step": "04", "label": "Resultado", "desc": "De R$0 a R$10.000 em vendas em 3 meses. Operação autossustentável. Marca renovada em 5 marketplaces." }
+      {
+        "step": "01",
+        "label": "Problema",
+        "desc": "Empresa com 22 anos de mercado sem presença digital. Catálogo inexistente online. R$0 em vendas digitais."
+      },
+      {
+        "step": "02",
+        "label": "Estratégia",
+        "desc": "Rebranding visual completo + padronização de catálogo fotográfico + seleção de 5 plataformas por potencial de ROI."
+      },
+      {
+        "step": "03",
+        "label": "Implementação",
+        "desc": "Estúdio interno de fotografia, 200+ itens catalogados, listings otimizados, identidade visual unificada em todos os canais."
+      },
+      {
+        "step": "04",
+        "label": "Resultado",
+        "desc": "De R$0 a R$10.000 em vendas em 3 meses. Operação autossustentável. Marca renovada em 5 marketplaces."
+      }
     ],
     "metrics": [
-      { "value": "R$10k", "label": "Receita em 3 meses" },
-      { "value": "5", "label": "Marketplaces ativos" },
-      { "value": "3", "label": "Meses para resultado" },
-      { "value": "R$0", "label": "Investimento externo" }
+      {
+        "value": "R$10k",
+        "label": "Receita em 3 meses"
+      },
+      {
+        "value": "5",
+        "label": "Marketplaces ativos"
+      },
+      {
+        "value": "3",
+        "label": "Meses para resultado"
+      },
+      {
+        "value": "R$0",
+        "label": "Investimento externo"
+      }
     ]
   },
   "now": {
     "sub": "Atualizado em fevereiro de 2026.",
     "items": [
-      { "label": "Construindo", "value": "Sistema ERP interno multi-CNPJ para Zenith Lacres" },
-      { "label": "Estudando", "value": "Arquitetura de Sistemas — BSc. Sistemas de Informação (UNASP-EC)" },
-      { "label": "Melhorando", "value": "Fluência em inglês — intermediário/avançado (Wizard W8)" }
+      {
+        "label": "Construindo",
+        "value": "Sistema ERP interno multi-CNPJ para Zenith Lacres"
+      },
+      {
+        "label": "Estudando",
+        "value": "Arquitetura de Sistemas — BSc. Sistemas de Informação (UNASP-EC)"
+      },
+      {
+        "label": "Melhorando",
+        "value": "Fluência em inglês — intermediário/avançado (Wizard W8)"
+      }
     ],
     "lighthouse": "Lighthouse Score",
     "available": "Disponível para oportunidades"
@@ -233,10 +432,22 @@
         }
       ],
       "education": [
-        { "degree": "Sistemas de Informação (cursando)", "school": "UNASP-EC", "period": "2026–2029" },
-        { "degree": "Técnico em TI", "school": "UNASP-EC", "period": "2023–2025" }
+        {
+          "degree": "Sistemas de Informação (cursando)",
+          "school": "UNASP-EC",
+          "period": "2026–2029"
+        },
+        {
+          "degree": "Técnico em TI",
+          "school": "UNASP-EC",
+          "period": "2023–2025"
+        }
       ],
-      "languages": ["Português – Nativo", "Inglês – Intermediário/Avançado", "Espanhol – Intermediário"]
+      "languages": [
+        "Português – Nativo",
+        "Inglês – Intermediário/Avançado",
+        "Espanhol – Intermediário"
+      ]
     }
   }
 }

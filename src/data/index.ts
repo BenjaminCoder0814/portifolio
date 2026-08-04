@@ -16,11 +16,10 @@ export const personal = {
   instagram: "https://instagram.com/benjamin_maciel_",
   whatsapp:  "+5519971003115",
   roles: [
-    "Full Stack Developer",
-    "System Architect",
-    "Digital Marketing",
-    "Product Thinker",
-    "Business Transformer",
+    "Front-End Developer",
+    "Internal Systems Developer",
+    "Business Software Engineer",
+    "AI Automation",
   ],
   tagline:    "Transformando problemas reais em sistemas reais.",
   subTagline: "Tecnologia com visão de negócio  desde os 15 anos.",
@@ -29,7 +28,7 @@ export const personal = {
   stack: ["React", "JavaScript", "HTML/CSS", "Node.js", "UI/UX Design", "GitHub", "MySQL", "Figma"],
   stats: [
     { label: "Anos de código",     value: "6+" },
-    { label: "Países visitados",   value: "17" },
+    { label: "Países visitados",   value: "13" },
     { label: "Vendas em 3 meses",  value: "10k" },
   ],
   philosophy: "Não entro em um ambiente para executar tarefas. Entro para entender o sistema, achar os gaps e construir o que falta.",
@@ -126,7 +125,7 @@ export const projects = [
   {
     title: "Plataforma Interna Zenith Lacres",
     description: "Sistema empresarial completo desenvolvido para resolver gaps operacionais reais: controle de estoque multi-CNPJ, chat interno (substituindo Meta Business a custo zero), tabela de preços com cubagem automática e painel de gestão. Lançado em 2026 e em uso ativo.",
-    stack: ["React", "Node.js", "MySQL", "WebSocket", "REST API"],
+    stack: ["React.js", "TypeScript", "Node.js", "MySQL", "WebSocket", "REST API", "JWT"],
     metrics: [
       { value: "3",     label: "CNPJs integrados" },
       { value: "100%",  label: "Controle de estoque" },
@@ -169,7 +168,7 @@ export const projects = [
   {
     title: "TCC  Sistema Web Completo (solo)",
     description: "Projeto de conclusão do curso técnico desenvolvido 100% solo: design, frontend e backend. Projeto que era em trio foi entregue individualmente com aprovação. Primeiro sistema full stack autoral completo.",
-    stack: ["HTML", "CSS", "JavaScript", "Node.js", "MySQL"],
+    stack: ["HTML5", "CSS3", "JavaScript", "Node.js", "MySQL", "REST API"],
     metrics: [
       { value: "100%",  label: "Desenvolvido solo" },
       { value: "10",    label: "Nota final" },
@@ -207,7 +206,7 @@ export const education = [
 
 export const knowMe = [
   { emoji: "", title: "Analista de Gaps",       description: "Entro em um ambiente e automaticamente começo a enxergar o que não funciona. Sistema de estoque caótico? Plataforma interna nova." },
-  { emoji: "", title: "Visão Global",            description: "17 países visitados, 3 idiomas, viagens frequentes a negócios. Perspectiva internacional no jeito de pensar e executar." },
+  { emoji: "", title: "Visão Global",            description: "13 países visitados, 3 idiomas, viagens frequentes a negócios. Perspectiva internacional no jeito de pensar e executar." },
   { emoji: "", title: "Execução Real",            description: "Não só planejo. Entrego. TCC solo, sistema em produção, R$10k em marketplaces em 3 meses. Resultado é o que importa." },
   { emoji: "", title: "Multidisciplinar",         description: "Drone profissional, rebranding, backend, marketing, expedição, administrativo, fiscal. Entendo o negócio de ponta a ponta." },
   { emoji: "", title: "Precoce por escolha",     description: "Comecei a programar com 12 anos. Não por acidente  por obsessão. Cada ano foi intencional." },
@@ -244,7 +243,7 @@ export const terminalCommands: Record<string, string[]> = {
     "  location   : Engenheiro Coelho  SP ",
     "  status     : [ONLINE] Available for work",
     "  languages  : PT (nativo)  EN (avançado)  ES (médio)",
-    "  countries  : 17 visitados",
+    "  countries  : 13 visitados",
     "  editor     : VS Code",
     "",
   ],
@@ -327,7 +326,7 @@ export const terminalCommands: Record<string, string[]> = {
     "",
     "   Inglês W8  Wizard (intermediário/avançado)",
     "    Espanhol médio. Português nativo.",
-    "    17 países visitados.",
+    "    13 países visitados.",
     "",
   ],
 };
