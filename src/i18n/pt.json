@@ -11,7 +11,7 @@
       "heading": "Skills & Educação"
     },
     "projects": {
-      "num": "01.",
+      "num": "03.",
       "heading": "Trabalho real"
     },
     "knowme": {
@@ -19,7 +19,7 @@
       "heading": "Além do código"
     },
     "contact": {
-      "num": "05.",
+      "num": "04.",
       "heading": "Vamos conversar"
     },
     "mindset": {
@@ -33,6 +33,10 @@
     },
     "now": {
       "heading": "Agora"
+    },
+    "achievements": {
+      "num": "02.",
+      "heading": "Trabalho selecionado"
     }
   },
   "nav": {
@@ -45,7 +49,9 @@
     "resumeBtn": "Currículo",
     "downloadPdf": "Baixar PDF",
     "viewResume": "Ver Currículo",
-    "engineering": "Engenharia"
+    "engineering": "Engenharia",
+    "systems": "Sistemas",
+    "achievements": "Trabalho selecionado"
   },
   "hero": {
     "greeting": "Olá, eu sou",
@@ -454,5 +460,30 @@
         "Espanhol – Intermediário"
       ]
     }
+  },
+  "systems": {
+    "erp": {
+      "status": "Em produção",
+      "title": "Enterprise Operations Platform",
+      "desc": "O ERP interno que sustenta a operação diária da empresa. Especificado, arquitetado e entregue sozinho.",
+      "m1": "CNPJs",
+      "m2": "Adoção da equipe",
+      "m3": "Cotação de preço"
+    },
+    "eng": {
+      "status": "7 decision records",
+      "title": "Engenharia",
+      "desc": "Arquitetura, decisões, trade-offs e o que cada um custou."
+    },
+    "ai": {
+      "status": "Em desenvolvimento",
+      "title": "AI Digital Workforce",
+      "desc": "Agentes assumindo trabalho administrativo repetitivo, sobre a plataforma que já está em produção."
+    },
+    "explore": "Explorar",
+    "followAlong": "Acompanhar"
+  },
+  "achievements": {
+    "title": "O que eu entreguei"
   }
 }

@@ -11,7 +11,7 @@
       "heading": "Skills & Education"
     },
     "projects": {
-      "num": "01.",
+      "num": "03.",
       "heading": "Real impact work"
     },
     "knowme": {
@@ -19,7 +19,7 @@
       "heading": "Beyond the code"
     },
     "contact": {
-      "num": "05.",
+      "num": "04.",
       "heading": "Let's talk"
     },
     "mindset": {
@@ -33,6 +33,10 @@
     },
     "now": {
       "heading": "Now"
+    },
+    "achievements": {
+      "num": "02.",
+      "heading": "Selected work"
     }
   },
   "nav": {
@@ -45,7 +49,9 @@
     "resumeBtn": "Resume",
     "downloadPdf": "Download PDF",
     "viewResume": "View Resume",
-    "engineering": "Engineering"
+    "engineering": "Engineering",
+    "systems": "Systems",
+    "achievements": "Selected work"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -454,5 +460,30 @@
         "Spanish – Intermediate"
       ]
     }
+  },
+  "systems": {
+    "erp": {
+      "status": "In production",
+      "title": "Enterprise Operations Platform",
+      "desc": "The internal ERP the company's daily operation runs on. Specified, architected and shipped solo.",
+      "m1": "Legal entities",
+      "m2": "Team adoption",
+      "m3": "Price quoting"
+    },
+    "eng": {
+      "status": "7 decision records",
+      "title": "Engineering",
+      "desc": "Architecture, decisions, trade-offs and what they cost."
+    },
+    "ai": {
+      "status": "In development",
+      "title": "AI Digital Workforce",
+      "desc": "Agents taking over repetitive administrative work, built on the platform already in production."
+    },
+    "explore": "Explore",
+    "followAlong": "Follow along"
+  },
+  "achievements": {
+    "title": "What I've shipped"
   }
 }
