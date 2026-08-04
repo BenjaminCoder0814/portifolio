@@ -9,15 +9,14 @@ import benjaminFoto from "@/benjaminfoto.png";
 const t = {
   pt: {
     lang: "PT",
-    title: "Desenvolvedor Front-End | UI/UX | Marketing Digital",
+    title: "Desenvolvedor Front-End Júnior · React · TypeScript · Sistemas Internos & Marketing",
     location: "Engenheiro Coelho – SP",
-    birth: "Nascimento: 20/02/2008",
     exportPdf: "↓ Exportar PDF",
     backPortfolio: "← Portfólio",
     sObjective: "Objetivo",
-    objective: "Atuar como Desenvolvedor Front-End em modelo remoto/online, entregando interfaces modernas, performáticas e orientadas a conversão, integrando tecnologia e estratégia de marketing digital. Baseado em Engenheiro Coelho (interior de SP), disponível para idas pontuais à sede.",
+    objective: "Atuar como Desenvolvedor Front-End Júnior em modelo remoto/online, entregando interfaces modernas, performáticas e orientadas a conversão com React, JavaScript e TypeScript. Combino desenvolvimento front-end com visão de negócio e marketing digital para transformar necessidades reais em produtos utilizáveis. Baseado em Engenheiro Coelho (interior de SP), disponível para idas pontuais à sede.",
     sSummary: "Resumo Profissional",
-    summary: "Desenvolvedor Front-End com formação técnica em TI e experiência prática em projetos empresariais reais. Atuação em criação de interfaces modernas, reestruturação de identidade visual, marketplaces e desenvolvimento de sistemas internos. Forte foco em performance, usabilidade e impacto comercial.",
+    summary: "Desenvolvedor Front-End com formação técnica em TI e experiência prática em projetos empresariais reais. Trabalho com React, JavaScript, TypeScript, HTML e CSS, criando aplicações responsivas, sistemas internos e interfaces orientadas a usabilidade, performance e impacto comercial. Meu diferencial é unir o desenvolvimento à compreensão de processos e necessidades de negócio. Atualmente curso Sistemas de Informação.",
     sSkills: "Competências Técnicas",
     skills: [
       { cat: "Frontend", items: "HTML5 · CSS3 · JavaScript · React · Responsividade · UI/UX Design" },
@@ -26,8 +25,7 @@ const t = {
         { cat: "Testes", items: "Jest · React Testing Library (básico)" },
       { cat: "Marketing Digital", items: "Estruturação de marketplace · Estratégia de conversão · Identidade visual · Produção de mídia" },
       { cat: "Backend (suporte)", items: "Node.js · REST APIs · MySQL · WebSocket · Consumo de APIs" },
-      { cat: "Soft Skills", items: "Autonomia · Visão de produto · Foco em conversão · Liderança técnica" },
-      { cat: "Soft Skills", items: "Autonomia (entrega de projetos solo) · Visão de produto (identificação de oportunidades) · Foco em conversão (resultados mensuráveis) · Liderança técnica (mentoria de colegas e condução de rebranding)" },
+      { cat: "Soft Skills", items: "Autonomia (entrega de projetos solo) · Visão de produto (identificação de oportunidades) · Foco em conversão (resultados mensuráveis) · Liderança técnica (mentoria e condução de rebranding)" },
     ],
     sExperience: "Experiência Profissional",
     exp: [
@@ -37,14 +35,12 @@ const t = {
         period: "2023 – atual",
         sub: "Empresa industrial com 22 anos de mercado · Engenheiro Coelho – SP",
         bullets: [
-          "Desenvolvimento e reformulação de interfaces web da empresa (tempo de carregamento reduzido em 40%)",
-          "Sistema interno multi-CNPJ disponível em: https://estoque-sistema.netlify.app/",
-          "Reestruturação visual e identidade digital da marca: logotipo, paleta, tipografia e aplicações físicas e digitais",
-          "Criação e otimização de páginas para marketplaces — Mercado Livre, Shopee, Amazon, Magalu e TikTok Shop",
-          "Implementação de estúdio interno para fotografia de produtos com produção de todo o material visual de catálogo",
-          "Desenvolvimento de sistema interno com interface personalizada para controle de estoque e comunicação interna",
-          "Crescimento de vendas digitais de R$0 para R$10.000 em 3 meses via estratégia de marketplace e conteúdo (aumento de 100% no alcance digital)",
-          "Produção e edição de vídeos institucionais e comerciais para mídias sociais",
+          "Reduzi em 40% o tempo de carregamento das interfaces web da empresa, através da reformulação do front-end com React e otimização de componentes",
+          "Aumentei as vendas digitais de R$0 para R$10.000 em 3 meses, através de estratégia de marketplace (Mercado Livre, Shopee, Amazon, Magalu, TikTok Shop) e produção de conteúdo — alcance digital +100%",
+          "Desenvolvi um sistema interno multi-CNPJ para controle de estoque e comunicação, centralizando a operação em uma única plataforma (estoque-sistema.netlify.app)",
+          "Reestruturei a identidade visual e digital da marca — logotipo, paleta, tipografia e aplicações físicas e digitais — modernizando a presença de uma empresa com 22 anos de mercado",
+          "Implementei um estúdio interno de fotografia de produtos, produzindo todo o material visual de catálogo utilizado nos marketplaces",
+          "Produzi e editei vídeos institucionais e comerciais para as mídias sociais da empresa",
         ],
       },
       {
@@ -53,9 +49,8 @@ const t = {
         period: "2024 – 2025",
         sub: "Certificado pela Futuriste Drone · São Paulo – SP",
         bullets: [
-          "Cobertura aérea oficial na Porsche Carrera Cup como operador de drone credenciado",
-          "Produção audiovisual para setor imobiliário e hoteleiro — fotos e vídeos de imóveis e propriedades",
-          "Edição profissional de vídeos e tratamento de imagem para entrega de material final ao cliente",
+          "Realizei a cobertura aérea oficial da Porsche Carrera Cup como operador de drone credenciado",
+          "Produzi e editei fotos e vídeos aéreos para os setores imobiliário e hoteleiro, entregando o material final tratado ao cliente",
         ],
       },
     ],
@@ -110,15 +105,14 @@ const t = {
 
   en: {
     lang: "EN",
-    title: "Front-End Developer | UI/UX | Digital Marketing",
+    title: "Junior Front-End Developer · React · TypeScript · Internal Systems & Marketing",
     location: "Engenheiro Coelho – SP, Brazil",
-    birth: "Born: Feb 20, 2008",
     exportPdf: "↓ Export PDF",
     backPortfolio: "← Portfolio",
     sObjective: "Objective",
-    objective: "To work remotely/online as a Front-End Developer, delivering modern, performant, conversion-driven interfaces, bridging technology and digital marketing strategy. Based in Engenheiro Coelho (São Paulo countryside), available for occasional on-site visits to HQ.",
+    objective: "To work remotely/online as a Junior Front-End Developer, delivering modern, performant, conversion-driven interfaces with React, JavaScript and TypeScript. I combine front-end development with business and digital-marketing insight to turn real needs into usable products. Based in Engenheiro Coelho (São Paulo countryside), available for occasional on-site visits to HQ.",
     sSummary: "Professional Summary",
-    summary: "Front-End Developer with a technical degree in IT and hands-on experience in real business projects. Skilled in building modern interfaces, visual identity overhauls, marketplace management, and internal system development. Strong focus on performance, usability, and commercial impact.",
+    summary: "Front-End Developer with a technical degree in IT and hands-on experience in real business projects. I work with React, JavaScript, TypeScript, HTML and CSS to build responsive applications, internal systems, and interfaces focused on usability, performance and commercial impact. My edge is pairing development with a real understanding of business processes and needs. Currently pursuing a B.Sc. in Information Systems.",
     sSkills: "Technical Skills",
     skills: [
       { cat: "Frontend", items: "HTML5 · CSS3 · JavaScript · React · Responsive Design · UI/UX Design · Angular" },
@@ -138,13 +132,12 @@ const t = {
         period: "2023 – present",
         sub: "Industrial company with 22 years in the market · Engenheiro Coelho – SP",
         bullets: [
-          "Development and redesign of the company's web interfaces",
-          "Full visual rebrand and digital identity: logo, color palette, typography, physical and digital applications",
-          "Creation and optimization of marketplace product pages — Mercado Livre, Shopee, Amazon, Magalu, TikTok Shop",
-          "Set up in-house product photography studio producing all visual catalog material",
-          "Built internal management system with custom UI for inventory control and corporate communication",
-          "Grew digital sales from R$0 to R$10,000 in 3 months through marketplace strategy and content",
-          "Produced and edited institutional and commercial videos for social media",
+          "Cut the company's web interface load time by 40% by rebuilding the front-end in React and optimizing components",
+          "Grew digital sales from R$0 to R$10,000 in 3 months through marketplace strategy (Mercado Livre, Shopee, Amazon, Magalu, TikTok Shop) and content — +100% digital reach",
+          "Built a multi-CNPJ internal system for inventory control and communication, centralizing operations in a single platform (estoque-sistema.netlify.app)",
+          "Rebranded the company's visual and digital identity — logo, palette, typography, physical and digital applications — modernizing a 22-year-old brand",
+          "Set up an in-house product photography studio, producing all catalog visuals used across marketplaces",
+          "Produced and edited institutional and commercial videos for the company's social media",
         ],
       },
       {
@@ -153,9 +146,8 @@ const t = {
         period: "2024 – 2025",
         sub: "Certified by Futuriste Drone · São Paulo – SP",
         bullets: [
-          "Official aerial coverage at Porsche Carrera Cup as a credentialed drone operator",
-          "Audiovisual production for real estate and hospitality sectors — property photos and videos",
-          "Professional video editing and image treatment for final client delivery",
+          "Delivered official aerial coverage at the Porsche Carrera Cup as a credentialed drone operator",
+          "Produced and edited aerial photos and videos for the real estate and hospitality sectors, delivering final treated material to clients",
         ],
       },
     ],
@@ -209,15 +201,14 @@ const t = {
 
   es: {
     lang: "ES",
-    title: "Desarrollador Front-End | UI/UX | Marketing Digital",
+    title: "Desarrollador Front-End Júnior · React · TypeScript · Sistemas Internos & Marketing",
     location: "Engenheiro Coelho – SP, Brasil",
-    birth: "Nacimiento: 20/02/2008",
     exportPdf: "↓ Exportar PDF",
     backPortfolio: "← Portafolio",
     sObjective: "Objetivo",
-    objective: "Actuar en modalidad remota/online como Desarrollador Front-End, entregando interfaces modernas, de alto rendimiento y orientadas a la conversión, integrando tecnología y estrategia de marketing digital. Resido en Engenheiro Coelho (interior de São Paulo) con disponibilidad para visitas puntuales a la sede.",
+    objective: "Actuar en modalidad remota/online como Desarrollador Front-End Júnior, entregando interfaces modernas, de alto rendimiento y orientadas a la conversión con React, JavaScript y TypeScript. Combino desarrollo front-end con visión de negocio y marketing digital para transformar necesidades reales en productos utilizables. Resido en Engenheiro Coelho (interior de São Paulo) con disponibilidad para visitas puntuales a la sede.",
     sSummary: "Resumen Profesional",
-    summary: "Desarrollador Front-End con formación técnica en TI y experiencia práctica en proyectos empresariales reales. Especializado en creación de interfaces modernas, reestructuración de identidad visual, marketplaces y desarrollo de sistemas internos. Fuerte enfoque en rendimiento, usabilidad e impacto comercial.",
+    summary: "Desarrollador Front-End con formación técnica en TI y experiencia práctica en proyectos empresariales reales. Trabajo con React, JavaScript, TypeScript, HTML y CSS para crear aplicaciones responsivas, sistemas internos e interfaces orientadas a la usabilidad, el rendimiento y el impacto comercial. Mi diferencial es unir el desarrollo con la comprensión de procesos y necesidades de negocio. Actualmente curso Ingeniería en Sistemas de Información.",
     sSkills: "Competencias Técnicas",
     skills: [
       { cat: "Frontend", items: "HTML5 · CSS3 · JavaScript · React · Responsividad · UI/UX Design · Angular" },
@@ -237,13 +228,12 @@ const t = {
         period: "2023 – actual",
         sub: "Empresa industrial con 22 años en el mercado · Engenheiro Coelho – SP",
         bullets: [
-          "Desarrollo y reformulación de interfaces web de la empresa",
-          "Reestructuración visual e identidad digital de la marca: logotipo, paleta, tipografía y aplicaciones físicas y digitales",
-          "Creación y optimización de páginas para marketplaces — Mercado Livre, Shopee, Amazon, Magalu y TikTok Shop",
-          "Implementación de estudio interno para fotografía de productos con producción de todo el material visual del catálogo",
-          "Desarrollo de sistema interno con interfaz personalizada para control de inventario y comunicación interna",
-          "Crecimiento de ventas digitales de R$0 a R$10.000 en 3 meses mediante estrategia de marketplace y contenido",
-          "Producción y edición de videos institucionales y comerciales para redes sociales",
+          "Reduje en un 40% el tiempo de carga de las interfaces web de la empresa, reformulando el front-end con React y optimizando componentes",
+          "Aumenté las ventas digitales de R$0 a R$10.000 en 3 meses mediante estrategia de marketplace (Mercado Livre, Shopee, Amazon, Magalu, TikTok Shop) y producción de contenido — alcance digital +100%",
+          "Desarrollé un sistema interno multi-CNPJ para control de inventario y comunicación, centralizando la operación en una única plataforma (estoque-sistema.netlify.app)",
+          "Reestructuré la identidad visual y digital de la marca — logotipo, paleta, tipografía y aplicaciones físicas y digitales — modernizando una empresa con 22 años en el mercado",
+          "Implementé un estudio interno de fotografía de productos, produciendo todo el material visual del catálogo usado en los marketplaces",
+          "Produje y edité videos institucionales y comerciales para las redes sociales de la empresa",
         ],
       },
       {
@@ -252,9 +242,8 @@ const t = {
         period: "2024 – 2025",
         sub: "Certificado por Futuriste Drone · São Paulo – SP",
         bullets: [
-          "Cobertura aérea oficial en Porsche Carrera Cup como operador de drone acreditado",
-          "Producción audiovisual para sector inmobiliario y hotelero — fotos y videos de propiedades",
-          "Edición profesional de videos y tratamiento de imágenes para entrega final al cliente",
+          "Realicé la cobertura aérea oficial en la Porsche Carrera Cup como operador de drone acreditado",
+          "Produje y edité fotos y videos aéreos para los sectores inmobiliario y hotelero, entregando el material final tratado al cliente",
         ],
       },
     ],
@@ -405,7 +394,7 @@ export default function Curriculo() {
                   <a href="mailto:benjaminmaciel0814@gmail.com" className="hover:underline">benjaminmaciel0814@gmail.com</a>
                 </p>
                 <p>
-                  <a href="https://linkedin.com/in/benjamin-maciel-1ba2563a2" target="_blank" rel="noopener noreferrer" className="hover:underline">linkedin.com/in/benjaminmaciel</a>
+                  <a href="https://linkedin.com/in/benjamin-maciel-1ba2563a2" target="_blank" rel="noopener noreferrer" className="hover:underline">linkedin.com/in/benjamin-maciel</a>
                 </p>
                 <p>
                   <a href="https://github.com/BenjaminCoder0814" target="_blank" rel="noopener noreferrer" className="hover:underline">github.com/BenjaminCoder0814</a>
@@ -529,16 +518,16 @@ export default function Curriculo() {
             <div className="pdf-header-left">
               <h1 className="pdf-name">Benjamin Maciel</h1>
               <p className="pdf-role">{c.title}</p>
-              <p className="pdf-loc">{c.location} · {c.birth}</p>
+              <p className="pdf-loc">{c.location}</p>
             </div>
             <div className="pdf-header-photo">
               <img src={benjaminFoto.src} alt="Benjamin Maciel" />
             </div>
             <div className="pdf-header-right">
               <p>benjaminmaciel0814@gmail.com</p>
-              <p>linkedin.com/in/benjaminmaciel</p>
+              <p>linkedin.com/in/benjamin-maciel</p>
               <p>github.com/BenjaminCoder0814</p>
-              <p>preeminent-sopapillas-b24cad.netlify.app</p>
+              <p>benjaminmaciel.com.br</p>
             </div>
           </div>
 

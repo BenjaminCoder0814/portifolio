@@ -103,9 +103,9 @@ function ResumeContent() {
             {d.title}
           </p>
           <div className="contact-row">
-            <a href="mailto:benzinndev@gmail.com">benzinndev@gmail.com</a>
+            <a href="mailto:benjaminmaciel0814@gmail.com">benjaminmaciel0814@gmail.com</a>
             <a href="https://github.com/BenjaminCoder0814">github.com/BenjaminCoder0814</a>
-            <a href="https://linkedin.com/in/benjamin-maciel">linkedin.com/in/benjamin-maciel</a>
+            <a href="https://linkedin.com/in/benjamin-maciel-1ba2563a2">linkedin.com/in/benjamin-maciel</a>
             <span>Engenheiro Coelho – SP</span>
           </div>
         </header>
@@ -171,7 +171,7 @@ function ResumeContent() {
               </h2>
               {d.languages.map((l, i) => (
                 <div key={i} style={{ color: '#94a3b8', fontSize: '0.72rem', marginBottom: '0.25rem' }}>
-                  <span style={{ color: '#00ff88', fontFamily: "'JetBrains Mono', monospace', fontSize: '0.6rem'" }}>▶ </span>
+                  <span style={{ color: '#00ff88', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.6rem' }}>▶ </span>
                   {l}
                 </div>
               ))}
