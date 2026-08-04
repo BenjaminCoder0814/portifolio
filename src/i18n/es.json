@@ -59,13 +59,16 @@
       "Automatización con IA"
     ],
     "bio": "Desarrollador Front-End con 3 años de experiencia real en proyectos empresariales. Especializado en interfaces que convierten.",
-    "cta_portfolio": "Mira el sistema que construí",
+    "cta_portfolio": "Explora el ERP que construí",
     "cta_resume": "Ver Currículum",
     "cta_contact": "Contactar",
     "scroll": "Desplázate para explorar",
     "location": "Ubicación",
     "status": "Estado",
-    "online": "En línea"
+    "online": "En línea",
+    "proofEntities": "Entidades unificadas",
+    "proofAdoption": "Adopción del equipo operativo",
+    "proofPricing": "Cotización de precio"
   },
   "about": {
     "title": "Sobre mí",

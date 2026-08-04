@@ -161,10 +161,24 @@ export default function Hero() {
               </p>
             </div>
 
+            {/* Proof strip — the numbers earn the click below */}
+            <div className="flex flex-wrap gap-x-6 gap-y-3 mb-8 animate-[fadeInUp_0.6s_1.05s_both]">
+              {[
+                { v: "3", l: t.hero.proofEntities },
+                { v: "100%", l: t.hero.proofAdoption },
+                { v: "15min → 30s", l: t.hero.proofPricing },
+              ].map((s) => (
+                <div key={s.l} className="flex flex-col">
+                  <span className="text-xl font-black text-[#00d4ff] leading-none">{s.v}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-[#4d5866] mt-1">{s.l}</span>
+                </div>
+              ))}
+            </div>
+
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 mb-10 animate-[fadeInUp_0.6s_1.1s_both]">
               <a
-                href="#projects"
+                href="/engineering/erp"
                 className="inline-flex items-center gap-2 px-7 py-3 bg-[#00d4ff] text-[#0a0a0a] font-bold rounded-lg text-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,212,255,0.35)]"
               >
                 {t.hero.cta_portfolio}

@@ -25,7 +25,7 @@ export default function Footer() {
             {t.footer.linkedinKit}
           </a>
           <a
-            href="/erp"
+            href="/engineering/erp"
             className="font-mono text-xs text-[#00ff88] border border-[rgba(0,255,136,0.2)] px-3 py-2 rounded transition-all hover:bg-[rgba(0,255,136,0.08)]"
           >
             {t.footer.erp}

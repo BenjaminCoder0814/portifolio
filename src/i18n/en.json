@@ -59,13 +59,16 @@
       "AI Automation"
     ],
     "bio": "Front-End Developer with 3 years of real business experience. Specialized in interfaces that convert.",
-    "cta_portfolio": "See the system I built",
+    "cta_portfolio": "Explore the ERP I built",
     "cta_resume": "View Resume",
     "cta_contact": "Get in Touch",
     "scroll": "Scroll to explore",
     "location": "Location",
     "status": "Status",
-    "online": "Online"
+    "online": "Online",
+    "proofEntities": "Legal entities unified",
+    "proofAdoption": "Operations team adoption",
+    "proofPricing": "Price quoting"
   },
   "about": {
     "title": "About me",
