@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import benjaminFoto from "@/benjaminfoto.png";
 
@@ -10,11 +11,13 @@ const t = {
   pt: {
     lang: "PT",
     title: "Desenvolvedor Front-End Júnior · React · TypeScript · Sistemas Internos & Marketing",
-    location: "Engenheiro Coelho – SP",
+    location: "São Paulo – SP, Brasil",
+    phone: "+55 19 97100-3115",
     exportPdf: "↓ Exportar PDF",
     backPortfolio: "← Portfólio",
+    highlights: [{v:"3+",l:"Anos de experiência"},{v:"2025",l:"Formado — Técnico em TI"},{v:"100%",l:"Adoção do sistema em produção"},{v:"3",l:"Formações em andamento"}],
     sObjective: "Objetivo",
-    objective: "Atuar como Desenvolvedor Front-End Júnior em modelo remoto/online, entregando interfaces modernas, performáticas e orientadas a conversão com React, JavaScript e TypeScript. Combino desenvolvimento front-end com visão de negócio e marketing digital para transformar necessidades reais em produtos utilizáveis. Baseado em Engenheiro Coelho (interior de SP), disponível para idas pontuais à sede.",
+    objective: "Atuar como Desenvolvedor Front-End Júnior em modelo remoto/online, entregando interfaces modernas, performáticas e orientadas a conversão com React, JavaScript e TypeScript. Combino desenvolvimento front-end com visão de negócio e marketing digital para transformar necessidades reais em produtos utilizáveis. Disponível para atuação remota internacional e realocação.",
     sSummary: "Resumo Profissional",
     summary: "Desenvolvedor Front-End com formação técnica em TI e experiência prática em projetos empresariais reais. Trabalho com React, JavaScript, TypeScript, HTML e CSS, criando aplicações responsivas, sistemas internos e interfaces orientadas a usabilidade, performance e impacto comercial. Meu diferencial é unir o desenvolvimento à compreensão de processos e necessidades de negócio. Atualmente curso Sistemas de Informação.",
     sSkills: "Competências Técnicas",
@@ -33,7 +36,7 @@ const t = {
         company: "Zenith Lacres",
         role: "Front-End & Marketing Digital",
         period: "2023 – atual",
-        sub: "Empresa industrial com 22 anos de mercado · Engenheiro Coelho – SP",
+        sub: "Empresa industrial com 22 anos de mercado · São Paulo – SP",
         bullets: [
           "Reduzi em 40% o tempo de carregamento das interfaces web da empresa, através da reformulação do front-end com React e otimização de componentes",
           "Aumentei as vendas digitais de R$0 para R$10.000 em 3 meses, através de estratégia de marketplace (Mercado Livre, Shopee, Amazon, Magalu, TikTok Shop) e produção de conteúdo — alcance digital +100%",
@@ -89,8 +92,9 @@ const t = {
     ],
     sEducation: "Formação Acadêmica",
     education: [
-      { degree: "Bacharelado em Sistemas de Informação", school: "UNASP — Campus Engenheiro Coelho", period: "2026 – 2029 (cursando)" },
-      { degree: "Técnico em Tecnologia da Informação", school: "UNASP — Campus Engenheiro Coelho", period: "2023 – 2025 · Concluído" },
+      { degree: "Bacharelado em Ciência da Computação (cursando)", school: "University of the People — Pasadena, Califórnia, EUA", period: "2026 – presente · Online" },
+      { degree: "Bacharelado em Sistemas de Informação", school: "UNASP — São Paulo, Brasil", period: "2026 – 2029 (cursando)" },
+      { degree: "Técnico em Tecnologia da Informação", school: "UNASP — São Paulo, Brasil", period: "2023 – 2025 · Concluído" },
       { degree: "Certificação Profissional em Pilotagem de Drone", school: "Futuriste Drone", period: "2024" },
     ],
     sLanguages: "Idiomas",
@@ -106,11 +110,13 @@ const t = {
   en: {
     lang: "EN",
     title: "Junior Front-End Developer · React · TypeScript · Internal Systems & Marketing",
-    location: "Engenheiro Coelho – SP, Brazil",
+    location: "São Paulo – SP, Brazil",
+    phone: "+55 19 97100-3115",
     exportPdf: "↓ Export PDF",
     backPortfolio: "← Portfolio",
+    highlights: [{v:"3+",l:"Years of experience"},{v:"2025",l:"Graduated — Technical Degree in IT"},{v:"100%",l:"Adoption of system in production"},{v:"3",l:"Degrees in progress"}],
     sObjective: "Objective",
-    objective: "To work remotely/online as a Junior Front-End Developer, delivering modern, performant, conversion-driven interfaces with React, JavaScript and TypeScript. I combine front-end development with business and digital-marketing insight to turn real needs into usable products. Based in Engenheiro Coelho (São Paulo countryside), available for occasional on-site visits to HQ.",
+    objective: "To work remotely/online as a Junior Front-End Developer, delivering modern, performant, conversion-driven interfaces with React, JavaScript and TypeScript. I combine front-end development with business and digital-marketing insight to turn real needs into usable products. Available for international remote work and relocation.",
     sSummary: "Professional Summary",
     summary: "Front-End Developer with a technical degree in IT and hands-on experience in real business projects. I work with React, JavaScript, TypeScript, HTML and CSS to build responsive applications, internal systems, and interfaces focused on usability, performance and commercial impact. My edge is pairing development with a real understanding of business processes and needs. Currently pursuing a B.Sc. in Information Systems.",
     sSkills: "Technical Skills",
@@ -130,7 +136,7 @@ const t = {
         company: "Zenith Lacres",
         role: "Front-End Developer & Digital Marketing",
         period: "2023 – present",
-        sub: "Industrial company with 22 years in the market · Engenheiro Coelho – SP",
+        sub: "Industrial company with 22 years in the market · São Paulo – SP",
         bullets: [
           "Cut the company's web interface load time by 40% by rebuilding the front-end in React and optimizing components",
           "Grew digital sales from R$0 to R$10,000 in 3 months through marketplace strategy (Mercado Livre, Shopee, Amazon, Magalu, TikTok Shop) and content — +100% digital reach",
@@ -186,8 +192,9 @@ const t = {
     ],
     sEducation: "Education",
     education: [
-      { degree: "B.Sc. Information Systems (in progress)", school: "UNASP — Engenheiro Coelho Campus", period: "2026 – present" },
-      { degree: "Technical Degree in Information Technology", school: "UNASP — Engenheiro Coelho Campus", period: "2023 – 2025 · Completed" },
+      { degree: "B.Sc. Computer Science (in progress)", school: "University of the People — Pasadena, California, USA", period: "2026 – present · Online" },
+      { degree: "B.Sc. Information Systems (in progress)", school: "UNASP — São Paulo, Brazil", period: "2026 – present" },
+      { degree: "Technical Degree in Information Technology", school: "UNASP — São Paulo, Brazil", period: "2023 – 2025 · Completed" },
     ],
     sLanguages: "Languages",
     languages: [
@@ -202,11 +209,13 @@ const t = {
   es: {
     lang: "ES",
     title: "Desarrollador Front-End Júnior · React · TypeScript · Sistemas Internos & Marketing",
-    location: "Engenheiro Coelho – SP, Brasil",
+    location: "São Paulo – SP, Brasil",
+    phone: "+55 19 97100-3115",
     exportPdf: "↓ Exportar PDF",
     backPortfolio: "← Portafolio",
+    highlights: [{v:"3+",l:"Años de experiencia"},{v:"2025",l:"Graduado — Técnico en TI"},{v:"100%",l:"Adopción del sistema en producción"},{v:"3",l:"Formaciones en curso"}],
     sObjective: "Objetivo",
-    objective: "Actuar en modalidad remota/online como Desarrollador Front-End Júnior, entregando interfaces modernas, de alto rendimiento y orientadas a la conversión con React, JavaScript y TypeScript. Combino desarrollo front-end con visión de negocio y marketing digital para transformar necesidades reales en productos utilizables. Resido en Engenheiro Coelho (interior de São Paulo) con disponibilidad para visitas puntuales a la sede.",
+    objective: "Actuar en modalidad remota/online como Desarrollador Front-End Júnior, entregando interfaces modernas, de alto rendimiento y orientadas a la conversión con React, JavaScript y TypeScript. Combino desarrollo front-end con visión de negocio y marketing digital para transformar necesidades reales en productos utilizables. Disponible para trabajo remoto internacional y reubicación.",
     sSummary: "Resumen Profesional",
     summary: "Desarrollador Front-End con formación técnica en TI y experiencia práctica en proyectos empresariales reales. Trabajo con React, JavaScript, TypeScript, HTML y CSS para crear aplicaciones responsivas, sistemas internos e interfaces orientadas a la usabilidad, el rendimiento y el impacto comercial. Mi diferencial es unir el desarrollo con la comprensión de procesos y necesidades de negocio. Actualmente curso Ingeniería en Sistemas de Información.",
     sSkills: "Competencias Técnicas",
@@ -226,7 +235,7 @@ const t = {
         company: "Zenith Lacres",
         role: "Front-End & Marketing Digital",
         period: "2023 – actual",
-        sub: "Empresa industrial con 22 años en el mercado · Engenheiro Coelho – SP",
+        sub: "Empresa industrial con 22 años en el mercado · São Paulo – SP",
         bullets: [
           "Reduje en un 40% el tiempo de carga de las interfaces web de la empresa, reformulando el front-end con React y optimizando componentes",
           "Aumenté las ventas digitales de R$0 a R$10.000 en 3 meses mediante estrategia de marketplace (Mercado Livre, Shopee, Amazon, Magalu, TikTok Shop) y producción de contenido — alcance digital +100%",
@@ -282,8 +291,9 @@ const t = {
     ],
     sEducation: "Formación Académica",
     education: [
-      { degree: "Ing. en Sistemas de Información (en curso)", school: "UNASP — Campus Engenheiro Coelho", period: "2026 – presente" },
-      { degree: "Técnico en Tecnología de la Información", school: "UNASP — Campus Engenheiro Coelho", period: "2023 – 2025 · Completado" },
+      { degree: "Lic. en Ciencias de la Computación (en curso)", school: "University of the People — Pasadena, California, EE.UU.", period: "2026 – presente · Online" },
+      { degree: "Ing. en Sistemas de Información (en curso)", school: "UNASP — São Paulo, Brasil", period: "2026 – presente" },
+      { degree: "Técnico en Tecnología de la Información", school: "UNASP — São Paulo, Brasil", period: "2023 – 2025 · Completado" },
     ],
     sLanguages: "Idiomas",
     languages: [
@@ -327,12 +337,29 @@ function Section({
 // ─── MAIN COMPONENT ──────────────────────────────────────────────────────────
 
 export default function Curriculo() {
-  const [lang, setLang] = useState<Lang>("pt");
+  // Initialise from the /[lang]/curriculo route so the language switcher
+  // elsewhere on the site carries over instead of always falling back to PT.
+  const params = useParams();
+  const routeLang = Array.isArray(params?.lang) ? params.lang[0] : params?.lang;
+  const initialLang: Lang =
+    routeLang === "en" || routeLang === "es" || routeLang === "pt" ? routeLang : "pt";
+
+  const [lang, setLang] = useState<Lang>(initialLang);
   const c = t[lang];
 
+  // Keep state in sync if the route language changes under us.
   useEffect(() => {
-    document.title = "Currículo — Benjamin Maciel";
-  }, []);
+    setLang(initialLang);
+  }, [initialLang]);
+
+  useEffect(() => {
+    document.title =
+      lang === "en"
+        ? "Resume — Benjamin Maciel"
+        : lang === "es"
+        ? "Currículum — Benjamin Maciel"
+        : "Currículo — Benjamin Maciel";
+  }, [lang]);
 
   return (
     <>
@@ -391,7 +418,10 @@ export default function Curriculo() {
               </div>
               <div className="text-xs text-[#8b949e] font-mono space-y-1 text-right">
                 <p>
-                  <a href="mailto:benjaminmaciel0814@gmail.com" className="hover:underline">benjaminmaciel0814@gmail.com</a>
+                  <a href="tel:+5519971003115" className="text-white font-bold text-sm hover:underline">{c.phone}</a>
+                </p>
+                <p>
+                  <a href="mailto:maciel@zenithlacres.com.br" className="hover:underline">maciel@zenithlacres.com.br</a>
                 </p>
                 <p>
                   <a href="https://linkedin.com/in/benjamin-maciel-1ba2563a2" target="_blank" rel="noopener noreferrer" className="hover:underline">linkedin.com/in/benjamin-maciel</a>
@@ -405,6 +435,16 @@ export default function Curriculo() {
               </div>
             </div>
             <div className="h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent mt-6" />
+
+            {/* HIGHLIGHTS */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+              {c.highlights.map((h) => (
+                <div key={h.l} className="rounded-lg border border-[#00d4ff]/15 bg-[#00d4ff]/[0.04] px-3 py-3 text-center">
+                  <span className="block text-2xl font-black text-[#00d4ff] leading-none">{h.v}</span>
+                  <span className="block text-[10px] uppercase tracking-[0.08em] text-[#8b949e] mt-[6px] leading-tight">{h.l}</span>
+                </div>
+              ))}
+            </div>
           </header>
 
           {/* OBJECTIVE */}
@@ -524,11 +564,22 @@ export default function Curriculo() {
               <img src={benjaminFoto.src} alt="Benjamin Maciel" />
             </div>
             <div className="pdf-header-right">
-              <p>benjaminmaciel0814@gmail.com</p>
+              <p className="pdf-phone">{c.phone}</p>
+              <p>maciel@zenithlacres.com.br</p>
               <p>linkedin.com/in/benjamin-maciel</p>
               <p>github.com/BenjaminCoder0814</p>
               <p>benjaminmaciel.com.br</p>
             </div>
+          </div>
+
+          {/* PDF HIGHLIGHTS */}
+          <div className="pdf-highlights">
+            {c.highlights.map((h) => (
+              <div key={h.l} className="pdf-hl">
+                <span className="pdf-hl-v">{h.v}</span>
+                <span className="pdf-hl-l">{h.l}</span>
+              </div>
+            ))}
           </div>
 
           {/* PDF BODY */}
@@ -683,6 +734,42 @@ export default function Curriculo() {
             font-family: 'Courier New', monospace;
           }
           .pdf-header-right p { margin: 0; }
+          .pdf-phone {
+            color: #f1f5f9 !important;
+            font-weight: 700;
+            font-size: 8.5pt;
+            letter-spacing: 0.3pt;
+          }
+
+          /* HIGHLIGHTS BAR */
+          .pdf-highlights {
+            display: flex;
+            gap: 0;
+            background: rgba(0,212,255,0.05);
+            border-bottom: 0.5pt solid rgba(0,212,255,0.18);
+            padding: 7pt 26pt;
+          }
+          .pdf-hl {
+            flex: 1;
+            text-align: center;
+            border-right: 0.5pt solid rgba(255,255,255,0.07);
+          }
+          .pdf-hl:last-child { border-right: none; }
+          .pdf-hl-v {
+            display: block;
+            font-size: 11pt;
+            font-weight: 900;
+            color: #00d4ff;
+            line-height: 1.1;
+          }
+          .pdf-hl-l {
+            display: block;
+            font-size: 5.8pt;
+            text-transform: uppercase;
+            letter-spacing: 0.6pt;
+            color: #94a3b8;
+            margin-top: 1pt;
+          }
 
           .pdf-header-photo {
             width: 72pt;

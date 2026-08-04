@@ -103,10 +103,12 @@ function ResumeContent() {
             {d.title}
           </p>
           <div className="contact-row">
-            <a href="mailto:benjaminmaciel0814@gmail.com">benjaminmaciel0814@gmail.com</a>
+            <a href="tel:+5519971003115"><strong>+55 19 97100-3115</strong></a>
+            <span className="muted">·</span>
+            <a href="mailto:maciel@zenithlacres.com.br">maciel@zenithlacres.com.br</a>
             <a href="https://github.com/BenjaminCoder0814">github.com/BenjaminCoder0814</a>
             <a href="https://linkedin.com/in/benjamin-maciel-1ba2563a2">linkedin.com/in/benjamin-maciel</a>
-            <span>Engenheiro Coelho – SP</span>
+            <span>São Paulo – SP</span>
           </div>
         </header>
 

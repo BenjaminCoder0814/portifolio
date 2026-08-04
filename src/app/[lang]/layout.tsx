@@ -6,21 +6,21 @@ const LANG_SEO: Record<Lang, { title: string; description: string; locale: strin
   pt: {
     title: `${personal.name} — Desenvolvedor Front-End & Arquiteto de Sistemas`,
     description:
-      "Portfólio de Benjamin Maciel — Desenvolvedor Front-End com 3 anos de experiência real. 18 anos, Engenheiro Coelho–SP. Zenith Lacres.",
+      "Portfólio de Benjamin Maciel — Desenvolvedor Front-End com 3 anos de experiência real. 18 anos, São Paulo–SP. Zenith Lacres.",
     locale: "pt_BR",
     ogLocale: "pt_BR",
   },
   en: {
     title: `${personal.name} — Front-End Developer & System Architect`,
     description:
-      "Portfolio of Benjamin Maciel — Front-End Developer with 3 years of real business experience. 18 y/o, Engenheiro Coelho–SP, Brazil.",
+      "Portfolio of Benjamin Maciel — Front-End Developer with 3 years of real business experience. 18 y/o, São Paulo–SP, Brazil.",
     locale: "en_US",
     ogLocale: "en_US",
   },
   es: {
     title: `${personal.name} — Desarrollador Front-End & Arquitecto de Sistemas`,
     description:
-      "Portfolio de Benjamin Maciel — Desarrollador Front-End con 3 años de experiencia empresarial real. 18 años, Engenheiro Coelho–SP, Brasil.",
+      "Portfolio de Benjamin Maciel — Desarrollador Front-End con 3 años de experiencia empresarial real. 18 años, São Paulo–SP, Brasil.",
     locale: "es_ES",
     ogLocale: "es_ES",
   },

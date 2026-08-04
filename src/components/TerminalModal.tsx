@@ -51,7 +51,7 @@ export default function TerminalModal() {
         { text: "", type: "blank" },
         { text: "  Welcome. Let\u2019s build something scalable.", type: "output" },
         { text: "", type: "blank" },
-        { text: "  📧  benjaminmaciel0814@gmail.com", type: "output" },
+        { text: "  📧  maciel@zenithlacres.com.br", type: "output" },
         { text: "  🔗  linkedin.com/in/benjaminmaciel", type: "output" },
         { text: "", type: "blank" },
         { text: "  Status: [AVAILABLE] Open to opportunities", type: "output" },

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: `%s | ${personal.name}`,
   },
   description:
-    "Portfolio de Benjamin Maciel — Full Stack Developer, System Architect e Business Transformer. 18 anos. Engenheiro Coelho–SP. 3 anos na Zenith Lacres.",
+    "Portfolio de Benjamin Maciel — Full Stack Developer, System Architect e Business Transformer. 18 anos. São Paulo–SP. 3 anos na Zenith Lacres.",
   keywords: [
     "Benjamin Maciel",
     "portfolio",

@@ -27,7 +27,7 @@ Stack: React · JavaScript · Node.js · MySQL · HTML/CSS · Figma · REST APIs
 Penso como arquiteto: antes de escrever código, entendo o sistema, mapeio os gaps e projeto a solução certa.
 
 🌎 17 países visitados. PT nativo · EN avançado · ES intermediário.
-📍 Engenheiro Coelho – SP | Aberto a oportunidades híbridas e remotas.`,
+📍 São Paulo – SP | Aberto a oportunidades híbridas e remotas.`,
   },
   {
     id: "exp-zenith",
@@ -36,7 +36,7 @@ Penso como arquiteto: antes de escrever código, entendo o sistema, mapeio os ga
 Desenvolvedor Full Stack & Marketing Digital
 Março 2023 – Presente · 3 anos
 
-Engenheiro Coelho, SP (Presencial / Híbrido)
+São Paulo, SP (Presencial / Híbrido)
 
 Empresa com 22 anos de atuação no setor industrial.
 
