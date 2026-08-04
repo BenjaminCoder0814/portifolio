@@ -47,6 +47,20 @@ export default function Curriculo() {
   const [lang, setLang] = useState<Lang>(initial);
   const c = resume[lang];
 
+  // When this page is embedded (the resume modal loads it in an iframe) the
+  // host already provides language switching, print and download. Rendering
+  // our own bar on top of it stacks two sets of identical controls.
+  // `null` = not yet determined; the bar only mounts once we know we're top-level,
+  // so the embedded view never flashes a duplicate.
+  const [embedded, setEmbedded] = useState<boolean | null>(null);
+  useEffect(() => {
+    try {
+      setEmbedded(window.self !== window.top);
+    } catch {
+      setEmbedded(true); // cross-origin access throws — we are framed
+    }
+  }, []);
+
   useEffect(() => setLang(initial), [initial]);
   useEffect(() => {
     document.title =
@@ -57,7 +71,8 @@ export default function Curriculo() {
 
   return (
     <>
-      {/* ── controls ─────────────────────────────────────────── */}
+      {/* ── controls (top-level only — see `embedded` above) ──── */}
+      {embedded === false && (
       <div className="no-print fixed right-4 top-4 z-50 flex items-center gap-2">
         <div className="flex overflow-hidden rounded-lg border border-white/20 font-mono text-xs font-bold">
           {(["pt", "en", "es"] as Lang[]).map((l) => (
@@ -82,9 +97,14 @@ export default function Curriculo() {
           {c.exportPdf}
         </button>
       </div>
+      )}
 
       {/* ══════════════════════════ SCREEN ══════════════════════════ */}
-      <div className="screen-view min-h-screen bg-[#0d0d0d] px-4 py-20 text-white">
+      <div
+        className={`screen-view min-h-screen bg-[#0d0d0d] px-4 text-white ${
+          embedded ? "py-8" : "py-20"
+        }`}
+      >
         <div className="mx-auto max-w-[860px]">
           <header className="mb-8">
             <div className="flex flex-wrap items-center justify-between gap-6">
