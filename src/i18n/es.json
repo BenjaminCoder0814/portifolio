@@ -44,7 +44,8 @@
     "devMode": "Modo Dev",
     "resumeBtn": "Currículum",
     "downloadPdf": "Descargar PDF",
-    "viewResume": "Ver Currículum"
+    "viewResume": "Ver Currículum",
+    "engineering": "Ingeniería"
   },
   "hero": {
     "greeting": "Hola, soy",
@@ -255,7 +256,8 @@
     "backTop": "↑ Inicio",
     "curriculum": "📄 Currículum PDF",
     "linkedinKit": "💼 LinkedIn Kit",
-    "erp": "🛠️ Sistema ERP"
+    "erp": "🛠️ Sistema ERP",
+    "engineering": "⚙️ Documentación Técnica"
   },
   "languages": [
     {

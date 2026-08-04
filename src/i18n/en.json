@@ -44,7 +44,8 @@
     "devMode": "Dev Mode",
     "resumeBtn": "Resume",
     "downloadPdf": "Download PDF",
-    "viewResume": "View Resume"
+    "viewResume": "View Resume",
+    "engineering": "Engineering"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -255,7 +256,8 @@
     "backTop": "↑ Top",
     "curriculum": "📄 Resume PDF",
     "linkedinKit": "💼 LinkedIn Kit",
-    "erp": "🛠️ ERP System"
+    "erp": "🛠️ ERP System",
+    "engineering": "⚙️ Engineering Docs"
   },
   "languages": [
     {

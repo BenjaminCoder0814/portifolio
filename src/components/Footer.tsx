@@ -30,6 +30,12 @@ export default function Footer() {
           >
             {t.footer.erp}
           </a>
+          <a
+            href="/engineering"
+            className="font-mono text-xs text-white border border-[rgba(255,255,255,0.18)] px-3 py-2 rounded transition-all hover:bg-[rgba(255,255,255,0.06)]"
+          >
+            {t.footer.engineering}
+          </a>
         </div>
 
         {/* Bottom row */}
