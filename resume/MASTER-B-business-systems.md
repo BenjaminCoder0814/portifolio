@@ -1,0 +1,139 @@
+# BENJAMIN MACIEL
+## Business Systems Developer | React.js · TypeScript · Node.js | Internal Platforms · Process Automation · Applied AI
+
+benjaminmaciel0814@gmail.com · [LinkedIn](https://linkedin.com/in/benjamin-maciel-1ba2563a2) · [GitHub](https://github.com/BenjaminCoder0814) · [benjaminmaciel.com.br](https://benjaminmaciel.com.br)
+São Paulo, Brazil (UTC−3) · Open to relocation and international remote · Requires visa sponsorship
+
+> **Quando usar este currículo:** SaaS B2B, ERP, logística, supply chain, manufatura, fintech de
+> operações, consultorias, times de *internal tools* / *business applications* / *operations
+> engineering*. Mesmos fatos do Currículo A — enquadramento diferente.
+
+---
+
+## SUMMARY
+
+Software developer who builds the internal systems companies actually run on. Three years turning manual operational processes into production software at an industrial manufacturer — specified, built and shipped the ERP that unified inventory, pricing and communication across three legal entities, now used daily by the entire operations team. Front end in **React.js and TypeScript**, integrated with **REST APIs, WebSocket** real-time data and a **MySQL** relational model. Now Director of Information Technology at the same company, still writing production code while leading software architecture and an AI automation initiative. Currently pursuing a **B.Sc. in Computer Science at University of the People (United States)**.
+
+---
+
+## ENGINEERING IMPACT
+
+- **Made the build-versus-buy call, then executed it.** Chose to build the ERP in-house over licensing an off-the-shelf platform; it now covers inventory, pricing and internal communication with no vendor dependency.
+- **Own the system the company runs on.** In production and used daily by 100% of the operations team across three legal entities — replaced disconnected spreadsheets that made stock movements untraceable.
+- **Turned the company's slowest manual process into its fastest.** Product pricing went from 10–15 minutes of manual calculation to under 30 seconds, through an interface with automated cubic-weight logic.
+- **Leading the company's AI automation initiative.** Designing AI agents that take over repetitive administrative work, integrated with the internal systems already in production.
+- **Cut inventory counting time by 60%** by developing real-time dashboards that gave operations teams live stock visibility, consolidated and per entity.
+- **Removed a recurring software cost** by replacing a paid third-party messaging platform with an in-house real-time chat over WebSocket, adopted company-wide.
+
+---
+
+## CORE EXPERTISE
+
+**Business Systems:** Internal Systems · Business Applications · ERP Development · Inventory Management Systems · Dashboard Development · Workflow Automation · Process Automation · Requirements Gathering · Business Process Analysis
+
+**Software Architecture:** Software Architecture · Component-Based Architecture · Single-Page Applications (SPA) · REST API Design & Integration · Real-Time Systems (WebSocket) · Relational Data Modeling · Role-Based Access Control · Technical Leadership · Technology Decision-Making
+
+**Front-End:** React.js · Next.js · JavaScript (ES6+) · TypeScript · HTML5 · CSS3 · Tailwind CSS · Design Systems · Reusable Component Libraries · Responsive Web Design · UI Development
+
+**Back-End & Data:** Node.js · Express.js · MySQL · JWT Authentication · REST APIs
+
+**AI & Automation:** AI Agents · AI-Driven Process Automation · Digital Transformation
+
+**Tools & Practices:** Git · GitHub · VS Code · Figma · Jest · React Testing Library · Clean Code · Debugging · Problem Solving
+
+---
+
+## PROFESSIONAL EXPERIENCE
+
+### Zenith Lacres — São Paulo, Brazil
+*Industrial sealing manufacturer · 3 legal entities · 22 years in market*
+
+#### Director of Information Technology · 2025 – Present
+**Hands-on Software Development | Systems Architecture | Process Automation | Applied AI**
+*Promoted from Front-End Developer*
+
+- **Own** technology decision-making for the company's digital transformation, including build-versus-buy calls such as developing the internal ERP in-house rather than licensing an off-the-shelf platform.
+- **Write production code weekly** — React.js, TypeScript and the REST API integration layer of the internal platform — while leading technology strategy across three legal entities.
+- **Direct** the development of internal systems that replace manual processes end to end: sitting with the operations team to map the process, defining scope and data model, then building and shipping the software.
+- **Define** the software architecture and technology standards used across all internal applications — component-based architecture, shared design system, REST API integration patterns, and role-based access control.
+- **Lead** an AI automation initiative, designing AI agents that take over repetitive administrative tasks so the operations team spends its time on work that requires human judgment.
+
+#### Front-End Developer · 2023 – 2025
+
+- **Developed** the ERP that replaced the company's spreadsheet-based inventory control — a React.js and TypeScript single-page application with real-time dashboards, permission-aware navigation and REST API integration, now used daily by 100% of the operations team.
+- **Built** the dynamic pricing interface with automated cubic-weight and logistics calculation, and the real-time inventory dashboards consuming REST APIs.
+- **Implemented** real-time internal chat over WebSocket, eliminating a recurring third-party messaging subscription.
+- **Built** and maintained the design system and reusable React component library the platform is built on, standardizing the UI across every module.
+- **Optimized** component rendering and asset delivery across the company's web interfaces, **reducing load time by 40%**.
+- **Collaborated** with business teams on digital initiatives, launching the company across 5 online marketplaces and growing digital revenue from R$0 to R$10,000 in 3 months.
+
+---
+
+## SELECTED PROJECTS
+
+### Enterprise Operations Platform (Internal ERP) — *In active production*
+**React.js · TypeScript · Node.js · Express.js · MySQL · REST API · WebSocket · JWT** · 2025 – 2026
+
+- **Problem.** Three legal entities sharing one warehouse tracked stock in disconnected spreadsheets. Movements were untraceable, transfers between entities conflicted, price quoting took 10–15 minutes of manual calculation, and internal communication ran on a paid external platform.
+- **Decision.** Evaluated off-the-shelf ERP against building in-house. Chose to build: full process fit, no per-seat licensing, no vendor lock-in, and continuous evolution controlled internally.
+- **Architecture.** Single-Page Application over a decoupled REST API; WebSocket channel for real-time stock updates and chat; JWT authentication with three permission tiers (operations, sales, administration); MySQL relational model that isolates entities while allowing a consolidated view.
+- **Interface.** Custom design system and reusable React component library; real-time dashboards with consolidated and per-entity views; permission-aware navigation; high-density UI designed for non-technical warehouse and sales operators.
+- **Impact.** Full stock traceability across entities · 60% faster inventory counts · pricing under 30 seconds · one paid communication tool removed from the cost base · **100% adoption by the operations team**.
+- **Ownership.** Specified, architected, built and shipped solo — no external team, no outsourcing.
+
+*Full case study: [benjaminmaciel.com.br/erp](https://benjaminmaciel.com.br/erp)*
+
+### AI Digital Workforce — *In development*
+**AI Agents · Process Automation · Internal Systems Integration** · 2026
+
+- **Problem.** Administrative work across departments is dominated by repetitive, rule-based tasks that consume staff time without requiring judgment.
+- **Approach.** Designing a digital workforce of AI agents to take over these tasks, integrated with the internal systems already in production so automation acts on live company data rather than a parallel tool.
+- **Goal.** Reduce manual effort, increase operational efficiency, and let the operations team spend its time on work that requires human decision-making.
+- **Role.** Leading the initiative end to end — identifying which processes are automatable, defining scope and architecture, and implementing it.
+
+### Full-Stack Web Application — *Graduation project · delivered solo · top grade*
+**JavaScript · HTML5 · CSS3 · Node.js · MySQL · REST API** · 2025
+
+Built a complete web application end to end — interface, back end and relational data model — and defended it as the final project of the technical degree. Delivered without a team; graded top of the class.
+
+---
+
+## EDUCATION
+
+**B.Sc. in Computer Science** — University of the People · Pasadena, California, United States
+2026 – Present *(online)*
+
+**B.Sc. in Information Systems** — UNASP · Engenheiro Coelho, São Paulo, Brazil
+2026 – 2029 *(expected)*
+
+**Technical Diploma in Information Technology** — UNASP · Engenheiro Coelho, São Paulo, Brazil
+2023 – 2025 *(completed)* · Final project: full-stack web application delivered solo — top grade.
+
+---
+
+## LANGUAGES
+
+**Portuguese** — Native · **English** — Professional working proficiency (B2) · **Spanish** — Intermediate (B1)
+
+---
+
+<!--
+=============================================================================
+DIFERENÇAS ENTRE O CURRÍCULO A E O B — mesmos fatos, ênfase diferente
+
+                        A (Front-End)              B (Business Systems)
+Título                  Front-End Developer        Business Systems Developer
+1º Achievement          Own the front end          Build-versus-buy decision
+Skills, 1ª categoria    Front-End                  Business Systems
+Portfólio pessoal       Incluído como projeto      Removido (irrelevante aqui)
+Link do case study      —                          Incluído
+Cargo Director          2º bloco de destaque       1º bloco de destaque
+Load time 40%           Achievement                Dentro da experiência
+
+NENHUM FATO MUDA. Nenhuma métrica muda. Nenhum cargo muda.
+Se um recrutador comparar os dois, não encontra contradição — só foco diferente.
+
+⚠️ VERIFICAR ANTES DE ENVIAR: data de início da UoPeople, mês da promoção,
+telefone com código de país.
+=============================================================================
+-->

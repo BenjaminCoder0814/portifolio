@@ -1,0 +1,178 @@
+BENJAMIN MACIEL
+Front-End Developer | React.js | TypeScript | JavaScript | Next.js | Web Applications and Internal Business Systems
+
+Email: benjaminmaciel0814@gmail.com
+Phone: [add your number with country code, e.g. +55 19 XXXXX-XXXX]
+LinkedIn: linkedin.com/in/benjamin-maciel-1ba2563a2
+GitHub: github.com/BenjaminCoder0814
+Portfolio: benjaminmaciel.com.br
+Location: Sao Paulo, Brazil (UTC-3)
+Work Authorization: Open to relocation and international remote. Requires visa sponsorship.
+
+
+SUMMARY
+
+Front-End Developer who builds business software that improves operational efficiency. Three
+years of practical experience with React.js, TypeScript, JavaScript, HTML5 and CSS3, turning
+manual operational processes into production software used daily by entire teams. Built
+and shipped the front end of an internal ERP unifying three legal entities, integrating REST APIs
+and real-time WebSocket data, and reduced interface load time by 40%. Now Director of
+Information Technology at the same company, remaining hands-on in the codebase while leading
+software architecture, digital transformation and an AI digital workforce initiative. Currently
+pursuing a B.Sc. in Computer Science at University of the People (United States).
+
+
+SELECTED ACHIEVEMENTS
+
+- Own the front end of the system the company runs on: a React.js and TypeScript single-page
+  application in production, used daily by 100% of the operations team across three legal
+  entities, specified, built and shipped solo.
+- Made the build-versus-buy call, then executed it: chose to build the ERP in-house over
+  licensing an off-the-shelf platform. It now covers inventory, pricing and internal
+  communication with no vendor dependency.
+- Turned the company slowest manual process into its fastest: product pricing went from 10-15
+  minutes of manual calculation to under 30 seconds, through an interface with automated
+  cubic-weight logic.
+- Built the component layer the platform runs on: a design system and reusable React component
+  library that every module ships against, keeping the user interface consistent as the platform
+  grows.
+- Leading the company AI automation initiative: designing AI agents that take over repetitive
+  administrative work, integrated with the internal systems already in production rather than
+  running as a parallel tool.
+
+
+CORE SKILLS
+
+Front-End: React.js, React, Next.js, JavaScript (ES6+), TypeScript, HTML5, CSS3,
+   Tailwind CSS, Framer Motion
+
+Web Development: Responsive Web Design, Responsive Design, Web Performance Optimization,
+   Web Performance, Component-Based Architecture, UI Development, User Interface,
+   Single-Page Applications (SPA), Server-Side Rendering (SSR), Cross-Browser Compatibility,
+   Design Systems, Reusable Component Libraries, State Management, Internationalization
+
+APIs and Data: REST API Integration, REST APIs, API Integration, WebSocket, Real-Time Data,
+   JWT Authentication, Node.js, Express.js, MySQL
+
+Software and Systems: Software Architecture, Internal Systems, Business Applications,
+   Requirements Gathering, Technical Leadership, Technology Decision-Making
+
+AI and Automation: AI Agents, AI-Driven Process Automation, Workflow Automation,
+   Process Automation, Digital Transformation
+
+Tools: Git, GitHub, Version Control, Visual Studio Code, Figma, Netlify, Jest,
+   React Testing Library
+
+Practices: Clean Code, Debugging, Problem Solving, Code Review
+
+
+PROFESSIONAL EXPERIENCE
+
+Zenith Lacres - Sao Paulo, Brazil
+Industrial sealing manufacturer, three legal entities, 22 years in market
+
+Director of Information Technology
+Hands-on Software Development | Front-End Architecture | Internal Systems | AI Automation
+2025 - Present
+(Promoted from Front-End Developer)
+
+- Write production code weekly: React.js, TypeScript and the REST API integration layer of the
+  internal platform, while leading technology strategy across three legal entities.
+- Define the software architecture and front-end technology standards used across all internal
+  applications: component-based architecture, shared design system, and REST API integration
+  patterns.
+- Lead an AI digital workforce initiative, designing AI agents that automate repetitive
+  administrative tasks to reduce manual work and increase operational efficiency.
+- Direct the development of internal systems that replace manual processes end to end, from
+  requirements gathering with business stakeholders to shipped, adopted software.
+- Own technology decision-making for the company digital transformation, including
+  build-versus-buy calls such as developing the internal ERP in-house rather than licensing an
+  off-the-shelf platform.
+
+Front-End Developer
+2023 - 2025
+
+- Developed the front end of an internal ERP with React.js and TypeScript: a single-page
+  application with real-time dashboards, permission-aware navigation and REST API integration,
+  now used daily by 100% of the operations team.
+- Implemented real-time internal chat over WebSocket, eliminating a recurring third-party
+  messaging subscription.
+- Built and maintained a custom design system and reusable React component library,
+  standardizing the user interface across every module of the platform.
+- Developed responsive, cross-browser web interfaces from Figma designs, ensuring consistent
+  behavior across desktop and mobile.
+- Built the dynamic pricing interface with automated cubic-weight calculation and the real-time
+  inventory dashboards consuming REST APIs.
+- Optimized component rendering and asset delivery across the company web interfaces.
+- Collaborated with business teams on digital initiatives, launching the company across 5 online
+  marketplaces and growing digital revenue from R$0 to R$10,000 in 3 months.
+
+
+SELECTED PROJECTS
+
+Enterprise Operations Platform (Internal ERP) - In active production
+React.js, TypeScript, JavaScript, HTML5, CSS3, REST API, WebSocket, Node.js, MySQL, JWT
+2025 - 2026
+Problem: three legal entities sharing one warehouse tracked stock in disconnected spreadsheets,
+producing untraceable movements, conflicting transfers, and 10-15 minutes of manual work per
+price quote.
+Architecture: Single-Page Application with a decoupled REST API back end, WebSocket channel for
+real-time updates and chat, JWT authentication with three permission tiers, and a MySQL relational
+model that isolates entities while allowing a consolidated view.
+Front-end work: built the entire interface layer including a custom design system, a reusable React
+component library, real-time dashboards, permission-aware navigation, and a high-density user
+interface designed for non-technical warehouse and sales operators.
+Impact: full stock traceability across entities, 60% faster inventory counts, pricing under 30 seconds,
+one paid communication tool removed, 100% adoption by the operations team.
+Differentiator: specified, architected and shipped solo. Built in-house instead of buying an
+off-the-shelf ERP, giving full process fit and no vendor lock-in.
+
+AI Digital Workforce - In development
+AI Agents, Process Automation, Internal Systems Integration
+2026
+Problem: administrative work across departments is dominated by repetitive, rule-based tasks that
+consume staff time without requiring judgment.
+Approach: designing a digital workforce of AI agents to take over these tasks, integrated with the
+internal systems already in production so that automation acts on live company data rather than a
+parallel tool.
+Goal: reduce manual effort, increase operational efficiency, and let the operations team spend its
+time on work that requires human decision-making.
+Role: leading the initiative end to end, identifying which processes are automatable, defining scope
+and architecture, and implementing it.
+
+Full-Stack Web Application - Graduation project, delivered solo, top grade
+JavaScript, HTML5, CSS3, Node.js, MySQL, REST API
+2025
+Owned 100% of the interface including layouts, component structure, navigation flow and
+responsive behavior, integrated with a Node.js and MySQL back end built in the same project.
+Delivered without a team across design, front end and back end. Graded top of the class.
+
+Personal Portfolio - benjaminmaciel.com.br - Live in production
+Next.js, React.js, TypeScript, Tailwind CSS, Framer Motion, HTML5, CSS3
+2026
+Next.js App Router with statically generated, internationalized routes in English, Portuguese and
+Spanish, a design system built from scratch, and custom interactive components. Live production
+deployment.
+
+
+EDUCATION
+
+B.Sc. in Computer Science (in progress)
+University of the People - Pasadena, California, United States
+2026 - Present (online)
+
+B.Sc. in Information Systems (in progress)
+UNASP - Engenheiro Coelho, Sao Paulo, Brazil
+2026 - 2029 (expected)
+
+Technical Diploma in Information Technology
+UNASP - Engenheiro Coelho, Sao Paulo, Brazil
+2023 - 2025 (completed)
+Final project: full-stack web application delivered solo, top grade.
+
+
+LANGUAGES
+
+Portuguese: Native
+English: Professional working proficiency (CEFR B2)
+Spanish: Intermediate (CEFR B1)
