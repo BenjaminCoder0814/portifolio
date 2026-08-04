@@ -72,14 +72,42 @@ export default function BootLoader() {
     };
   }, []);
 
-  // Show lines progressively
+  // Show lines progressively.
+  //
+  // This used to hold the page for 3.5s on every visit. For a portfolio whose
+  // job is to get a recruiter to the case study, that was 3.5s of the ~7s of
+  // attention they arrive with, spent on an animation. Now: once per session,
+  // ~1.1s, skippable by any input, and skipped entirely for reduced-motion
+  // users and anyone arriving on a deep link.
   useEffect(() => {
-    const delays = [0, 300, 600, 900, 1100, 1300, 1550, 1750, 2000, 2200, 2350, 2550];
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const seen = sessionStorage.getItem("boot-seen");
+    const deepLink = window.location.pathname.replace(/\/(pt|en|es)$/, "") !== "";
+
+    if (reduced || seen || deepLink) {
+      setHidden(true);
+      return;
+    }
+    sessionStorage.setItem("boot-seen", "1");
+
+    const delays = [0, 90, 180, 270, 350, 420, 490, 560, 630, 700, 780, 860];
     const timers = delays.map((d, i) =>
       setTimeout(() => setVisibleCount((n) => Math.max(n, i + 1)), d)
     );
-    const dismiss = setTimeout(() => setHidden(true), 3500);
-    return () => { timers.forEach(clearTimeout); clearTimeout(dismiss); };
+    const dismiss = setTimeout(() => setHidden(true), 1100);
+
+    const skip = () => setHidden(true);
+    window.addEventListener("pointerdown", skip);
+    window.addEventListener("keydown", skip);
+    window.addEventListener("wheel", skip, { passive: true });
+
+    return () => {
+      timers.forEach(clearTimeout);
+      clearTimeout(dismiss);
+      window.removeEventListener("pointerdown", skip);
+      window.removeEventListener("keydown", skip);
+      window.removeEventListener("wheel", skip);
+    };
   }, []);
 
   if (hidden) return null;

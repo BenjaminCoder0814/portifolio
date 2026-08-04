@@ -15,7 +15,7 @@ export default function PdfViewerModal({ isOpen, onClose }: PdfViewerModalProps)
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
 
-  const resumeUrl = `/resume/short?lang=${lang}`;
+  const resumeUrl = `/${lang}/curriculo`;
   const downloadUrl = `/resume/benjamin_resume_short_${lang}.pdf`;
   const fileName = `benjamin_maciel_resume_${lang}.pdf`;
 

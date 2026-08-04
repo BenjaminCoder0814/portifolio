@@ -23,31 +23,33 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://benjaminmaciel.dev"),
+  metadataBase: new URL("https://benjaminmaciel.com.br"),
   title: {
-    default: `${personal.name} — Developer & System Architect`,
+    default: `${personal.name} — Front-End Developer · React.js · TypeScript`,
     template: `%s | ${personal.name}`,
   },
   description:
-    "Portfolio de Benjamin Maciel — Full Stack Developer, System Architect e Business Transformer. 18 anos. São Paulo–SP. 3 anos na Zenith Lacres.",
-  keywords: [
+    "Front-End Developer building the internal business systems companies run on. React.js, TypeScript, an internal ERP in production, and AI-driven process automation. São Paulo, Brazil.",
+    keywords: [
     "Benjamin Maciel",
-    "portfolio",
-    "developer",
-    "full stack",
-    "React",
+    "Front-End Developer",
+    "React Developer",
+    "React.js",
+    "TypeScript",
     "Next.js",
-    "Node.js",
-    "system architect",
+    "Internal Systems Developer",
+    "Business Software Engineer",
+    "ERP",
+    "AI Automation",
   ],
   authors: [{ name: personal.name, url: personal.github }],
   creator: personal.name,
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://benjaminmaciel.dev",
-    title: `${personal.name} — Developer & System Architect`,
-    description: "Full Stack Developer construindo sistemas escaláveis com visão de produto.",
+    url: "https://benjaminmaciel.com.br",
+    title: `${personal.name} — Front-End Developer · React.js · TypeScript`,
+    description: "He built and runs the system his company operates on. React.js · TypeScript · Internal business systems · AI automation.",
     siteName: `${personal.name} Portfolio`,
     images: [
       {
@@ -60,8 +62,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${personal.name} — Developer & System Architect`,
-    description: "Full Stack Developer construindo sistemas escaláveis com visão de produto.",
+    title: `${personal.name} — Front-End Developer · React.js · TypeScript`,
+    description:
+      "He built and runs the system his company operates on. React.js · TypeScript · Internal business systems · AI automation.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -86,6 +89,41 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#0a0a0a] text-[#f0f6fc]`}
       >
+        {/* Structured data: lets a recruiter's Google result show role, employer
+            and profile links instead of a bare title and URL. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: personal.name,
+              url: "https://benjaminmaciel.com.br",
+              image: "https://benjaminmaciel.com.br/og-image.png",
+              jobTitle: "Front-End Developer",
+              email: `mailto:${personal.email}`,
+              telephone: "+55 19 97100-3115",
+              worksFor: { "@type": "Organization", name: "Zenith Lacres" },
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "São Paulo",
+                addressRegion: "SP",
+                addressCountry: "BR",
+              },
+              alumniOf: [
+                { "@type": "CollegeOrUniversity", name: "University of the People" },
+                { "@type": "CollegeOrUniversity", name: "UNASP" },
+              ],
+              knowsLanguage: ["pt-BR", "en", "es"],
+              knowsAbout: [
+                "React.js", "TypeScript", "JavaScript", "Next.js",
+                "Front-End Development", "Internal Business Systems",
+                "REST APIs", "WebSocket", "AI Automation",
+              ],
+              sameAs: [personal.github, personal.linkedin],
+            }),
+          }}
+        />
         {children}
       </body>
     </html>

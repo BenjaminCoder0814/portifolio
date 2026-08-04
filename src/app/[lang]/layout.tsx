@@ -6,21 +6,21 @@ const LANG_SEO: Record<Lang, { title: string; description: string; locale: strin
   pt: {
     title: `${personal.name} — Desenvolvedor Front-End & Arquiteto de Sistemas`,
     description:
-      "Portfólio de Benjamin Maciel — Desenvolvedor Front-End com 3 anos de experiência real. 18 anos, São Paulo–SP. Zenith Lacres.",
+      "Desenvolvedor Front-End que constrói os sistemas internos com que as empresas operam. React.js, TypeScript, ERP interno em produção e automação com IA. São Paulo, Brasil.",
     locale: "pt_BR",
     ogLocale: "pt_BR",
   },
   en: {
     title: `${personal.name} — Front-End Developer & System Architect`,
     description:
-      "Portfolio of Benjamin Maciel — Front-End Developer with 3 years of real business experience. 18 y/o, São Paulo–SP, Brazil.",
+      "Front-End Developer building the internal business systems companies run on. React.js, TypeScript, an internal ERP in production, and AI-driven automation. São Paulo, Brazil.",
     locale: "en_US",
     ogLocale: "en_US",
   },
   es: {
     title: `${personal.name} — Desarrollador Front-End & Arquitecto de Sistemas`,
     description:
-      "Portfolio de Benjamin Maciel — Desarrollador Front-End con 3 años de experiencia empresarial real. 18 años, São Paulo–SP, Brasil.",
+      "Desarrollador Front-End que construye los sistemas internos con los que operan las empresas. React.js, TypeScript, ERP interno en producción y automatización con IA. São Paulo, Brasil.",
     locale: "es_ES",
     ogLocale: "es_ES",
   },
@@ -44,17 +44,17 @@ export async function generateMetadata({
     title: seo.title,
     description: seo.description,
     alternates: {
-      canonical: `https://benjaminmaciel.dev/${lang}`,
+      canonical: `https://benjaminmaciel.com.br/${lang}`,
       languages: {
-        "pt-BR": "https://benjaminmaciel.dev/pt",
-        "en-US": "https://benjaminmaciel.dev/en",
-        "es-ES": "https://benjaminmaciel.dev/es",
+        "pt-BR": "https://benjaminmaciel.com.br/pt",
+        "en-US": "https://benjaminmaciel.com.br/en",
+        "es-ES": "https://benjaminmaciel.com.br/es",
       },
     },
     openGraph: {
       type: "website",
       locale: seo.ogLocale,
-      url: `https://benjaminmaciel.dev/${lang}`,
+      url: `https://benjaminmaciel.com.br/${lang}`,
       title: seo.title,
       description: seo.description,
       siteName: `${personal.name} Portfolio`,

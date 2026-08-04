@@ -41,10 +41,11 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL(`/${lang}${pathname}`, req.url));
   }
 
-  // /resume → /pt/resume (etc.)
+  // /resume/* was a second, divergent copy of the resume. Send it to the one
+  // that is maintained rather than 404ing links already in the wild.
   if (pathname === '/resume' || pathname.startsWith('/resume/')) {
     const lang = detectLang(req);
-    return NextResponse.redirect(new URL(`/${lang}${pathname}`, req.url));
+    return NextResponse.redirect(new URL(`/${lang}/curriculo`, req.url));
   }
 
   return NextResponse.next();

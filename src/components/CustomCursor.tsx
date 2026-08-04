@@ -13,6 +13,16 @@ export default function CustomCursor() {
   const [hover, setHover] = useState(false);
 
   useEffect(() => {
+    // Replacing the native cursor is a liability on anything without a precise
+    // pointer, and for anyone who has asked the OS for less motion. Bail before
+    // attaching listeners rather than rendering an invisible follower.
+    if (
+      !window.matchMedia("(pointer: fine)").matches ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
     const onMove = (e: MouseEvent) => {
       mouseX.current = e.clientX;
       mouseY.current = e.clientY;

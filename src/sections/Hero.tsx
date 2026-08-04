@@ -13,10 +13,16 @@ export default function Hero() {
   const animRef   = useRef<number>(0);
   const role      = useTypingEffect(t.hero.roles);
 
-  // Code Rain canvas
+  // Code Rain canvas.
+  //
+  // Previously ran a requestAnimationFrame loop for the entire session, even
+  // once the hero was scrolled far offscreen — burning CPU and battery while
+  // the visitor read the case study. Now it pauses when out of view and never
+  // starts for reduced-motion users.
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -72,11 +78,26 @@ export default function Hero() {
       });
     };
 
+    let running = false;
+    let inView = false;
+
     const loop = () => { draw(); animRef.current = requestAnimationFrame(loop); };
-    loop();
+    const stop = () => { running = false; cancelAnimationFrame(animRef.current); };
+    const sync = () => {
+      const should = inView && !document.hidden;
+      if (should && !running) { running = true; loop(); }
+      else if (!should && running) stop();
+    };
+
+    // Pause while offscreen, and while the tab is in the background.
+    const io = new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; sync(); }, { threshold: 0 });
+    io.observe(canvas);
+    document.addEventListener("visibilitychange", sync);
 
     return () => {
-      cancelAnimationFrame(animRef.current);
+      stop();
+      io.disconnect();
+      document.removeEventListener("visibilitychange", sync);
       window.removeEventListener("resize", resize);
     };
   }, []);
