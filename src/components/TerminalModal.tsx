@@ -52,7 +52,7 @@ export default function TerminalModal() {
         { text: "  Welcome. Let\u2019s build something scalable.", type: "output" },
         { text: "", type: "blank" },
         { text: "  📧  maciel@zenithlacres.com.br", type: "output" },
-        { text: "  🔗  linkedin.com/in/benjaminmaciel", type: "output" },
+        { text: "  🔗  linkedin.com/in/benjamin-maciel-dev", type: "output" },
         { text: "", type: "blank" },
         { text: "  Status: [AVAILABLE] Open to opportunities", type: "output" },
         { text: "", type: "blank" },
@@ -76,7 +76,7 @@ export default function TerminalModal() {
       return;
     }
     if (trimmed === "linkedin") {
-      window.open("https://linkedin.com/in/benjaminmaciel", "_blank");
+      window.open("https://www.linkedin.com/in/benjamin-maciel-dev", "_blank");
       setLines([...newLines, { text: "  ✓ Opening LinkedIn...", type: "output" }]);
       scrollBottom();
       return;

@@ -243,7 +243,7 @@ export default function Curriculo() {
         <div className="pdf-page">
           <div className="pdf-header">
             <div className="pdf-header-left">
-              <h1 className="pdf-name">Benjamin Maciel</h1>
+              <p className="pdf-name">Benjamin Maciel</p>
               <p className="pdf-role">{c.title}</p>
               <p className="pdf-loc">{c.location}</p>
             </div>
@@ -357,7 +357,13 @@ export default function Curriculo() {
         </div>
       </div>
 
-      <style>{`
+      {/* dangerouslySetInnerHTML, not <style>{`...`}</style>: as children, React
+          escapes the CSS's single quotes to &#x27; on the server, and a <style>
+          element is raw text — the parser never decodes entities. That shipped
+          `font-family: &#x27;Segoe UI&#x27;` (invalid CSS) and made the server
+          markup differ from the client's by exactly those 20 characters, which
+          is the hydration mismatch React reported on this page. */}
+      <style dangerouslySetInnerHTML={{ __html: `
         .pdf-view { display: none; }
 
         @media print {
@@ -464,7 +470,7 @@ export default function Curriculo() {
           .pdf-lang-n { font-weight: 600; color: #e2e8f0; font-size: 8pt; }
           .pdf-lang-l { color: #94a3b8; font-size: 7pt; }
         }
-      `}</style>
+      ` }} />
     </>
   );
 }

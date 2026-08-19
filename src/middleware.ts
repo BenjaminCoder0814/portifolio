@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export const config = {
   matcher: [
     // Match root and only the exact lang slugs — avoid matching static assets
-    '/((?!_next|favicon|fonts|resume/benjamin|og-image|manifest|apple-icon|sitemap).*)',
+    '/((?!_next|favicon|fonts|resume/benjamin|og-image|icon-|manifest|apple-icon|robots|sitemap).*)',
   ],
 };
 

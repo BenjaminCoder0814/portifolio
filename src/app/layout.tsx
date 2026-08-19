@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { personal } from "@/data";
+import { SITE_URL, siteUrl } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://benjaminmaciel.com.br"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: `${personal.name} — Front-End Developer · React.js · TypeScript`,
     template: `%s | ${personal.name}`,
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://benjaminmaciel.com.br",
+    url: SITE_URL,
     title: `${personal.name} — Front-End Developer · React.js · TypeScript`,
     description: "He built and runs the system his company operates on. React.js · TypeScript · Internal business systems · AI automation.",
     siteName: `${personal.name} Portfolio`,
@@ -98,8 +99,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: personal.name,
-              url: "https://benjaminmaciel.com.br",
-              image: "https://benjaminmaciel.com.br/og-image.png",
+              url: SITE_URL,
+              image: siteUrl("/og-image.png"),
               jobTitle: "Front-End Developer",
               email: `mailto:${personal.email}`,
               telephone: "+55 19 97100-3115",

@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/lib/site";
+
 /**
  * Resume content — single source for the screen view and the print/PDF view.
  * Mirrors resume/MASTER.md. When one changes, change the other.
@@ -9,12 +11,12 @@ export const contact = {
   email: "maciel@zenithlacres.com.br",
   phone: "+55 19 97100-3115",
   phoneHref: "tel:+5519971003115",
-  linkedin: "linkedin.com/in/benjamin-maciel",
-  linkedinHref: "https://linkedin.com/in/benjamin-maciel-1ba2563a2",
+  linkedin: "linkedin.com/in/benjamin-maciel-dev",
+  linkedinHref: "https://www.linkedin.com/in/benjamin-maciel-dev",
   github: "github.com/BenjaminCoder0814",
   githubHref: "https://github.com/BenjaminCoder0814",
-  site: "benjaminmaciel.com.br",
-  siteHref: "https://benjaminmaciel.com.br",
+  site: SITE_URL.replace(/^https?:\/\//, ""),
+  siteHref: SITE_URL,
 };
 
 export const resume = {
@@ -43,7 +45,7 @@ export const resume = {
       "Tomei a decisão de construir em vez de contratar, e executei: optei por desenvolver o ERP internamente em vez de licenciar uma plataforma de mercado. Hoje cobre estoque, precificação e comunicação interna, sem dependência de fornecedor.",
       "Transformei o processo manual mais lento da empresa no mais rápido: a precificação passou de 10–15 minutos de cálculo manual para menos de 30 segundos.",
       "Construí a camada de componentes sobre a qual a plataforma roda — design system e biblioteca React reutilizável que todos os módulos consomem.",
-      "Lidero a iniciativa de automação com IA da empresa: agentes que assumem trabalho administrativo repetitivo, integrados aos sistemas já em produção.",
+      "Lidero o Cortex, a iniciativa de IA da empresa: uma camada sobre os dados do ERP com integração ativa, sincronização incremental e 226 mil registros — base para agentes que assumem trabalho administrativo repetitivo.",
     ],
 
     sSkills: "Competências",
@@ -105,12 +107,13 @@ export const resume = {
         ],
       },
       {
-        name: "AI Digital Workforce",
-        year: "2026 · Em desenvolvimento",
-        stack: "Agentes de IA · Automação de processos · Integração com sistemas internos",
+        name: "Cortex — camada de IA sobre o ERP",
+        year: "2026 · Plataforma em homologação",
+        stack: "Anthropic Claude API · Integração com ERP de terceiro · Sincronização incremental · Multiempresa",
         bullets: [
-          "Agentes que assumem tarefas administrativas repetitivas, integrados aos sistemas já em produção para atuar sobre dados reais em vez de uma cópia paralela.",
-          "Liderança de ponta a ponta: identificação dos processos automatizáveis, definição de escopo e arquitetura, e implementação.",
+          "Camada de dados sobre o ERP comercial da empresa (Deltaze), sem acesso privilegiado ao schema: 9 consultas, 226.296 registros, sincronização incremental por chave natural e cobertura multiempresa.",
+          "Raciocínio sobre a API Claude da Anthropic, mantida independente da camada de dados para que o modelo possa ser trocado sem tocar na integração.",
+          "Plataforma em homologação; agentes (recebíveis, comercial, compras, executivo) em desenvolvimento, sob a regra de que nada crítico executa sem aprovação humana.",
         ],
       },
       {
@@ -122,7 +125,7 @@ export const resume = {
         ],
       },
       {
-        name: "Portfólio pessoal — benjaminmaciel.com.br",
+        name: "Portfólio pessoal",
         year: "2026 · No ar",
         stack: "Next.js · React.js · TypeScript · Tailwind CSS · Framer Motion",
         bullets: [
@@ -171,7 +174,7 @@ export const resume = {
       "Made the build-versus-buy call, then executed it: chose to build the ERP in-house over licensing an off-the-shelf platform. It now covers inventory, pricing and internal communication with no vendor dependency.",
       "Turned the company's slowest manual process into its fastest: product pricing went from 10–15 minutes of manual calculation to under 30 seconds.",
       "Built the component layer the platform runs on — a design system and reusable React component library that every module ships against.",
-      "Leading the company's AI automation initiative: designing AI agents that take over repetitive administrative work, integrated with the internal systems already in production.",
+      "Leading Cortex, the company's AI initiative: a layer over the ERP with a live integration, incremental synchronisation and 226,296 records imported — the foundation for agents that take over repetitive administrative work.",
     ],
 
     sSkills: "Core Expertise",
@@ -233,12 +236,13 @@ export const resume = {
         ],
       },
       {
-        name: "AI Digital Workforce",
-        year: "2026 · In development",
-        stack: "AI Agents · Process Automation · Internal Systems Integration",
+        name: "Cortex — AI layer over the ERP",
+        year: "2026 · Platform in homologation",
+        stack: "Anthropic Claude API · Third-party ERP integration · Incremental sync · Multi-company",
         bullets: [
-          "Agents taking over repetitive administrative tasks, integrated with the systems already in production so automation acts on live data rather than a parallel copy.",
-          "Leading the initiative end to end: identifying automatable processes, defining scope and architecture, and implementing it.",
+          "Data layer over the company's commercial ERP (Deltaze) with no privileged schema access: 9 queries, 226,296 records, incremental synchronisation keyed on natural keys, multi-company coverage.",
+          "Reasoning on Anthropic's Claude API, kept independent of the data layer so the model can be swapped without touching the ERP integration.",
+          "Platform in homologation; agents (receivables, commercial, purchasing, executive) in development, under the rule that nothing critical executes without human approval.",
         ],
       },
       {
@@ -250,7 +254,7 @@ export const resume = {
         ],
       },
       {
-        name: "Personal portfolio — benjaminmaciel.com.br",
+        name: "Personal portfolio",
         year: "2026 · Live",
         stack: "Next.js · React.js · TypeScript · Tailwind CSS · Framer Motion",
         bullets: [
@@ -299,7 +303,7 @@ export const resume = {
       "Tomé la decisión de construir en lugar de comprar, y la ejecuté: opté por desarrollar el ERP internamente en vez de licenciar una plataforma de mercado. Hoy cubre inventario, precios y comunicación interna, sin dependencia de proveedor.",
       "Convertí el proceso manual más lento de la empresa en el más rápido: la cotización pasó de 10–15 minutos de cálculo manual a menos de 30 segundos.",
       "Construí la capa de componentes sobre la que corre la plataforma: design system y librería React reutilizable que todos los módulos consumen.",
-      "Lidero la iniciativa de automatización con IA de la empresa: agentes que asumen trabajo administrativo repetitivo, integrados con los sistemas ya en producción.",
+      "Lidero Cortex, la iniciativa de IA de la empresa: una capa sobre los datos del ERP con integración activa, sincronización incremental y 226.296 registros — base para agentes que asumen trabajo administrativo repetitivo.",
     ],
 
     sSkills: "Competencias",
@@ -361,12 +365,13 @@ export const resume = {
         ],
       },
       {
-        name: "AI Digital Workforce",
-        year: "2026 · En desarrollo",
-        stack: "Agentes de IA · Automatización de procesos · Integración con sistemas internos",
+        name: "Cortex — capa de IA sobre el ERP",
+        year: "2026 · Plataforma en homologación",
+        stack: "Anthropic Claude API · Integración con ERP de terceros · Sincronización incremental · Multiempresa",
         bullets: [
-          "Agentes que asumen tareas administrativas repetitivas, integrados con los sistemas ya en producción para actuar sobre datos reales en lugar de una copia paralela.",
-          "Liderazgo de punta a punta: identificación de procesos automatizables, definición de alcance y arquitectura, e implementación.",
+          "Capa de datos sobre el ERP comercial de la empresa (Deltaze), sin acceso privilegiado al esquema: 9 consultas, 226.296 registros, sincronización incremental por clave natural y cobertura multiempresa.",
+          "Razonamiento sobre la API Claude de Anthropic, mantenida independiente de la capa de datos para poder cambiar el modelo sin tocar la integración.",
+          "Plataforma en homologación; agentes (cobranzas, comercial, compras, ejecutivo) en desarrollo, bajo la regla de que nada crítico se ejecuta sin aprobación humana.",
         ],
       },
       {
@@ -378,7 +383,7 @@ export const resume = {
         ],
       },
       {
-        name: "Portafolio personal — benjaminmaciel.com.br",
+        name: "Portafolio personal",
         year: "2026 · En línea",
         stack: "Next.js · React.js · TypeScript · Tailwind CSS · Framer Motion",
         bullets: [

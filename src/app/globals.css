@@ -180,3 +180,24 @@ body {
 @layer utilities {
   .text-balance { text-wrap: balance; }
 }
+
+/* ─── Reduced motion ─────────────────────────────
+   The page leans on scroll reveals, a boot sequence and looping accents.
+   For visitors who asked the OS for less motion, cut the CSS animations and
+   collapse transitions. Framer Motion is handled separately by the
+   <MotionConfig reducedMotion="user"> wrapper in lib/i18n.tsx.
+
+   Every keyframe here ends at the visible state (fadeInUp: opacity 0 → 1),
+   so removing the animation leaves content shown, never stuck hidden. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html { scroll-behavior: auto !important; }
+}

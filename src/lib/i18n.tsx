@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { MotionConfig } from 'framer-motion';
 import pt from '@/i18n/pt.json';
 import en from '@/i18n/en.json';
 import es from '@/i18n/es.json';
@@ -57,7 +58,10 @@ export function I18nProvider({ children, initialLang }: I18nProviderProps) {
 
   return (
     <I18nContext.Provider value={{ lang, setLang, t: dictionaries[lang] }}>
-      {children}
+      {/* reducedMotion="user" drops the transform/scroll animations for visitors
+          who asked the OS for less motion, while keeping opacity fades — so the
+          content still appears instead of staying stuck at its hidden variant. */}
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </I18nContext.Provider>
   );
 }

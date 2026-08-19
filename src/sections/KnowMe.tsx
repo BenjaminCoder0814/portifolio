@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
@@ -60,7 +60,7 @@ export default function KnowMe() {
             <p className="text-[#c9d1d9] text-xl font-medium italic leading-relaxed mb-4 relative z-[1]">
               {personal.philosophy}
             </p>
-            <cite className="font-mono text-sm text-[#4d5866] not-italic">â€” {personal.firstName} {personal.lastName}</cite>
+            <cite className="font-mono text-sm text-[#4d5866] not-italic">— {personal.firstName} {personal.lastName}</cite>
           </motion.blockquote>
         )}
       </div>

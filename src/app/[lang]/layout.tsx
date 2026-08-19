@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { I18nProvider, type Lang } from "@/lib/i18n";
 import { personal } from "@/data";
+import { SITE_URL } from "@/lib/site";
 
 const LANG_SEO: Record<Lang, { title: string; description: string; locale: string; ogLocale: string }> = {
   pt: {
@@ -32,6 +33,15 @@ export async function generateStaticParams() {
   return VALID_LANGS.map((lang) => ({ lang }));
 }
 
+/**
+ * Without this, [lang] swallows every unmatched single-segment path: /jobs,
+ * /about, a mistyped link — all rendered the PT homepage with a 200, so the
+ * 404 page was unreachable and crawlers saw unlimited duplicates of the home
+ * page under different URLs. Restricting to the generated params makes
+ * anything else fall through to not-found.tsx with a real 404.
+ */
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
 }: {
@@ -44,17 +54,20 @@ export async function generateMetadata({
     title: seo.title,
     description: seo.description,
     alternates: {
-      canonical: `https://benjaminmaciel.com.br/${lang}`,
+      canonical: `${SITE_URL}/${lang}`,
       languages: {
-        "pt-BR": "https://benjaminmaciel.com.br/pt",
-        "en-US": "https://benjaminmaciel.com.br/en",
-        "es-ES": "https://benjaminmaciel.com.br/es",
+        "pt-BR": `${SITE_URL}/pt`,
+        "en-US": `${SITE_URL}/en`,
+        "es-ES": `${SITE_URL}/es`,
+        // middleware falls back to PT when Accept-Language matches nothing,
+        // so x-default has to name the page an unmatched visitor actually gets.
+        "x-default": `${SITE_URL}/pt`,
       },
     },
     openGraph: {
       type: "website",
       locale: seo.ogLocale,
-      url: `https://benjaminmaciel.com.br/${lang}`,
+      url: `${SITE_URL}/${lang}`,
       title: seo.title,
       description: seo.description,
       siteName: `${personal.name} Portfolio`,

@@ -237,7 +237,7 @@
   "contact": {
     "title": "Contacto",
     "subtitle": "Hablemos",
-    "cta": "Estoy abierto a pasantías, freelance y proyectos. Envíame un mensaje.",
+    "cta": "Estoy abierto a oportunidades y proyectos. Envíame un mensaje.",
     "ctaSub": "Respondo en menos de 24 horas.",
     "email": "Email",
     "linkedin": "LinkedIn",
@@ -476,9 +476,9 @@
       "desc": "Arquitectura, decisiones, trade-offs y lo que costó cada uno."
     },
     "ai": {
-      "status": "En desarrollo",
-      "title": "AI Digital Workforce",
-      "desc": "Agentes que asumen trabajo administrativo repetitivo, sobre la plataforma ya en producción."
+      "status": "Plataforma en homologación",
+      "title": "Cortex",
+      "desc": "Capa de IA sobre el ERP comercial de la empresa. 226.296 registros con sincronización incremental, razonamiento en la API Claude. Agentes en desarrollo."
     },
     "explore": "Explorar",
     "followAlong": "Seguir"

@@ -163,7 +163,7 @@ export default function Hero() {
 
             {/* Meta */}
             <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-[#4d5866] mb-6 animate-[fadeInUp_0.6s_0.8s_both]">
-              <span className="text-[#8b949e]">Director of IT @ Zenith Lacres</span>
+              <span className="text-[#8b949e]">Front-End Developer @ Zenith Lacres</span>
               <span className="text-[#4d5866]">·</span>
               <span><span className="text-[#4d5866]">{t.hero.location}</span> <span className="text-[#8b949e]">{"// "}{personal.location}</span></span>
               <span className="text-[#4d5866]">·</span>

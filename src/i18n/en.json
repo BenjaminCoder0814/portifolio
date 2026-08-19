@@ -237,7 +237,7 @@
   "contact": {
     "title": "Contact",
     "subtitle": "Let's talk",
-    "cta": "I'm open to internships, freelance work, and projects. Send me a message.",
+    "cta": "I am open to opportunities and projects. Send me a message.",
     "ctaSub": "I reply within 24 hours.",
     "email": "Email",
     "linkedin": "LinkedIn",
@@ -476,9 +476,9 @@
       "desc": "Architecture, decisions, trade-offs and what they cost."
     },
     "ai": {
-      "status": "In development",
-      "title": "AI Digital Workforce",
-      "desc": "Agents taking over repetitive administrative work, built on the platform already in production."
+      "status": "Platform in homologation",
+      "title": "Cortex",
+      "desc": "An AI layer over the company's commercial ERP. 226,296 records under incremental sync, reasoning on the Claude API. Agents in development."
     },
     "explore": "Explore",
     "followAlong": "Follow along"

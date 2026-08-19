@@ -24,7 +24,7 @@ Em uma linha memorável, do jeito que um recrutador repete para um colega:
 
 **LinkedIn** (220 caracteres):
 ```
-Front-End Developer | React.js · TypeScript · Next.js | Building internal business systems & AI-driven automation | Director of IT @ Zenith | CS @ University of the People
+Front-End Developer @ Zenith Lacres | React.js · TypeScript · Next.js | Building internal business systems & AI-driven automation | CS @ University of the People
 ```
 
 **GitHub bio** (160 caracteres):
@@ -63,9 +63,10 @@ It's in production today, used daily by 100% of the operations team. Price quoti
 messaging platform was replaced by an in-house chat.
 
 I'm now Director of Information Technology at the company — and I still write production code
-every week. I'm leading an AI automation initiative: designing AI agents that take over
-repetitive administrative work, integrated with the systems already in production rather than
-running as a parallel tool.
+every week. I'm leading Cortex, our AI initiative: a layer over the commercial ERP the company
+runs on, with 226,296 records under incremental synchronisation and reasoning on Anthropic's
+Claude API. The platform is in homologation; the agents that will take over repetitive
+administrative work are in development.
 
 I'm pursuing a B.Sc. in Computer Science at University of the People (United States) alongside
 a B.Sc. in Information Systems in Brazil.
@@ -123,7 +124,7 @@ Depois: `JavaScript` · `Next.js` · `HTML5` · `CSS3` · `Responsive Web Design
 - [ ] Cargos desejados: `Front-End Developer`, `React Developer`, `Web Developer`, `Front-End Engineer`, `Junior Front-End Developer`
 - [ ] **Localização real (Brasil)** — nunca uma cidade onde você não mora
 - [ ] Perfil em **inglês** como idioma principal
-- [ ] URL personalizada: `linkedin.com/in/benjaminmaciel` — hoje tem sufixo aleatório `-1ba2563a2`, que parece perfil abandonado
+- [x] URL personalizada: `linkedin.com/in/benjamin-maciel-dev` — feito (antes tinha sufixo aleatório `-1ba2563a2`)
 - [ ] Publique 1×/semana algo técnico que você construiu — atividade recente pesa no ranking
 
 > **Sobre "Júnior":** o título que você *publica* nunca leva "Júnior". O que você *busca* deve incluir.
@@ -151,8 +152,9 @@ where I specified, built and shipped the ERP the company's daily operation runs 
 and TypeScript SPA with real-time dashboards, WebSocket updates and role-based access, used
 daily by 100% of the operations team across three legal entities.
 
-Now leading an AI automation initiative: AI agents that take over repetitive administrative
-work, integrated with the systems already in production.
+Now leading Cortex: an AI layer over the company's commercial ERP — 226,296 records under
+incremental synchronisation, reasoning on the Claude API. Platform in homologation, agents
+in development.
 
 ### Stack
 **Front-End** React.js · Next.js · JavaScript (ES6+) · TypeScript · HTML5 · CSS3 · Tailwind CSS
@@ -164,11 +166,11 @@ work, integrated with the systems already in production.
 | Project | Stack | Status |
 |---|---|---|
 | **Inventory Management System** | React · TypeScript · Node · MySQL · WebSocket | In production |
-| **AI Digital Workforce** | AI Agents · Process Automation | In development |
+| **Cortex** | Claude API · ERP integration · Incremental sync | Platform in homologation |
 | **Portfolio** | Next.js · React · TypeScript · Tailwind | [Live](https://benjaminmaciel.com.br) |
 
 📍 Brazil · Open to international remote and relocation · B.Sc. Computer Science @ University of the People
-📧 benjaminmaciel0814@gmail.com · [LinkedIn](https://linkedin.com/in/benjamin-maciel-1ba2563a2)
+📧 maciel@zenithlacres.com.br · [LinkedIn](https://www.linkedin.com/in/benjamin-maciel-dev)
 ```
 
 ### Padrão de README por repositório — o que separa um GitHub júnior de um internacional

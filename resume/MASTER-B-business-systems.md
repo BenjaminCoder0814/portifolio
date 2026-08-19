@@ -1,7 +1,7 @@
 # BENJAMIN MACIEL
 ## Business Systems Developer | React.js · TypeScript · Node.js | Internal Platforms · Process Automation · Applied AI
 
-benjaminmaciel0814@gmail.com · [LinkedIn](https://linkedin.com/in/benjamin-maciel-1ba2563a2) · [GitHub](https://github.com/BenjaminCoder0814) · [benjaminmaciel.com.br](https://benjaminmaciel.com.br)
+maciel@zenithlacres.com.br · [LinkedIn](https://www.linkedin.com/in/benjamin-maciel-dev) · [GitHub](https://github.com/BenjaminCoder0814) · [benjaminmaciel.com.br](https://benjaminmaciel.com.br)
 São Paulo, Brazil (UTC−3) · Open to relocation and international remote · Requires visa sponsorship
 
 > **Quando usar este currículo:** SaaS B2B, ERP, logística, supply chain, manufatura, fintech de
@@ -21,7 +21,7 @@ Software developer who builds the internal systems companies actually run on. Th
 - **Made the build-versus-buy call, then executed it.** Chose to build the ERP in-house over licensing an off-the-shelf platform; it now covers inventory, pricing and internal communication with no vendor dependency.
 - **Own the system the company runs on.** In production and used daily by 100% of the operations team across three legal entities — replaced disconnected spreadsheets that made stock movements untraceable.
 - **Turned the company's slowest manual process into its fastest.** Product pricing went from 10–15 minutes of manual calculation to under 30 seconds, through an interface with automated cubic-weight logic.
-- **Leading the company's AI automation initiative.** Designing AI agents that take over repetitive administrative work, integrated with the internal systems already in production.
+- **Leading Cortex, the company's AI initiative.** Built the data layer over the commercial ERP the company runs on — 226,296 records under incremental synchronisation, multi-company, reasoning on Anthropic's Claude API — as the foundation for agents that take over repetitive administrative work.
 - **Cut inventory counting time by 60%** by developing real-time dashboards that gave operations teams live stock visibility, consolidated and per entity.
 - **Removed a recurring software cost** by replacing a paid third-party messaging platform with an in-house real-time chat over WebSocket, adopted company-wide.
 
@@ -83,13 +83,14 @@ Software developer who builds the internal systems companies actually run on. Th
 
 *Full case study: [benjaminmaciel.com.br/erp](https://benjaminmaciel.com.br/erp)*
 
-### AI Digital Workforce — *In development*
-**AI Agents · Process Automation · Internal Systems Integration** · 2026
+### Cortex — AI layer over ERP data — *Platform in homologation*
+**Anthropic Claude API · Third-party ERP integration · Incremental synchronisation · Multi-company** · 2026
 
-- **Problem.** Administrative work across departments is dominated by repetitive, rule-based tasks that consume staff time without requiring judgment.
-- **Approach.** Designing a digital workforce of AI agents to take over these tasks, integrated with the internal systems already in production so automation acts on live company data rather than a parallel tool.
-- **Goal.** Reduce manual effort, increase operational efficiency, and let the operations team spend its time on work that requires human decision-making.
-- **Role.** Leading the initiative end to end — identifying which processes are automatable, defining scope and architecture, and implementing it.
+- **Problem.** Administrative work across departments — chasing receivables, answering stock questions, preparing quotes — requires no judgment but does require a person navigating the ERP.
+- **Constraint.** The data sits in Deltaze, the commercial ERP the company runs on. No privileged access and no schema to change, so the platform treats it as a read-only source that can change underneath it.
+- **Built.** Data layer with 9 mapped queries, **226,296 records imported**, incremental synchronisation keyed on natural keys, multi-company coverage, pagination, and an explorer for verifying imported state against the source.
+- **Architecture.** Reasoning on Anthropic's Claude API, kept independent of the data layer so the model can be swapped without touching the ERP integration.
+- **Stage.** Platform in homologation. Agents — receivables, commercial, purchasing, executive — in development, under a rule fixed before the first one was written: nothing critical executes without human approval.
 
 ### Full-Stack Web Application — *Graduation project · delivered solo · top grade*
 **JavaScript · HTML5 · CSS3 · Node.js · MySQL · REST API** · 2025

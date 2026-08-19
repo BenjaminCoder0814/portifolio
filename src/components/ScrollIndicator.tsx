@@ -5,13 +5,15 @@ import { useScrollY } from "@/hooks";
 export default function ScrollIndicator() {
   const scrollY = useScrollY();
 
-  // Get total scrollable height
-  if (typeof window === "undefined") return null;
-
+  // Never bail out on `typeof window === "undefined"`: that returned null on the
+  // server and a <div> on the client's first render, which is exactly the
+  // mismatch React reports as "Expected server HTML to contain a matching <div>".
+  // The bar is rendered on both sides instead — useScrollY starts at 0 and only
+  // updates in an effect, so server and first client render both produce 0%.
   const maxScroll =
     typeof document !== "undefined"
       ? document.documentElement.scrollHeight - window.innerHeight
-      : 1;
+      : 0;
 
   const progress = maxScroll > 0 ? (scrollY / maxScroll) * 100 : 0;
 

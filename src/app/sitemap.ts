@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://benjaminmaciel.com.br";
+import { SITE_URL } from "@/lib/site";
+
+const BASE = SITE_URL;
 const LANGS = ["pt", "en", "es"] as const;
 
 /**
