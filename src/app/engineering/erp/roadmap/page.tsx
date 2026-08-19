@@ -92,21 +92,22 @@ export default function Roadmap() {
           />
         </Release>
 
-        <Release version="Future" name="AI Digital Workforce" status="In development" progress={10} tone="purple">
+        <Release version="Adjacent" name="Cortex — AI over ERP data" status="Platform in homologation" progress={35} tone="purple">
           <Prose>
             <p className="text-sm">
-              Agents that take over repetitive, rule-based administrative tasks, integrated with
-              the platform&apos;s existing data rather than running as a separate tool.
+              A separate initiative, not a phase of this one: an AI layer over{" "}
+              <strong>Deltaze</strong>, the commercial ERP the company runs on. 226,296 records
+              under incremental synchronisation, reasoning on the Claude API.
             </p>
             <p className="text-sm">
-              The reasoning: the platform already holds the operational data and already models
-              the processes. Automation reading from a parallel system would drift out of sync;
-              automation built on the source of truth cannot.
+              It sits here on the roadmap because the two systems will eventually meet — but the
+              data it reads is not this platform&apos;s, and pretending otherwise would misstate
+              what was actually built.
             </p>
           </Prose>
           <p className="mt-4">
             <a href="/engineering/ai" className="font-mono text-[12px] font-bold text-[#a78bfa] hover:underline">
-              AI Digital Workforce →
+              Cortex →
             </a>
           </p>
         </Release>

@@ -24,8 +24,8 @@ export const NAV: Group[] = [
     ],
   },
   {
-    label: "AI Digital Workforce",
-    items: [{ label: "Overview", href: "/engineering/ai", status: "draft" }],
+    label: "Cortex — AI over ERP data",
+    items: [{ label: "Overview", href: "/engineering/ai" }],
   },
 ];
 

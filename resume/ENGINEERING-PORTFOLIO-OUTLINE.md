@@ -53,8 +53,12 @@ O núcleo do documento. `CASE-STUDY-ERP.md` já cobre a espinha dorsal; expandir
 | Impact | ✅ escrito | — |
 | What I'd do differently | ⬜ | **Só você pode escrever. É a seção mais lida por engenheiro sênior.** |
 
-### Parte 3 — Case Study: AI Digital Workforce (5–7 páginas)
-Estrutura idêntica. **Bloqueado** — ver a lista de dados no fim deste arquivo.
+### Parte 3 — Case Study: Cortex (5–7 páginas)
+Camada de IA sobre o Deltaze, o ERP comercial da empresa. Estrutura idêntica à do ERP.
+Já escrito em `/engineering/ai`: problema, a restrição de não controlar o ERP, camada de
+dados (9 consultas, 226.296 registros, sincronização incremental por chave natural,
+multiempresa), camada de modelo na API Claude, o que **não** está construído, e a regra de
+aprovação humana. Falta: diagrama da arquitetura de extração e impacto medido.
 
 ### Parte 4 — Code Samples (3–4 páginas)
 Dois a três trechos comentados, cada um demonstrando uma decisão, não sintaxe:

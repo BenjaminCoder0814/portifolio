@@ -13,7 +13,7 @@ export default function Page() {
         why="Those intermediate entries are the interesting ones, because they record what real use changed. They are worth reconstructing accurately rather than approximating."
         outline={[{"term":"v1.0.0 — Production release","desc":"Five modules shipped: multi-entity inventory, real-time dashboards, automated pricing, internal chat, role-based access. Documented in full on the roadmap."},{"term":"v0.9.x — Internal beta","desc":"What existed before the official launch, and what changed after the operations team used it for the first time."},{"term":"Format","desc":"Grouped as Added / Changed / Fixed. Entries describe the consequence for the user — Stock table now loads 500+ items without freezing, not Refactored StockTable component."}]}
       />
-      <PageNav prev={{ label: "Journal", href: "/engineering/erp/journal" }} next={{ label: "AI Digital Workforce", href: "/engineering/ai" }} />
+      <PageNav prev={{ label: "Journal", href: "/engineering/erp/journal" }} next={{ label: "Cortex", href: "/engineering/ai" }} />
     </>
   );
 }

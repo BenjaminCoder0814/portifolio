@@ -14,7 +14,7 @@ What's next for the Enterprise Operations Platform, and why.
 ## Now — in progress
 
 ### AI digital workforce
-Agents that take over repetitive, rule-based administrative tasks, integrated with the platform's existing data rather than running as a separate tool.
+A separate initiative, not a phase of this one: an AI layer over Deltaze, the commercial ERP the company runs on. It reads that system's data, not this platform's — the two will eventually meet, but conflating them would misstate what was built where.
 
 The reasoning: the platform already holds the operational data and already models the processes. Automation that reads from a parallel system would drift out of sync; automation built on top of the source of truth cannot.
 

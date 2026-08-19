@@ -27,10 +27,10 @@ export default function EngineeringIndex() {
           running three legal entities out of one warehouse. In production, used daily by the
           whole operations team. Specified, architected and shipped solo.
         </Card>
-        <Card title="AI Digital Workforce" meta="2026" tone="amber" href="/engineering/ai">
-          Agents that take over repetitive administrative work, built on top of the platform
-          already in production rather than as a parallel tool. In development — this
-          documentation is being written as the work happens.
+        <Card title="Cortex" meta="2026" tone="amber" href="/engineering/ai">
+          An AI layer over the company&apos;s commercial ERP — 226,296 records under incremental
+          synchronisation, reasoning on the Claude API. Platform in homologation; the agents that
+          will act on it are in development.
         </Card>
       </CardGrid>
 

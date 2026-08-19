@@ -16,7 +16,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versio
 ## [Unreleased]
 
 ### In progress
-- AI digital workforce — agents automating repetitive administrative workflows, integrated with the platform's existing data
+- (Adjacent, separate system) Cortex — AI layer over the company's commercial ERP. Tracked separately; it does not read this platform's data.
 
 ### Planned
 See [ROADMAP.md](ROADMAP.md).
