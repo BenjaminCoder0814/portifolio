@@ -153,9 +153,10 @@
         "desc": "ERP personalizado con control de inventario multi-CNPJ, chat corporativo interno y gestión de precios con cubicación automática. Sistema en producción activa.",
         "tags": [
           "React",
-          "Node.js",
-          "MySQL",
-          "WebSocket"
+          "Express",
+          "Prisma",
+          "PostgreSQL",
+          "Firebase"
         ],
         "year": "2026",
         "impact": "Sistema activo · 3 CNPJs unificados"
@@ -173,13 +174,13 @@
       },
       {
         "name": "TFG — Sistema Web Full Stack",
-        "desc": "Proyecto de graduación técnica desarrollado íntegramente en solitario. Diseño, frontend y backend desde cero. Nota máxima.",
+        "desc": "Plataforma de seguimiento de entrenamientos entregada como proyecto de graduación, hecha 100% en solitario — diseño, front-end y back-end. 181+ ejercicios, constructor de rutinas y detección automática de récords.",
         "tags": [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Node.js",
-          "MySQL"
+          "Next.js 15",
+          "React 19",
+          "TypeScript",
+          "Prisma",
+          "Docker"
         ],
         "year": "2025",
         "impact": "Nota máxima · 100% autónomo"
@@ -335,12 +336,12 @@
       {
         "name": "Node.js",
         "category": "Backend",
-        "desc": "REST APIs, WebSocket y lógica de negocio en el servidor (sistema ERP)."
+        "desc": "REST APIs en Express, autenticación JWT y reglas de negocio en el servidor (ERP en producción)."
       },
       {
-        "name": "MySQL",
+        "name": "PostgreSQL",
         "category": "Database",
-        "desc": "Modelado relacional, queries optimizadas, control multi-CNPJ en producción activa."
+        "desc": "Modelado relacional vía Prisma. Base de datos en producción en Neon, con movimientos escritos en transacción."
       },
       {
         "name": "Figma",
@@ -427,7 +428,7 @@
         "design": "Figma · Design System · UI/UX · Canva Pro",
         "tools": "Git · GitHub · VS Code · Next.js",
         "marketing": "Marketplaces · Identidad Visual · Conversión",
-        "backend": "Node.js · REST APIs · MySQL · WebSocket"
+        "backend": "Node.js · Express · REST APIs · Prisma · PostgreSQL"
       },
       "experience": [
         {

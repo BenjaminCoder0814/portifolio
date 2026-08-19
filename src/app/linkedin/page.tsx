@@ -22,7 +22,7 @@ Principais entregas:
 → TCC do curso técnico desenvolvido 100% de forma autônoma — design, frontend e backend
 → Cobertura aérea profissional na Porsche Carrera Cup como operador de drone certificado
 
-Stack: React · JavaScript · Node.js · MySQL · HTML/CSS · Figma · REST APIs
+Stack: React · TypeScript · Node.js · Express · Prisma · PostgreSQL · REST APIs
 
 Penso como arquiteto: antes de escrever código, entendo o sistema, mapeio os gaps e projeto a solução certa.
 
@@ -42,7 +42,7 @@ Empresa com 22 anos de atuação no setor industrial.
 
 Tecnologia & Sistemas:
 • Desenvolvi plataforma interna completa: controle de estoque unificado para 3 CNPJs, chat corporativo interno, tabela de preços com cubagem automática e painel de gestão
-• Stack utilizada: React, Node.js, MySQL, WebSocket, REST API
+• Stack utilizada: React, Node.js, Express, Prisma, PostgreSQL, Firebase, REST API
 • Sistema lançado em 2026, em produção ativa
 
 Marketing & Crescimento:
@@ -82,7 +82,7 @@ Solução desenvolvida:
 → Tabela de preços com cálculo automático de cubagem
 → Painel de gestão com visibilidade em tempo real
 
-Stack: React · Node.js · MySQL · WebSocket · REST API · JWT
+Stack: React · Node.js · Express · Prisma · PostgreSQL · Firebase · JWT
 
 Resultado: sistema lançado em 2026, em uso ativo. Controle operacional completo.`,
   },

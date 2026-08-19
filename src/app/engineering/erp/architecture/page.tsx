@@ -1,7 +1,7 @@
 import {
   PageHeader, Breadcrumb, H2, H3, Prose, Lead, Callout, DefList, Code, PageNav, CardGrid, Card,
 } from "@/components/engineering/ui";
-import { SystemDiagram, DataModelDiagram, TransferFlowDiagram } from "@/components/engineering/Diagrams";
+import { SystemDiagram, DataModelDiagram, MovementFlowDiagram } from "@/components/engineering/Diagrams";
 
 export const metadata = { title: "Architecture — Enterprise Operations Platform" };
 
@@ -20,15 +20,16 @@ export default function Architecture() {
         eyebrow="Enterprise Operations Platform"
         title="Architecture"
         lead="How the system is put together, and why each layer exists. The reasoning behind each choice lives in the decision records."
-        meta={["React · TypeScript · Node.js · Express · MySQL · WebSocket · JWT"]}
+        meta={["React · Vite · Node.js · Express · Prisma · PostgreSQL · Firebase · JWT"]}
       />
 
       {/* ── OVERVIEW ────────────────────────────────────────────────────── */}
       <H2 id="overview">System overview</H2>
 
       <Lead>
-        A Single-Page Application over a decoupled REST API, with a WebSocket channel carrying
-        anything that has to be live.
+        A React single-page application over a decoupled Express REST API on PostgreSQL. The one
+        surface that genuinely has to be live — internal chat — runs on Firestore rather than on a
+        real-time channel of our own.
       </Lead>
 
       <SystemDiagram />
@@ -75,63 +76,124 @@ export default function Architecture() {
       </Callout>
 
       {/* ── TRANSFERS ───────────────────────────────────────────────────── */}
-      <H2 id="transfers">Transfers between entities</H2>
+      <H2 id="movements">Stock movements</H2>
 
       <Prose>
         <p>
-          A transfer is two writes that must both succeed or both fail. If one lands and the other
-          doesn&apos;t, two companies&apos; ledgers disagree and there is no way to tell which is
-          right.
+          Stock is not a column anyone edits. It is a balance on the product, and the only way to
+          move it is to write a movement — <code>ENTRADA</code>, <code>SAIDA</code> or{" "}
+          <code>AJUSTE</code>. That constraint is the whole point: a number that changed without a
+          row explaining why is exactly what the spreadsheets produced.
         </p>
         <p>
-          That is exactly the failure the spreadsheets had. Rebuilding it in software would have
-          defeated the purpose of building anything.
+          Which means every write is two writes — the movement row and the new balance — and they
+          have to land together. If the row lands without the balance, the history lies. If the
+          balance lands without the row, the number has no explanation. Both failures are worse
+          than the write not happening at all.
         </p>
       </Prose>
 
-      <TransferFlowDiagram />
+      <MovementFlowDiagram />
 
-      <Code lang="Transfer — shape of the operation">{`// Both sides move inside one transaction, scoped to their entity.
-// Either the ledgers agree afterwards, or nothing happened at all.
+      <Code lang="backend/src/routes/movements.js">{`router.post('/', ah(async (req, res) => {
+  const { productId, type, quantity, note } = req.body || {};
+  const q = Number(quantity || 0);
+  if (!productId || !type || q <= 0)
+    return res.status(400).json({ ok: false, error: 'Dados inválidos' });
 
-async function transferStock({ productId, fromEntity, toEntity, qty, userId }) {
-  return db.transaction(async (tx) => {
-    await tx.stock.decrement({ entityId: fromEntity, productId, qty });
-    await tx.stock.increment({ entityId: toEntity,   productId, qty });
-
-    await tx.movements.insert([
-      { entityId: fromEntity, productId, userId, type: "transfer_out", qty },
-      { entityId: toEntity,   productId, userId, type: "transfer_in",  qty },
-    ]);
+  const product = await prisma.product.findUnique({
+    where: { id: Number(productId) },
   });
-}`}</Code>
+  if (!product)
+    return res.status(404).json({ ok: false, error: 'Produto não encontrado' });
+
+  let nextStock = product.stockCurrent;
+  if (type === 'ENTRADA') nextStock += q;
+  if (type === 'SAIDA')   nextStock -= q;
+  if (type === 'AJUSTE')  nextStock  = q;
+
+  // Refuse before writing. A negative balance is not a state the
+  // warehouse can be in, so it is not a state the table may hold.
+  if (nextStock < 0)
+    return res.status(400).json({ ok: false, error: 'Estoque não pode ficar negativo' });
+
+  const [movement] = await prisma.$transaction([
+    prisma.movement.create({
+      data: { productId: product.id, userId: req.user?.id ?? null, type, quantity: q, note: note || '' },
+    }),
+    prisma.product.update({
+      where: { id: product.id },
+      data:  { stockCurrent: nextStock },
+    }),
+  ]);
+
+  return res.status(201).json({ ok: true, data: movement });
+}));`}</Code>
+
+      <Callout tone="insight" title="Why the balance is stored, not summed">
+        The honest alternative is to keep no balance at all and derive it —{" "}
+        <code>SUM(quantity)</code> over the movements, every time. That can never drift, because
+        there is nothing to drift from. It was rejected for a boring reason: the warehouse reads
+        stock far more often than it writes it, and the product list is the most-opened screen in
+        the system. Storing the balance makes the common case a single indexed read, and{" "}
+        <code>$transaction</code> is what buys back the correctness that derivation would have
+        given for free. <code>AJUSTE</code> exists for when reality and the balance disagree
+        anyway — a physical count wins, and the adjustment is recorded as its own row rather than
+        edited in silently.
+      </Callout>
 
       {/* ── REAL TIME ───────────────────────────────────────────────────── */}
       <H2 id="realtime">Real-time layer</H2>
 
       <Prose>
-        <p>A single WebSocket connection carries two kinds of traffic:</p>
+        <p>
+          Only one thing in this system is actually real-time, and it is not stock. It is chat.
+        </p>
       </Prose>
 
       <DefList
         items={[
           {
-            term: "Stock events",
-            desc: "When an operator records a movement, connected clients update without a refresh. This is what made the system trustworthy — two people looking at the same screen see the same number, which was never true with spreadsheets.",
+            term: "Chat runs on Firestore",
+            tone: "purple",
+            desc: (
+              <>
+                Messages live in a <code>chat_conversas</code> collection with Firebase
+                Authentication behind them. The client subscribes; Google operates the socket, the
+                reconnection and the offline queue. The reason it exists at all is that internal
+                communication was running through a paid external messaging platform — replacing
+                it removed a recurring bill.
+              </>
+            ),
           },
           {
-            term: "Chat messages",
-            tone: "purple",
-            desc: "Internal communication between staff, replacing a paid external platform. Sharing the existing channel meant no second piece of infrastructure to operate.",
+            term: "Stock is request/response",
+            desc: (
+              <>
+                Movements go over the same REST API as everything else, and screens read the
+                balance when they open. There is no push, and no server of ours holding
+                connections open.
+              </>
+            ),
           },
         ]}
       />
 
-      <Callout tone="warn" title="What this costs">
-        Connection state becomes the front end&apos;s problem: reconnection, messages missed
-        during a drop, and stale values on resume. Polling would have avoided all of it — at the
-        cost of latency proportional to the interval, and load proportional to users × frequency
-        for data that changes rarely.
+      <Callout tone="warn" title="The trade-off, stated plainly">
+        Two people looking at the same stock screen can be a few minutes apart until one of them
+        reloads. That is a real limitation and it is the honest description of the system as
+        built. It was accepted because the write rate is low — a warehouse records movements
+        dozens of times a day, not dozens of times a second — and because the alternative was
+        operating a stateful real-time layer for data that rarely changes. Chat got Firestore
+        precisely because chat is the workload where staleness is immediately, obviously wrong.
+      </Callout>
+
+      <Callout tone="insight" title="Why a second backend for one feature">
+        Adding Firebase means two authentication stories in one product — JWT for the API,
+        Firebase Auth for chat — which is a genuine cost in complexity. It bought delivery speed
+        on the feature with the least business logic and the most infrastructure: presence,
+        ordering, retries and offline delivery are the hard parts of chat, and none of them are
+        parts anyone would be paid to reinvent here.
       </Callout>
 
       {/* ── AUTH ────────────────────────────────────────────────────────── */}
@@ -145,15 +207,56 @@ async function transferStock({ productId, fromEntity, toEntity, qty, userId }) {
         </p>
       </Prose>
 
+      <Code lang="backend/src/middleware/auth.js">{`export function requireAuth(req, res, next) {
+  const auth  = req.headers.authorization || '';
+  const token = auth.startsWith('Bearer ') ? auth.slice(7) : null;
+  if (!token) return res.status(401).json({ ok: false, error: 'Token ausente' });
+
+  try {
+    req.user = jwt.verify(token, process.env.JWT_SECRET);
+    return next();
+  } catch {
+    return res.status(401).json({ ok: false, error: 'Token inválido' });
+  }
+}
+
+export function requireRoles(...roles) {
+  return (req, res, next) => {
+    if (!req.user) return res.status(401).json({ ok: false, error: 'Não autenticado' });
+    if (!roles.includes(req.user.role))
+      return res.status(403).json({ ok: false, error: 'Sem permissão' });
+    return next();
+  };
+}`}</Code>
+
+      <Prose>
+        <p>
+          The roles are not three tiers, they are the org chart. The company already had these
+          divisions before there was any software, so the permission model copies them rather than
+          inventing a hierarchy nobody would recognise:
+        </p>
+      </Prose>
+
       <CardGrid cols={3}>
-        <Card title="Operations" tone="cyan">
-          Warehouse and production. Stock movements, transfers, movement history.
+        <Card title="Warehouse floor" tone="cyan" meta="EXPEDICAO · PRODUCAO">
+          Records movements and separations. Sees stock and its own queue, not pricing or reports.
         </Card>
-        <Card title="Sales" tone="purple">
-          Commercial. Pricing, cubic-weight calculation, availability.
+        <Card title="Commercial" tone="purple" meta="COMERCIAL · CENTRAL_ATENDIMENTO">
+          Pricing, cubic-weight calculation and availability — the screens used with a customer
+          waiting on the line.
         </Card>
-        <Card title="Administration" tone="green">
-          Full visibility and reporting across all three entities.
+        <Card title="Buying" tone="green" meta="COMPRAS">
+          Pending orders and replenishment alerts, driven by each product&apos;s minimum stock.
+        </Card>
+        <Card title="Oversight" tone="amber" meta="SUPERVISAO · DIRETORIA">
+          Reports and consolidated views across the operation.
+        </Card>
+        <Card title="Administration" tone="red" meta="ADMIN · TI">
+          User management, audit log, and everything the other roles cannot reach.
+        </Card>
+        <Card title="Default" meta="VISITANTE">
+          What a new account gets until someone grants it something. The safe state is no access,
+          not partial access.
         </Card>
       </CardGrid>
 

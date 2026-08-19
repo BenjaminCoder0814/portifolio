@@ -7,7 +7,7 @@ An internal ERP that replaced spreadsheet-based inventory control for a manufact
 ![Dashboard](docs/media/dashboard.png)
 
 ```
-React · TypeScript · Node.js · Express · MySQL · WebSocket · JWT
+React · Vite · Node.js · Express · Prisma · PostgreSQL · Firebase · JWT
 ```
 
 ---
@@ -32,7 +32,7 @@ The users are warehouse operators and salespeople. Not technical, and not willin
 | **Multi-entity inventory** | Entry, exit and transfer between entities with full traceability — every movement attributed, auditable, reversible |
 | **Real-time dashboard** | Consolidated and per-entity stock views, minimum-level alerts, live movement indicators |
 | **Automated pricing** | Cubic-weight calculation integrated with the freight table — instant quotes |
-| **Internal chat** | Real-time messaging over WebSocket, replacing a paid external platform |
+| **Internal chat** | Real-time messaging on Firebase Firestore, replacing a paid external platform |
 | **Role-based access** | Three tiers — operations, sales, administration — shaping both API permissions and navigation |
 
 ## Impact
@@ -47,14 +47,14 @@ The users are warehouse operators and salespeople. Not technical, and not willin
 
 ## Architecture
 
-Single-Page Application over a decoupled REST API, with a WebSocket channel for anything real-time.
+Single-Page Application over a decoupled REST API, with a Firestore for anything real-time.
 
 ```
 ┌──────────────┐   REST      ┌──────────────┐
-│  React SPA   │ ──────────► │  Express API │ ──────► MySQL
+│  React SPA   │ ──────────► │  Express API │ ──────► PostgreSQL
 │  TypeScript  │             │   JWT auth   │        (entity-scoped)
 └──────┬───────┘             └──────┬───────┘
-       │        WebSocket           │
+       │        Firestore           │
        └────────────────────────────┘
         stock updates · internal chat
 ```
@@ -90,7 +90,7 @@ This repository contains the **front end and a mock API** for demonstration. The
 | | |
 |---|---|
 | [Architecture](docs/ARCHITECTURE.md) | System design, data model, real-time layer, auth |
-| [Engineering decisions](docs/DECISIONS.md) | Why React, TypeScript, REST, JWT, WebSocket, MySQL — and what was rejected |
+| [Engineering decisions](docs/DECISIONS.md) | Why React, REST, JWT, Firestore, PostgreSQL — and what was rejected |
 | [Technical challenges](docs/CHALLENGES.md) | The hard problems and how they were solved |
 | [Engineering journal](docs/ENGINEERING-JOURNAL.md) | What went wrong, what changed, what I'd do differently |
 | [Changelog](CHANGELOG.md) | Release history |

@@ -28,7 +28,7 @@ This is the failure mode the spreadsheets had. Rebuilding it in software would h
      - O que acontece se dois operadores tentam transferir o mesmo item simultaneamente?
      - Você já viu isso falhar em produção? O que aconteceu?
 
-     Se a resposta for "confio na transação do MySQL e nunca testei concorrência de verdade",
+     Se a resposta for "confio na transação do Postgres e nunca testei concorrência de verdade",
      escreva isso. É honesto, é comum, e vira um item de Roadmap. -->
 
 ### What I'd do differently

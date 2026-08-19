@@ -37,7 +37,7 @@ export const resume = {
 
     sSummary: "Resumo",
     summary:
-      "Desenvolvedor Front-End que constrói software de negócio para melhorar eficiência operacional. Três anos de experiência prática com React.js, TypeScript, JavaScript, HTML5 e CSS3, transformando processos manuais em software em produção usado diariamente por equipes inteiras. Construí e coloquei em produção o front-end de um ERP interno que unificou três CNPJs, integrando REST APIs e dados em tempo real via WebSocket, e reduzi em 40% o tempo de carregamento das interfaces. Hoje Diretor de Tecnologia da Informação na mesma empresa, seguindo mão na massa no código enquanto lidero arquitetura de software, transformação digital e uma iniciativa de força de trabalho digital com IA. Cursando Bacharelado em Ciência da Computação na University of the People (EUA).",
+      "Desenvolvedor Front-End que constrói software de negócio para melhorar eficiência operacional. Três anos de experiência prática com React.js, TypeScript, JavaScript, HTML5 e CSS3, transformando processos manuais em software em produção usado diariamente por equipes inteiras. Construí e coloquei em produção o front-end de um ERP interno que unificou três CNPJs, integrando REST APIs e sincronização em tempo real via Firestore, e reduzi em 40% o tempo de carregamento das interfaces. Hoje Diretor de Tecnologia da Informação na mesma empresa, seguindo mão na massa no código enquanto lidero arquitetura de software, transformação digital e uma iniciativa de força de trabalho digital com IA. Cursando Bacharelado em Ciência da Computação na University of the People (EUA).",
 
     sAchievements: "Impacto de Engenharia",
     achievements: [
@@ -52,7 +52,7 @@ export const resume = {
     skills: [
       { cat: "Front-End", items: "React.js · Next.js · JavaScript (ES6+) · TypeScript · HTML5 · CSS3 · Tailwind CSS · Framer Motion" },
       { cat: "Desenvolvimento Web", items: "Responsive Web Design · Web Performance · Arquitetura baseada em componentes · Design Systems · SPA · SSR · Cross-Browser · Internacionalização" },
-      { cat: "APIs & Dados", items: "REST API Integration · WebSocket / Tempo real · JWT · Node.js · Express.js · MySQL" },
+      { cat: "APIs & Dados", items: "REST API Integration · Tempo real (Firestore) · JWT · Node.js · Express.js · Prisma · PostgreSQL" },
       { cat: "Software & Sistemas", items: "Arquitetura de software · Sistemas internos · Aplicações de negócio · Levantamento de requisitos · Liderança técnica · Decisão tecnológica" },
       { cat: "IA & Automação", items: "Agentes de IA · Automação de processos · Workflow Automation · Transformação digital" },
       { cat: "Ferramentas & Práticas", items: "Git · GitHub · VS Code · Figma · Jest · React Testing Library · Clean Code · Debugging · Code Review" },
@@ -82,7 +82,7 @@ export const resume = {
             period: "2023 – 2025",
             bullets: [
               "Desenvolvi o front-end do ERP interno com React.js e TypeScript — SPA com dashboards em tempo real, navegação por permissão e integração REST — hoje usada diariamente por 100% da equipe operacional.",
-              "Implementei chat interno em tempo real sobre WebSocket, eliminando uma assinatura recorrente de plataforma de mensagens.",
+              "Implementei chat interno em tempo real sobre Firebase Firestore, eliminando uma assinatura recorrente de plataforma de mensagens.",
               "Construí e mantenho o design system e a biblioteca de componentes React reutilizáveis, padronizando a interface em todos os módulos da plataforma.",
               "Construí a interface de precificação com cálculo automático de cubagem e os dashboards de estoque em tempo real consumindo REST APIs.",
               "Desenvolvi interfaces web responsivas e cross-browser a partir de layouts no Figma, garantindo comportamento consistente em desktop e mobile.",
@@ -99,10 +99,10 @@ export const resume = {
       {
         name: "Enterprise Operations Platform (ERP interno)",
         year: "2025 – 2026 · Em produção",
-        stack: "React.js · TypeScript · Node.js · Express · MySQL · REST API · WebSocket · JWT",
+        stack: "React · Vite · Node.js · Express · Prisma · PostgreSQL · Firebase · JWT",
         bullets: [
           "Problema: três CNPJs dividindo um armazém controlavam estoque em planilhas desconectadas — movimentações sem rastreabilidade e 10–15 minutos de cálculo manual por cotação.",
-          "Arquitetura: SPA sobre REST API desacoplada, canal WebSocket para tempo real, JWT com três níveis de permissão e modelo relacional que isola entidades permitindo visão consolidada.",
+          "Arquitetura: SPA React sobre REST API Express desacoplada; chat em tempo real sobre Firestore; JWT com controle de acesso por perfil; modelo relacional em PostgreSQL via Prisma, com movimentação de estoque escrita em transação para que registro e saldo nunca divirjam.",
           "Impacto: rastreabilidade total, inventário 60% mais rápido, precificação em menos de 30 segundos, ferramenta paga de comunicação eliminada, 100% de adoção.",
         ],
       },
@@ -119,9 +119,9 @@ export const resume = {
       {
         name: "Sistema Web Full Stack — TCC",
         year: "2025 · Entregue sozinho, nota máxima",
-        stack: "JavaScript · HTML5 · CSS3 · Node.js · MySQL · REST API",
+        stack: "Next.js 15 · React 19 · TypeScript · Prisma · Tailwind · Docker",
         bullets: [
-          "Responsável por 100% da interface — layouts, estrutura de componentes, fluxo de navegação e responsividade — integrada a back-end Node.js e MySQL construído no mesmo projeto.",
+          "Responsável por 100% da interface — layouts, estrutura de componentes, fluxo de navegação e responsividade — integrada ao back-end construído no mesmo projeto com Next.js e Prisma.",
         ],
       },
       {
@@ -166,7 +166,7 @@ export const resume = {
 
     sSummary: "Summary",
     summary:
-      "Front-End Developer who builds business software that improves operational efficiency. Three years of practical experience with React.js, TypeScript, JavaScript, HTML5 and CSS3, turning manual operational processes into production software used daily by entire teams. Built and shipped the front end of an internal ERP unifying three legal entities, integrating REST APIs and real-time WebSocket data, and reduced interface load time by 40%. Now Director of Information Technology at the same company, remaining hands-on in the codebase while leading software architecture, digital transformation and an AI digital workforce initiative. Currently pursuing a B.Sc. in Computer Science at University of the People (United States).",
+      "Front-End Developer who builds business software that improves operational efficiency. Three years of practical experience with React.js, TypeScript, JavaScript, HTML5 and CSS3, turning manual operational processes into production software used daily by entire teams. Built and shipped the front end of an internal ERP unifying three legal entities, integrating REST APIs and real-time Firestore synchronisation, and reduced interface load time by 40%. Now Director of Information Technology at the same company, remaining hands-on in the codebase while leading software architecture, digital transformation and an AI digital workforce initiative. Currently pursuing a B.Sc. in Computer Science at University of the People (United States).",
 
     sAchievements: "Engineering Impact",
     achievements: [
@@ -181,7 +181,7 @@ export const resume = {
     skills: [
       { cat: "Front-End", items: "React.js · Next.js · JavaScript (ES6+) · TypeScript · HTML5 · CSS3 · Tailwind CSS · Framer Motion" },
       { cat: "Web Development", items: "Responsive Web Design · Web Performance · Component-Based Architecture · Design Systems · SPA · SSR · Cross-Browser · Internationalization" },
-      { cat: "APIs & Data", items: "REST API Integration · WebSocket / Real-Time · JWT Authentication · Node.js · Express.js · MySQL" },
+      { cat: "APIs & Data", items: "REST API Integration · Real-Time (Firestore) · JWT Authentication · Node.js · Express.js · Prisma · PostgreSQL" },
       { cat: "Software & Systems", items: "Software Architecture · Internal Systems · Business Applications · Requirements Gathering · Technical Leadership · Technology Decision-Making" },
       { cat: "AI & Automation", items: "AI Agents · AI-Driven Process Automation · Workflow Automation · Digital Transformation" },
       { cat: "Tools & Practices", items: "Git · GitHub · VS Code · Figma · Jest · React Testing Library · Clean Code · Debugging · Code Review" },
@@ -211,7 +211,7 @@ export const resume = {
             period: "2023 – 2025",
             bullets: [
               "Developed the front end of an internal ERP with React.js and TypeScript — a single-page application with real-time dashboards, permission-aware navigation and REST API integration, now used daily by 100% of the operations team.",
-              "Implemented real-time internal chat over WebSocket, eliminating a recurring third-party messaging subscription.",
+              "Implemented real-time internal chat over Firebase Firestore, eliminating a recurring third-party messaging subscription.",
               "Built and maintained a custom design system and reusable React component library, standardizing the UI across every module of the platform.",
               "Built the dynamic pricing interface with automated cubic-weight calculation and the real-time inventory dashboards consuming REST APIs.",
               "Developed responsive, cross-browser web interfaces from Figma designs, ensuring consistent behavior across desktop and mobile.",
@@ -228,10 +228,10 @@ export const resume = {
       {
         name: "Enterprise Operations Platform (Internal ERP)",
         year: "2025 – 2026 · In production",
-        stack: "React.js · TypeScript · Node.js · Express · MySQL · REST API · WebSocket · JWT",
+        stack: "React · Vite · Node.js · Express · Prisma · PostgreSQL · Firebase · JWT",
         bullets: [
           "Problem: three legal entities sharing one warehouse tracked stock in disconnected spreadsheets — untraceable movements and 10–15 minutes of manual work per price quote.",
-          "Architecture: SPA over a decoupled REST API, WebSocket channel for real-time updates, JWT with three permission tiers, and a MySQL model that isolates entities while allowing a consolidated view.",
+          "Architecture: a React SPA over a decoupled Express REST API; real-time chat on Firestore; JWT with role-based access; a PostgreSQL model through Prisma, where a stock movement and the balance it changes are written in one transaction so the two can never disagree.",
           "Impact: full traceability, 60% faster inventory counts, pricing under 30 seconds, one paid communication tool removed, 100% adoption by the operations team.",
         ],
       },
@@ -248,9 +248,9 @@ export const resume = {
       {
         name: "Full-Stack Web Application — Graduation project",
         year: "2025 · Delivered solo, top grade",
-        stack: "JavaScript · HTML5 · CSS3 · Node.js · MySQL · REST API",
+        stack: "Next.js 15 · React 19 · TypeScript · Prisma · Tailwind · Docker",
         bullets: [
-          "Owned 100% of the interface — layouts, component structure, navigation flow and responsive behavior — integrated with a Node.js and MySQL back end built in the same project.",
+          "Owned 100% of the interface — layouts, component structure, navigation flow and responsive behavior — integrated with the back end built in the same project on Next.js and Prisma.",
         ],
       },
       {
@@ -295,7 +295,7 @@ export const resume = {
 
     sSummary: "Resumen",
     summary:
-      "Desarrollador Front-End que construye software de negocio para mejorar la eficiencia operativa. Tres años de experiencia práctica con React.js, TypeScript, JavaScript, HTML5 y CSS3, transformando procesos manuales en software en producción usado a diario por equipos completos. Construí y puse en producción el front-end de un ERP interno que unificó tres entidades legales, integrando REST APIs y datos en tiempo real vía WebSocket, y reduje un 40% el tiempo de carga de las interfaces. Hoy Director de Tecnología de la Información en la misma empresa, sigo escribiendo código mientras lidero arquitectura de software, transformación digital y una iniciativa de fuerza de trabajo digital con IA. Cursando Licenciatura en Ciencias de la Computación en University of the People (EE.UU.).",
+      "Desarrollador Front-End que construye software de negocio para mejorar la eficiencia operativa. Tres años de experiencia práctica con React.js, TypeScript, JavaScript, HTML5 y CSS3, transformando procesos manuales en software en producción usado a diario por equipos completos. Construí y puse en producción el front-end de un ERP interno que unificó tres entidades legales, integrando REST APIs y sincronización en tiempo real vía Firestore, y reduje un 40% el tiempo de carga de las interfaces. Hoy Director de Tecnología de la Información en la misma empresa, sigo escribiendo código mientras lidero arquitectura de software, transformación digital y una iniciativa de fuerza de trabajo digital con IA. Cursando Licenciatura en Ciencias de la Computación en University of the People (EE.UU.).",
 
     sAchievements: "Impacto de Ingeniería",
     achievements: [
@@ -310,7 +310,7 @@ export const resume = {
     skills: [
       { cat: "Front-End", items: "React.js · Next.js · JavaScript (ES6+) · TypeScript · HTML5 · CSS3 · Tailwind CSS · Framer Motion" },
       { cat: "Desarrollo Web", items: "Responsive Web Design · Web Performance · Arquitectura basada en componentes · Design Systems · SPA · SSR · Cross-Browser · Internacionalización" },
-      { cat: "APIs & Datos", items: "REST API Integration · WebSocket / Tiempo real · JWT · Node.js · Express.js · MySQL" },
+      { cat: "APIs & Datos", items: "REST API Integration · Tiempo real (Firestore) · JWT · Node.js · Express.js · Prisma · PostgreSQL" },
       { cat: "Software & Sistemas", items: "Arquitectura de software · Sistemas internos · Aplicaciones de negocio · Levantamiento de requisitos · Liderazgo técnico · Decisión tecnológica" },
       { cat: "IA & Automatización", items: "Agentes de IA · Automatización de procesos · Workflow Automation · Transformación digital" },
       { cat: "Herramientas & Prácticas", items: "Git · GitHub · VS Code · Figma · Jest · React Testing Library · Clean Code · Debugging · Code Review" },
@@ -340,7 +340,7 @@ export const resume = {
             period: "2023 – 2025",
             bullets: [
               "Desarrollé el front-end del ERP interno con React.js y TypeScript — SPA con dashboards en tiempo real, navegación por permisos e integración REST — hoy usada a diario por el 100% del equipo operativo.",
-              "Implementé chat interno en tiempo real sobre WebSocket, eliminando una suscripción recurrente de plataforma de mensajería.",
+              "Implementé chat interno en tiempo real sobre Firebase Firestore, eliminando una suscripción recurrente de plataforma de mensajería.",
               "Construí y mantengo el design system y la librería de componentes React reutilizables, estandarizando la interfaz en todos los módulos.",
               "Construí la interfaz de precios con cálculo automático de cubicaje y los dashboards de inventario en tiempo real consumiendo REST APIs.",
               "Desarrollé interfaces web responsivas y cross-browser a partir de diseños en Figma.",
@@ -357,10 +357,10 @@ export const resume = {
       {
         name: "Enterprise Operations Platform (ERP interno)",
         year: "2025 – 2026 · En producción",
-        stack: "React.js · TypeScript · Node.js · Express · MySQL · REST API · WebSocket · JWT",
+        stack: "React · Vite · Node.js · Express · Prisma · PostgreSQL · Firebase · JWT",
         bullets: [
           "Problema: tres entidades legales compartiendo un almacén controlaban inventario en planillas desconectadas — movimientos sin trazabilidad y 10–15 minutos de cálculo manual por cotización.",
-          "Arquitectura: SPA sobre REST API desacoplada, canal WebSocket para tiempo real, JWT con tres niveles de permiso y modelo relacional que aísla entidades permitiendo vista consolidada.",
+          "Arquitectura: SPA React sobre REST API Express desacoplada; chat en tiempo real sobre Firestore; JWT con control de acceso por perfil; modelo relacional en PostgreSQL vía Prisma, con el movimiento de stock escrito en transacción para que registro y saldo nunca difieran.",
           "Impacto: trazabilidad total, inventario 60% más rápido, cotización en menos de 30 segundos, herramienta paga de comunicación eliminada, 100% de adopción.",
         ],
       },
@@ -377,9 +377,9 @@ export const resume = {
       {
         name: "Sistema Web Full Stack — Proyecto final",
         year: "2025 · Entregado en solitario, nota máxima",
-        stack: "JavaScript · HTML5 · CSS3 · Node.js · MySQL · REST API",
+        stack: "Next.js 15 · React 19 · TypeScript · Prisma · Tailwind · Docker",
         bullets: [
-          "Responsable del 100% de la interfaz — layouts, estructura de componentes, flujo de navegación y responsividad — integrada con back-end Node.js y MySQL construido en el mismo proyecto.",
+          "Responsable del 100% de la interfaz — layouts, estructura de componentes, flujo de navegación y responsividad — integrada al back-end construido en el mismo proyecto con Next.js y Prisma.",
         ],
       },
       {

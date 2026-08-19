@@ -63,7 +63,7 @@ export default function EngineeringIndex() {
         <p className="flex flex-wrap gap-2">
           {[
             "React.js", "TypeScript", "Next.js", "JavaScript (ES6+)", "HTML5", "CSS3",
-            "Tailwind CSS", "Node.js", "Express.js", "MySQL", "REST APIs", "WebSocket",
+            "Tailwind CSS", "Node.js", "Express.js", "Prisma", "PostgreSQL", "REST APIs", "Firebase",
             "JWT", "Git", "Figma",
           ].map((s) => (
             <span

@@ -119,7 +119,7 @@ export default function RootLayout({
               knowsAbout: [
                 "React.js", "TypeScript", "JavaScript", "Next.js",
                 "Front-End Development", "Internal Business Systems",
-                "REST APIs", "WebSocket", "AI Automation",
+                "REST APIs", "Prisma", "PostgreSQL", "AI Automation",
               ],
               sameAs: [personal.github, personal.linkedin],
             }),

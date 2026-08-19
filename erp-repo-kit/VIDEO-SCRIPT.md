@@ -34,7 +34,7 @@ Scroll it. Show two sheets side by side with numbers that disagree.
 **Screen:** log in, land on the dashboard. Let it load in real time — do not cut the loading.
 
 **Narration:**
-> "This replaced it. React and TypeScript front end, REST API, MySQL. In production, used daily by the whole operations team."
+> "This replaced it. React front end, Express REST API, PostgreSQL through Prisma. In production, used daily by the whole operations team."
 
 ---
 
@@ -50,7 +50,7 @@ Scroll it. Show two sheets side by side with numbers that disagree.
 **Screen:** **two browser windows side by side.** Record a movement in one. The number updates in the other without a refresh.
 
 **Narration:**
-> "Stock updates broadcast over WebSocket. Two people looking at the same number see the same number — which was never true with the spreadsheets."
+> "Every movement is a row: what moved, who moved it, why. The balance and the record are written in one transaction, so they cannot disagree — which was never true with the spreadsheets."
 
 **This is the most important 20 seconds of the video.** It's the one thing a screenshot cannot show, and it's the feature that made the team trust the system. Rehearse it until the timing is clean.
 
@@ -82,7 +82,7 @@ Scroll it. Show two sheets side by side with numbers that disagree.
 
 ```
 Enterprise Operations Platform
-React · TypeScript · Node.js · MySQL · WebSocket
+React · Node.js · Express · Prisma · PostgreSQL · Firebase
 
 Built and shipped solo · In production
 

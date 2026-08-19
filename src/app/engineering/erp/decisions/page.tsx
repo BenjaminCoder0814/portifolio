@@ -136,60 +136,60 @@ export default function Decisions() {
           },
           {
             id: "adr-004",
-            title: "ADR-004 · MySQL with row-level entity attribution",
-            meta: "Accepted · Most consequential",
+            title: "ADR-004 · SQLite first, then PostgreSQL on Neon",
+            meta: "Superseded by migration · Most consequential",
             content: (
               <Record
-                context="Three legal entities share one physical warehouse. Each needs a legally distinct ledger. Administration needs one consolidated view. Stock physically moves between entities."
-                decision="A single relational database where every stock record and every movement carries an entity identifier. Queries scope to one entity or roll up across all."
+                context="The first version had one user and ran on a laptop. SQLite meant no server to install, no credentials to manage and no hosting decision to make before there was anything worth hosting. Once the warehouse started using it from more than one machine, a file-backed database became the constraint rather than the shortcut."
+                decision="Start on SQLite. Move to PostgreSQL on Neon when concurrency demanded it, keeping Prisma as the layer between the application and either one."
                 alternatives={[
-                  { term: "One database per entity", desc: "Transfers become cross-database transactions. Consolidated views require joining across databases. Backup and migration triple in complexity." },
-                  { term: "No separation, tag-only", desc: "Legal separation would depend on discipline in the application layer. One bug and the ledgers are wrong in a way that matters to an auditor." },
-                  { term: "NoSQL / document store", desc: "Stock movement is inherently relational and transactional. Wrong tool for the problem." },
+                  { term: "PostgreSQL from day one", desc: "Correct in hindsight and wrong at the time. It front-loads hosting, connection strings and a running server onto a project that had not yet earned any of them." },
+                  { term: "Staying on SQLite", desc: "Writers block each other and the database lives on one machine's disk. Fine for one operator; not for a warehouse and a sales floor at once." },
+                  { term: "MySQL", desc: "Would have worked. Neon's branching and generous free tier decided it, not the SQL dialect." },
                 ]}
                 consequences={{
-                  good: "Transfers are a single transaction. Consolidated and per-entity views come from the same source of truth, so they cannot disagree.",
-                  bad: "Every query must be entity-aware. A query missing the filter silently returns another company's data — the most dangerous bug class in the codebase.",
+                  good: "The migration was a schema change and a data copy, not a rewrite, because Prisma had been holding the boundary the whole time. The old migrations are still in the repository under migrations_sqlite_bak — the history of the move is not hidden.",
+                  bad: "Two migration lineages exist in the repo, which is confusing to read cold. And Neon's free tier suspends an idle database, so the first request after a quiet period is slow — the front end has to treat a cold backend as a normal state, not an error.",
                 }}
               />
             ),
           },
           {
             id: "adr-005",
-            title: "ADR-005 · WebSocket for real-time stock and chat",
+            title: "ADR-005 · Firestore for chat, and nothing real-time for stock",
             meta: "Accepted",
             content: (
               <Record
-                context="Two people looking at the same stock number must see the same value. An operator recording a movement and a salesperson quoting a price can be working simultaneously. Internal communication was running on a paid external platform."
-                decision="A single WebSocket channel carrying both stock movement broadcasts and internal chat."
+                context="Internal communication ran on a paid external messaging platform. Replacing it meant owning presence, ordering, retries and offline delivery — the parts of chat that are actually hard and have nothing to do with this company's business."
+                decision="Put chat on Firebase Firestore with Firebase Authentication, and leave stock on plain request/response over the REST API."
                 alternatives={[
-                  { term: "Polling", desc: "Latency proportional to the interval, and load proportional to users × frequency, for data that changes rarely." },
-                  { term: "Server-Sent Events", desc: "One-directional. Works for stock broadcasts, not for chat." },
-                  { term: "Keeping the paid chat platform", desc: "Recurring cost, no control, and no path to integrating chat with stock events." },
+                  { term: "A WebSocket server of our own", desc: "One channel for chat and stock broadcasts. It means operating a stateful service, and owning reconnection, backfill and missed-message logic — for a warehouse that records movements dozens of times a day, not dozens of times a second." },
+                  { term: "Polling for stock", desc: "Load proportional to users × frequency for data that mostly does not change. Rejected as paying continuously for freshness nobody had asked for." },
+                  { term: "Keeping the paid platform", desc: "Recurring cost, and company conversations living in someone else's product." },
                 ]}
                 consequences={{
-                  good: "The numbers on screen are trustworthy, which is what made operators adopt the system. Chat cost eliminated.",
-                  bad: "Connection state becomes the front end's problem: reconnection, missed messages during a drop, stale values on resume.",
+                  good: "The recurring messaging bill went to zero, and the hard parts of chat are Google's problem. Stock stayed simple: one API, one way in, no connection state in the front end.",
+                  bad: "Two authentication systems in one product — JWT for the API, Firebase Auth for chat. And stock screens can be minutes stale until someone reloads, which is a real limitation rather than an oversight.",
                 }}
               />
             ),
           },
           {
             id: "adr-006",
-            title: "ADR-006 · JWT with three permission tiers",
+            title: "ADR-006 · JWT with the company's own roles as the permission model",
             meta: "Accepted",
             content: (
               <Record
-                context="Three user groups with genuinely different needs: warehouse/production, sales, administration. Operators seeing pricing data or administrative reports is both a security issue and a usability one."
-                decision="JWT authentication carrying a role claim. Three tiers — operations, sales, administration — shaping both API authorization and the navigation each user sees."
+                context="The company already had divisions before it had software: expedição, produção, compras, comercial, central de atendimento, supervisão, diretoria, TI. Any permission model invented on top of that would have to be explained to every user; a model that matched it would not."
+                decision="JWT carrying a role claim, with requireRoles(...) guarding routes and the same role deciding which navigation a user is given. New accounts default to VISITANTE — no access — rather than to a partial one."
                 alternatives={[
                   { term: "Server-side sessions", desc: "Would work. With a decoupled API, a stateless token avoids shared session storage." },
-                  { term: "Two tiers (user / admin)", desc: "Too coarse. Sales and operations need genuinely different screens." },
-                  { term: "Per-permission ACL", desc: "More flexible, and more complexity than three well-understood roles justify at this scale." },
+                  { term: "Two tiers (user / admin)", desc: "Too coarse. A salesperson and a warehouse operator need genuinely different screens, and neither needs the other's." },
+                  { term: "Per-permission ACL", desc: "More flexible, and more machinery than roles the company can already name justify at this scale. It stays available if a role ever needs splitting." },
                 ]}
                 consequences={{
-                  good: "Each role sees a smaller interface, which for non-technical users is a usability gain as much as a security one.",
-                  bad: "JWTs can't be revoked before expiry without additional machinery — relevant when someone leaves the company.",
+                  good: "Nobody has to learn what their permissions mean — they map onto the job title they already have. Each role also gets a smaller interface, which for non-technical users is a usability gain as much as a security one.",
+                  bad: "Roles are a string on the user row, so adding one is a code change, not configuration. And JWTs cannot be revoked before expiry without extra machinery — which matters the day someone leaves the company.",
                 }}
               />
             ),

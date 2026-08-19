@@ -17,7 +17,7 @@ export default function ErpCaseStudy() {
         lead="An internal ERP that replaced spreadsheet-based inventory control for a manufacturer operating three legal entities out of a single warehouse. Specified, architected and shipped solo."
         meta={[
           "2025 – 2026",
-          "React · TypeScript · Node.js · Express · MySQL · WebSocket · JWT",
+          "React · Vite · Node.js · Express · Prisma · PostgreSQL · Firebase · JWT",
           "Sole developer",
         ]}
       />
@@ -55,9 +55,9 @@ export default function ErpCaseStudy() {
             desc: "A product could leave the warehouse with no record of which entity owned it, who moved it, or when. Reconciliation was archaeology.",
           },
           {
-            term: "Conflicting transfers",
+            term: "Sheets that disagreed",
             tone: "red",
-            desc: "Stock moved between entities was often recorded on one side only. The two sheets disagreed and nobody could tell which was right — so neither was trusted.",
+            desc: "The same stock appeared in more than one sheet with more than one number, and nobody could tell which was right — so neither was trusted, and people counted the shelf instead.",
           },
           {
             term: "Slow quoting",
@@ -75,6 +75,15 @@ export default function ErpCaseStudy() {
       <Callout tone="note" title="Who the users are">
         Warehouse operators and salespeople. Not technical, and not willing to learn a complex
         tool. This constraint drove more design decisions than any technical requirement did.
+      </Callout>
+
+      <Callout tone="risk" title="What the system does not yet do">
+        The three companies share the warehouse and share this system, but the schema does not
+        carry an owning entity on a product or a movement — there is no <code>Company</code>{" "}
+        table and no per-entity ledger. Attribution today is organisational, not enforced by the
+        data model. Saying otherwise would describe software that has not been written; the
+        entity column, and the migration that backfills it, is the single largest open item on
+        the roadmap.
       </Callout>
 
       {/* ── BUSINESS CONTEXT ────────────────────────────────────────────── */}
@@ -176,29 +185,61 @@ export default function ErpCaseStudy() {
       <H2 id="modules">What it does</H2>
 
       <CardGrid>
-        <Card title="Multi-entity inventory" tone="cyan">
-          Entry, exit and transfer between legal entities with full traceability. Every movement
-          attributed, auditable and reversible.
+        <Card title="Inventory" tone="cyan">
+          Entrada, saída and ajuste, each written as a movement that names the product, the person
+          and the reason. The balance is never edited directly — it moves only because a movement
+          was recorded.
         </Card>
-        <Card title="Real-time dashboards" tone="cyan">
-          Consolidated and per-entity stock views, minimum-level alerts, live movement indicators.
-          Two people looking at the same number see the same number.
+        <Card title="Dashboards and reports" tone="cyan">
+          Stock views and charts over the movement history, with minimum-level alerts per product
+          and export to spreadsheet for the people who still want one.
         </Card>
-        <Card title="Automated pricing" tone="green">
-          Cubic-weight calculation integrated with the freight table. What took 10–15 minutes of
-          manual work returns in under 30 seconds.
+        <Card title="Pricing and cubagem" tone="green">
+          Cubic-weight calculation over the product catalogue. What took 10–15 minutes of manual
+          work returns in under 30 seconds.
         </Card>
         <Card title="Internal chat" tone="purple">
-          Real-time messaging over the same WebSocket channel, replacing a paid external platform.
+          Real-time messaging on Firebase Firestore, replacing a paid external platform. Contacts
+          and badges follow the same roles as the rest of the system.
+        </Card>
+        <Card title="Buying and pending orders" tone="green">
+          Requests raised against a product, carrying who asked and why, with a status of their
+          own rather than living in someone&apos;s inbox.
+        </Card>
+        <Card title="Separations" tone="cyan">
+          The picking side of the warehouse: what has to leave, in what order, and what has
+          already gone.
+        </Card>
+        <Card title="Gatehouse queue" tone="amber">
+          Driver check-in at the gate and the queue that follows from it — the part of the
+          operation that happens before anything is loaded.
+        </Card>
+        <Card title="Audit log" tone="red">
+          Every change recorded with its before and after as JSON, attributed to a user. This is
+          what makes a wrong number answerable instead of merely wrong.
+        </Card>
+        <Card title="Users, media and extensions" meta="ADMIN · TI">
+          Account and role management, a shared media library for product photography, and the
+          internal phone directory.
         </Card>
       </CardGrid>
+
+      <Callout tone="note" title="Why the list is longer than the pitch">
+        The system is usually described as inventory, chat and pricing, because those are the
+        three that changed how the company works. The rest arrived the way internal software
+        always does — someone asked whether the thing they were doing on paper could live in here
+        too, and the answer kept being yes.
+      </Callout>
 
       <H3>Role-based access</H3>
       <Prose>
         <p>
-          Three tiers — operations, sales, administration — shaping both API authorization and the
-          navigation each user sees. For non-technical users, a smaller interface is a faster one,
-          so this is a usability decision as much as a security one.
+          The roles are the company&apos;s own — expedição, produção, compras, comercial, central
+          de atendimento, supervisão, diretoria, TI — and the same claim on the token that guards
+          a route also decides which navigation a user is given. For non-technical users, a
+          smaller interface is a faster one, so this is a usability decision as much as a security
+          one. A new account starts as <code>VISITANTE</code> with nothing, because the safe
+          default is no access rather than partial access.
         </p>
       </Prose>
 

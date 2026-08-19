@@ -31,7 +31,7 @@ First production release. Replaced spreadsheet-based inventory control across th
 - **Multi-entity inventory control** — entry, exit and transfer between legal entities with full movement traceability (product, date, responsible user)
 - **Real-time operations dashboard** — consolidated and per-entity stock views, minimum-level alerts, movement indicators
 - **Automated pricing** — cubic-weight calculation integrated with the freight table, replacing manual computation
-- **Internal chat** — real-time messaging over WebSocket
+- **Internal chat** — real-time messaging on Firebase Firestore
 - **Role-based access control** — three tiers (operations, sales, administration) shaping both API permissions and navigation
 - Custom design system and reusable React component library
 

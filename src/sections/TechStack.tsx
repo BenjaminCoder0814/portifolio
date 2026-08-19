@@ -16,7 +16,7 @@ const techIcons: Record<string, string> = {
   "TypeScript":  "TS",
   "Tailwind CSS":"TW",
   "Node.js":     "⬡",
-  "MySQL":       "🗄",
+  "PostgreSQL":  "🗄",
   "Figma":       "✦",
   "Git":         "⎇",
 };

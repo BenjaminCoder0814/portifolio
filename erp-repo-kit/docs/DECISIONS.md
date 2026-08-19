@@ -78,7 +78,7 @@ TypeScript for the front-end codebase.
 
 ---
 
-## ADR-004 — MySQL with row-level entity attribution
+## ADR-004 — SQLite first, then PostgreSQL on Neon
 
 **Status:** Accepted · **This is the most important decision in the system**
 
@@ -103,7 +103,7 @@ A single relational database where every stock record and every movement carries
 
 ---
 
-## ADR-005 — WebSocket for real-time stock and chat
+## ADR-005 — Firestore for chat, and nothing real-time for stock
 
 **Status:** Accepted
 
@@ -111,7 +111,7 @@ A single relational database where every stock record and every movement carries
 Two people looking at the same stock number must see the same value. An operator recording a movement and a salesperson quoting a price can be working simultaneously. Internal communication was running on a paid external platform.
 
 ### Decision
-A WebSocket channel carrying both stock movement broadcasts and internal chat.
+Chat on Firebase Firestore; stock stays on plain request/response over the REST API.
 
 ### Alternatives considered
 - **Polling** — every client hitting the API on a timer. Rejected: latency proportional to the interval, and load proportional to users × frequency for data that changes rarely.

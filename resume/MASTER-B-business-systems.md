@@ -12,7 +12,7 @@ São Paulo, Brazil (UTC−3) · Open to relocation and international remote · R
 
 ## SUMMARY
 
-Software developer who builds the internal systems companies actually run on. Three years turning manual operational processes into production software at an industrial manufacturer — specified, built and shipped the ERP that unified inventory, pricing and communication across three legal entities, now used daily by the entire operations team. Front end in **React.js and TypeScript**, integrated with **REST APIs, WebSocket** real-time data and a **MySQL** relational model. Now Director of Information Technology at the same company, still writing production code while leading software architecture and an AI automation initiative. Currently pursuing a **B.Sc. in Computer Science at University of the People (United States)**.
+Software developer who builds the internal systems companies actually run on. Three years turning manual operational processes into production software at an industrial manufacturer — specified, built and shipped the ERP that unified inventory, pricing and communication across three legal entities, now used daily by the entire operations team. Front end in **React.js and TypeScript**, integrated with **REST APIs**, real-time chat on **Firestore** and a **PostgreSQL** model through **Prisma**. Now Director of Information Technology at the same company, still writing production code while leading software architecture and an AI automation initiative. Currently pursuing a **B.Sc. in Computer Science at University of the People (United States)**.
 
 ---
 
@@ -23,7 +23,7 @@ Software developer who builds the internal systems companies actually run on. Th
 - **Turned the company's slowest manual process into its fastest.** Product pricing went from 10–15 minutes of manual calculation to under 30 seconds, through an interface with automated cubic-weight logic.
 - **Leading Cortex, the company's AI initiative.** Built the data layer over the commercial ERP the company runs on — 226,296 records under incremental synchronisation, multi-company, reasoning on Anthropic's Claude API — as the foundation for agents that take over repetitive administrative work.
 - **Cut inventory counting time by 60%** by developing real-time dashboards that gave operations teams live stock visibility, consolidated and per entity.
-- **Removed a recurring software cost** by replacing a paid third-party messaging platform with an in-house real-time chat over WebSocket, adopted company-wide.
+- **Removed a recurring software cost** by replacing a paid third-party messaging platform with an in-house real-time chat on Firebase Firestore, adopted company-wide.
 
 ---
 
@@ -31,11 +31,11 @@ Software developer who builds the internal systems companies actually run on. Th
 
 **Business Systems:** Internal Systems · Business Applications · ERP Development · Inventory Management Systems · Dashboard Development · Workflow Automation · Process Automation · Requirements Gathering · Business Process Analysis
 
-**Software Architecture:** Software Architecture · Component-Based Architecture · Single-Page Applications (SPA) · REST API Design & Integration · Real-Time Systems (WebSocket) · Relational Data Modeling · Role-Based Access Control · Technical Leadership · Technology Decision-Making
+**Software Architecture:** Software Architecture · Component-Based Architecture · Single-Page Applications (SPA) · REST API Design & Integration · Real-Time Systems (Firestore) · Relational Data Modeling · Role-Based Access Control · Technical Leadership · Technology Decision-Making
 
 **Front-End:** React.js · Next.js · JavaScript (ES6+) · TypeScript · HTML5 · CSS3 · Tailwind CSS · Design Systems · Reusable Component Libraries · Responsive Web Design · UI Development
 
-**Back-End & Data:** Node.js · Express.js · MySQL · JWT Authentication · REST APIs
+**Back-End & Data:** Node.js · Express.js · Prisma · PostgreSQL · JWT Authentication · REST APIs
 
 **AI & Automation:** AI Agents · AI-Driven Process Automation · Digital Transformation
 
@@ -62,7 +62,7 @@ Software developer who builds the internal systems companies actually run on. Th
 
 - **Developed** the ERP that replaced the company's spreadsheet-based inventory control — a React.js and TypeScript single-page application with real-time dashboards, permission-aware navigation and REST API integration, now used daily by 100% of the operations team.
 - **Built** the dynamic pricing interface with automated cubic-weight and logistics calculation, and the real-time inventory dashboards consuming REST APIs.
-- **Implemented** real-time internal chat over WebSocket, eliminating a recurring third-party messaging subscription.
+- **Implemented** real-time internal chat on Firebase Firestore, eliminating a recurring third-party messaging subscription.
 - **Built** and maintained the design system and reusable React component library the platform is built on, standardizing the UI across every module.
 - **Optimized** component rendering and asset delivery across the company's web interfaces, **reducing load time by 40%**.
 - **Collaborated** with business teams on digital initiatives, launching the company across 5 online marketplaces and growing digital revenue from R$0 to R$10,000 in 3 months.
@@ -72,11 +72,11 @@ Software developer who builds the internal systems companies actually run on. Th
 ## SELECTED PROJECTS
 
 ### Enterprise Operations Platform (Internal ERP) — *In active production*
-**React.js · TypeScript · Node.js · Express.js · MySQL · REST API · WebSocket · JWT** · 2025 – 2026
+**React · TypeScript · Node.js · Express.js · Prisma · PostgreSQL · REST API · Firebase · JWT** · 2025 – 2026
 
 - **Problem.** Three legal entities sharing one warehouse tracked stock in disconnected spreadsheets. Movements were untraceable, transfers between entities conflicted, price quoting took 10–15 minutes of manual calculation, and internal communication ran on a paid external platform.
 - **Decision.** Evaluated off-the-shelf ERP against building in-house. Chose to build: full process fit, no per-seat licensing, no vendor lock-in, and continuous evolution controlled internally.
-- **Architecture.** Single-Page Application over a decoupled REST API; WebSocket channel for real-time stock updates and chat; JWT authentication with three permission tiers (operations, sales, administration); MySQL relational model that isolates entities while allowing a consolidated view.
+- **Architecture.** Single-Page Application over a decoupled REST API; real-time chat on Firestore; JWT authentication with the company's own roles guarding both the API and the navigation; a PostgreSQL model through Prisma where a stock movement and the balance it changes are written in one transaction.
 - **Interface.** Custom design system and reusable React component library; real-time dashboards with consolidated and per-entity views; permission-aware navigation; high-density UI designed for non-technical warehouse and sales operators.
 - **Impact.** Full stock traceability across entities · 60% faster inventory counts · pricing under 30 seconds · one paid communication tool removed from the cost base · **100% adoption by the operations team**.
 - **Ownership.** Specified, architected, built and shipped solo — no external team, no outsourcing.
@@ -93,7 +93,7 @@ Software developer who builds the internal systems companies actually run on. Th
 - **Stage.** Platform in homologation. Agents — receivables, commercial, purchasing, executive — in development, under a rule fixed before the first one was written: nothing critical executes without human approval.
 
 ### Full-Stack Web Application — *Graduation project · delivered solo · top grade*
-**JavaScript · HTML5 · CSS3 · Node.js · MySQL · REST API** · 2025
+**Next.js 15 · React 19 · TypeScript · Prisma · Tailwind · Docker** · 2025
 
 Built a complete web application end to end — interface, back end and relational data model — and defended it as the final project of the technical degree. Delivered without a team; graded top of the class.
 

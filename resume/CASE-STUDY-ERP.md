@@ -1,7 +1,7 @@
 # Case Study — Internal ERP at Zenith Lacres
 
 **Role:** Sole developer and architect · **Status:** In production, used daily · **Timeline:** 2025 – 2026
-**Stack:** React.js · TypeScript · JavaScript · Node.js · Express.js · MySQL · REST API · WebSocket · JWT
+**Stack:** React · TypeScript · JavaScript · Node.js · Express.js · Prisma · PostgreSQL · REST API · Firebase · JWT
 
 > Este documento existe para ser enviado como anexo, publicado no GitHub como `README.md` do repositório,
 > e usado como base do case study do portfólio. É o mesmo conteúdo em três canais — a base da marca única.
@@ -46,10 +46,10 @@ The strategic bet: **the person who already understood the operation from the in
 **Single-Page Application over a decoupled REST API.**
 The front end is a React SPA; the back end is a Node.js/Express REST API. Decoupling them was deliberate — stock queries needed to be fast and frequent, and a page reload per lookup would have been unusable for warehouse operators checking inventory dozens of times a day.
 
-**WebSocket channel for anything real-time.**
-Stock movements and internal chat both run over WebSocket. When an operator records a movement, every other open dashboard reflects it immediately. This is what made the system trustworthy: two people looking at the same screen see the same number.
+**Firestore for chat; request/response for everything else.**
+Internal chat runs on Firestore. Stock is deliberately not real-time: movements go over the same REST API as everything else, and screens read the balance when they open. The write rate is dozens of movements a day, not dozens a second, so a stateful real-time layer would have been cost without benefit.
 
-**MySQL relational model with entity isolation.**
+**PostgreSQL relational model through Prisma.**
 The core design decision. Entities are separated at the data model level — each movement is attributed to a legal entity — while queries can roll up to a consolidated view. This gives administration a single picture of total stock and gives each entity a clean, legally distinct ledger from the same source of truth.
 
 **JWT authentication with three permission tiers.**

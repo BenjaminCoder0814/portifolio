@@ -16,7 +16,7 @@ Front-End Developer who builds business software that improves operational effic
 years of practical experience with React.js, TypeScript, JavaScript, HTML5 and CSS3, turning
 manual operational processes into production software used daily by entire teams. Built
 and shipped the front end of an internal ERP unifying three legal entities, integrating REST APIs
-and real-time WebSocket data, and reduced interface load time by 40%. Now Director of
+and real-time chat on Firestore, and reduced interface load time by 40%. Now Director of
 Information Technology at the same company, remaining hands-on in the codebase while leading
 software architecture, digital transformation and an AI digital workforce initiative. Currently
 pursuing a B.Sc. in Computer Science at University of the People (United States).
@@ -52,8 +52,8 @@ Web Development: Responsive Web Design, Responsive Design, Web Performance Optim
    Single-Page Applications (SPA), Server-Side Rendering (SSR), Cross-Browser Compatibility,
    Design Systems, Reusable Component Libraries, State Management, Internationalization
 
-APIs and Data: REST API Integration, REST APIs, API Integration, WebSocket, Real-Time Data,
-   JWT Authentication, Node.js, Express.js, MySQL
+APIs and Data: REST API Integration, REST APIs, API Integration, Firestore, Real-Time Data,
+   JWT Authentication, Node.js, Express.js, Prisma, PostgreSQL
 
 Software and Systems: Software Architecture, Internal Systems, Business Applications,
    Requirements Gathering, Technical Leadership, Technology Decision-Making
@@ -96,7 +96,7 @@ Front-End Developer
 - Developed the front end of an internal ERP with React.js and TypeScript: a single-page
   application with real-time dashboards, permission-aware navigation and REST API integration,
   now used daily by 100% of the operations team.
-- Implemented real-time internal chat over WebSocket, eliminating a recurring third-party
+- Implemented real-time internal chat on Firebase Firestore, eliminating a recurring third-party
   messaging subscription.
 - Built and maintained a custom design system and reusable React component library,
   standardizing the user interface across every module of the platform.
@@ -112,13 +112,13 @@ Front-End Developer
 SELECTED PROJECTS
 
 Enterprise Operations Platform (Internal ERP) - In active production
-React.js, TypeScript, JavaScript, HTML5, CSS3, REST API, WebSocket, Node.js, MySQL, JWT
+React, TypeScript, Vite, REST API, Node.js, Express, Prisma, PostgreSQL, Firebase, JWT
 2025 - 2026
 Problem: three legal entities sharing one warehouse tracked stock in disconnected spreadsheets,
 producing untraceable movements, conflicting transfers, and 10-15 minutes of manual work per
 price quote.
-Architecture: Single-Page Application with a decoupled REST API back end, WebSocket channel for
-real-time updates and chat, JWT authentication with three permission tiers, and a MySQL relational
+Architecture: Single-Page Application with a decoupled REST API back end, Firestore for
+real-time updates and chat, JWT authentication with the company's own roles, and a PostgreSQL relational
 model that isolates entities while allowing a consolidated view.
 Front-end work: built the entire interface layer including a custom design system, a reusable React
 component library, real-time dashboards, permission-aware navigation, and a high-density user
@@ -145,10 +145,10 @@ reporting are in development, under a rule fixed before the first one was writte
 executes without human approval.
 
 Full-Stack Web Application - Graduation project, delivered solo, top grade
-JavaScript, HTML5, CSS3, Node.js, MySQL, REST API
+Next.js 15, React 19, TypeScript, Prisma, Tailwind, Docker
 2025
 Owned 100% of the interface including layouts, component structure, navigation flow and
-responsive behavior, integrated with a Node.js and MySQL back end built in the same project.
+responsive behavior, integrated with the back end built in the same project on Next.js and Prisma.
 Delivered without a team across design, front end and back end. Graded top of the class.
 
 Personal Portfolio - benjaminmaciel.com.br - Live in production

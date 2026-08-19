@@ -82,7 +82,7 @@ follow-up custa mais do que a ausência do documento.
 ## Por que este material vale mais que o currículo
 
 Seu currículo afirma: ERP em produção, 100% de adoção, decisão de build-versus-buy, arquitetura
-com WebSocket e JWT, design system próprio.
+com Firestore e JWT, design system próprio.
 
 Hoje **nada disso é verificável por quem lê**. Um engenheiro avalia por evidência, e a evidência
 que ele aceita é código, arquitetura escrita e trade-offs explicados.

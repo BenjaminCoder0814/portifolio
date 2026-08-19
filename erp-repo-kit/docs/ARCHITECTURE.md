@@ -18,24 +18,24 @@
                         │  └───────────────────────┘  │
                         └───────┬─────────────┬───────┘
                                 │             │
-                      REST      │             │   WebSocket
-                   (CRUD, auth, │             │  (stock events,
-                    reporting)  │             │   chat messages)
+                      REST      │             │   Firestore
+                   (CRUD, auth, │             │  (chat only —
+                    reporting)  │             │   not stock)  
                                 ▼             ▼
                         ┌─────────────────────────────┐
                         │     Node.js / Express       │
                         │                             │
                         │   JWT auth · role guard     │
                         │   REST controllers          │
-                        │   WebSocket server          │
+                        │   Prisma (data access)      │
                         └──────────────┬──────────────┘
                                        │
                                        ▼
                         ┌─────────────────────────────┐
-                        │           MySQL             │
+                        │          PostgreSQL         │
                         │                             │
-                        │  every row carries an       │
-                        │  entity identifier          │
+                        │  movement + balance written │
+                        │  in one transaction         │
                         └─────────────────────────────┘
 ```
 
@@ -72,7 +72,7 @@ A query missing its entity filter silently returns another company's data. This 
 
 ## Real-time layer
 
-A single WebSocket connection carries two kinds of traffic:
+Only chat is real-time, and it does not run on infrastructure of ours:
 
 **Stock events.** When an operator records a movement, connected clients update without a refresh. This is what made the system trustworthy — two people looking at the same screen see the same number, which was never true with spreadsheets.
 

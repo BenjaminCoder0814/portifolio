@@ -54,8 +54,8 @@ calculation.
 I evaluated licensing an off-the-shelf ERP and decided to build one instead. The multi-entity
 requirement wasn't a configuration option — it was a data model decision, and it had to be
 right from the start. I specified, architected and shipped it solo: a React.js and TypeScript
-single-page application over a REST API, with WebSocket real-time updates, JWT role-based
-access, and a MySQL model that keeps three legal entities separate while giving administration
+single-page application over a REST API, with real-time chat on Firestore, JWT role-based
+access, and a PostgreSQL model through Prisma, shared by the three companies that operate the warehouse, giving administration
 a consolidated view.
 
 It's in production today, used daily by 100% of the operations team. Price quoting went from
@@ -77,7 +77,7 @@ sponsorship required.
 —
 React.js · Next.js · JavaScript (ES6+) · TypeScript · HTML5 · CSS3 · Tailwind CSS · Responsive
 Web Design · Web Performance · Component-Based Architecture · Design Systems · Single-Page
-Applications · REST API Integration · WebSocket · Node.js · Express.js · MySQL · JWT · Git ·
+Applications · REST API Integration · Firestore · Node.js · Express.js · Prisma · PostgreSQL · JWT · Git ·
 GitHub · Software Architecture · Internal Systems · Business Applications · Workflow Automation ·
 AI Agents · AI Automation · Digital Transformation · Computer Science
 ```
@@ -113,7 +113,7 @@ muitas vagas listam *"BS in Computer Science or related field"*. Sem essa entrad
 
 Depois: `JavaScript` · `Next.js` · `HTML5` · `CSS3` · `Responsive Web Design` · `REST APIs` ·
 `Web Performance` · `Component-Based Architecture` · `UI Development` · `Software Architecture` ·
-`Node.js` · `WebSocket` · `MySQL` · `Design Systems` · `Internal Systems` · `Workflow Automation` ·
+`Node.js` · `Prisma` · `PostgreSQL` · `Design Systems` · `Internal Systems` · `Workflow Automation` ·
 `AI Automation` · `Git` · `GitHub` · `Problem Solving`
 
 ### Configurações (5 minutos, alto retorno)
@@ -149,7 +149,7 @@ I build the internal systems companies run on.
 
 Currently Director of Information Technology at Zenith Lacres, an industrial manufacturer
 where I specified, built and shipped the ERP the company's daily operation runs on — a React
-and TypeScript SPA with real-time dashboards, WebSocket updates and role-based access, used
+and TypeScript SPA with role-based dashboards, Firestore chat and role-based access, used
 daily by 100% of the operations team across three legal entities.
 
 Now leading Cortex: an AI layer over the company's commercial ERP — 226,296 records under
@@ -158,14 +158,14 @@ in development.
 
 ### Stack
 **Front-End** React.js · Next.js · JavaScript (ES6+) · TypeScript · HTML5 · CSS3 · Tailwind CSS
-**Architecture** Component-Based Architecture · Design Systems · SPA · REST API Integration · WebSocket
-**Back-End** Node.js · Express.js · MySQL · JWT
+**Architecture** Component-Based Architecture · Design Systems · SPA · REST API Integration · Prisma
+**Back-End** Node.js · Express.js · Prisma · PostgreSQL · JWT
 **Tools** Git · GitHub · Figma · Jest · React Testing Library
 
 ### Selected work
 | Project | Stack | Status |
 |---|---|---|
-| **Inventory Management System** | React · TypeScript · Node · MySQL · WebSocket | In production |
+| **Inventory Management System** | React · Node · Express · Prisma · PostgreSQL | In production |
 | **Cortex** | Claude API · ERP integration · Incremental sync | Platform in homologation |
 | **Portfolio** | Next.js · React · TypeScript · Tailwind | [Live](https://benjaminmaciel.com.br) |
 
@@ -232,7 +232,7 @@ preencha e siga em frente.
 Hi [NAME], thanks for reaching out.
 
 Quick context: I'm a front-end developer working in React and TypeScript. At Zenith Lacres I
-built the internal ERP the company runs on — a SPA with real-time dashboards and WebSocket
+built the internal ERP the company runs on — a SPA with role-based dashboards and Firestore
 updates, used daily by the whole operations team across three legal entities. I'm now Director
 of IT there and still write production code weekly.
 
@@ -253,7 +253,7 @@ I'm applying for the [ROLE] position at [COMPANY]. One thing that might not come
 the resume: I don't just build interfaces — I build the internal systems companies run on.
 
 At Zenith Lacres I evaluated licensing an off-the-shelf ERP and decided to build one instead,
-then shipped it solo: React, TypeScript, REST API, WebSocket, role-based access across three
+then shipped it solo: React, TypeScript, REST API, Firestore chat, role-based access across three
 legal entities. Price quoting went from 15 minutes to under 30 seconds. It's in production and
 the whole operations team uses it daily.
 

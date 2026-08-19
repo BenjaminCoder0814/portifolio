@@ -153,9 +153,10 @@
         "desc": "Custom ERP with multi-CNPJ inventory control, internal corporate chat, and automated price management. In active production.",
         "tags": [
           "React",
-          "Node.js",
-          "MySQL",
-          "WebSocket"
+          "Express",
+          "Prisma",
+          "PostgreSQL",
+          "Firebase"
         ],
         "year": "2026",
         "impact": "Active system · 3 CNPJs unified"
@@ -173,13 +174,13 @@
       },
       {
         "name": "Graduation Project — Full Stack",
-        "desc": "Technical graduation project developed entirely solo. Design, frontend, and backend from scratch. Achieved top grade.",
+        "desc": "A workout-tracking platform delivered as the technical graduation project, built entirely solo — design, front end and back end. 181+ catalogued exercises, a workout builder and automatic personal-record detection.",
         "tags": [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Node.js",
-          "MySQL"
+          "Next.js 15",
+          "React 19",
+          "TypeScript",
+          "Prisma",
+          "Docker"
         ],
         "year": "2025",
         "impact": "Top grade · 100% autonomous"
@@ -335,12 +336,12 @@
       {
         "name": "Node.js",
         "category": "Backend",
-        "desc": "REST APIs, WebSocket, and server-side business logic (ERP system)."
+        "desc": "Express REST APIs, JWT authentication and server-side business rules (ERP in production)."
       },
       {
-        "name": "MySQL",
+        "name": "PostgreSQL",
         "category": "Database",
-        "desc": "Relational modeling, optimized queries, multi-CNPJ control in active production."
+        "desc": "Relational modelling through Prisma. Production database on Neon, with stock movements written transactionally."
       },
       {
         "name": "Figma",
@@ -427,7 +428,7 @@
         "design": "Figma · Design System · UI/UX · Canva Pro",
         "tools": "Git · GitHub · VS Code · Next.js",
         "marketing": "Marketplaces · Visual Identity · Conversion Strategy",
-        "backend": "Node.js · REST APIs · MySQL · WebSocket"
+        "backend": "Node.js · Express · REST APIs · Prisma · PostgreSQL"
       },
       "experience": [
         {

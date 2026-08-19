@@ -8,7 +8,7 @@ São Paulo, Brazil (UTC−3) · Open to relocation and international remote · R
 
 ## SUMMARY
 
-**Front-End Developer who builds business software that improves operational efficiency.** Three years of practical experience with **React.js, TypeScript, JavaScript, HTML5 and CSS3**, turning manual operational processes into production software used daily by entire teams. Built and shipped the front end of an internal ERP unifying three legal entities, integrating REST APIs and real-time WebSocket data, and reduced interface load time by 40%. Now Director of Information Technology at the same company, remaining hands-on in the codebase while leading software architecture, digital transformation and an AI digital workforce initiative. Currently pursuing a **B.Sc. in Computer Science at University of the People (United States)**.
+**Front-End Developer who builds business software that improves operational efficiency.** Three years of practical experience with **React.js, TypeScript, JavaScript, HTML5 and CSS3**, turning manual operational processes into production software used daily by entire teams. Built and shipped the front end of an internal ERP unifying three legal entities, integrating REST APIs and real-time chat on Firestore, and reduced interface load time by 40%. Now Director of Information Technology at the same company, remaining hands-on in the codebase while leading software architecture, digital transformation and an AI digital workforce initiative. Currently pursuing a **B.Sc. in Computer Science at University of the People (United States)**.
 
 ---
 
@@ -28,7 +28,7 @@ São Paulo, Brazil (UTC−3) · Open to relocation and international remote · R
 
 **Web Development:** Responsive Web Design · Web Performance Optimization · Component-Based Architecture · UI Development · Single-Page Applications (SPA) · Server-Side Rendering (SSR) · Cross-Browser Compatibility · Design Systems · Reusable Component Libraries · State Management · Internationalization (i18n)
 
-**APIs & Data:** REST API Integration · WebSocket / Real-Time Data · JWT Authentication · Node.js · Express.js · MySQL
+**APIs & Data:** REST API Integration · Real-Time Data (Firestore) · JWT Authentication · Node.js · Express.js · Prisma · PostgreSQL
 
 **Software & Systems:** Software Architecture · Internal Systems · Business Applications · Requirements Gathering · Technical Leadership · Technology Decision-Making
 
@@ -58,7 +58,7 @@ São Paulo, Brazil (UTC−3) · Open to relocation and international remote · R
 #### Front-End Developer · 2023 – 2025
 
 - **Developed** the front end of an internal ERP with React.js and TypeScript — a single-page application with real-time dashboards, permission-aware navigation and REST API integration, now used daily by 100% of the operations team.
-- **Implemented** real-time internal chat over WebSocket, eliminating a recurring third-party messaging subscription.
+- **Implemented** real-time internal chat on Firebase Firestore, eliminating a recurring third-party messaging subscription.
 - **Built** and maintained a custom design system and reusable React component library, standardizing the UI across every module of the platform.
 - **Developed** responsive, cross-browser web interfaces from Figma designs, ensuring consistent behavior across desktop and mobile.
 - **Built** the dynamic pricing interface with automated cubic-weight calculation and the real-time inventory dashboards consuming REST APIs.
@@ -70,10 +70,10 @@ São Paulo, Brazil (UTC−3) · Open to relocation and international remote · R
 ## SELECTED PROJECTS
 
 ### Enterprise Operations Platform (Internal ERP) — *In active production*
-**React.js · TypeScript · JavaScript · HTML5 · CSS3 · REST API · WebSocket · Node.js · MySQL · JWT** · 2025 – 2026
+**React · TypeScript · Vite · REST API · Node.js · Express · Prisma · PostgreSQL · Firebase · JWT** · 2025 – 2026
 
 - **Problem.** Three legal entities sharing one warehouse tracked stock in disconnected spreadsheets — untraceable movements, conflicting transfers, and 10–15 minutes of manual work per price quote.
-- **Architecture.** Single-Page Application with a decoupled REST API back end, WebSocket channel for real-time updates and chat, JWT authentication with three permission tiers, and a MySQL relational model that isolates entities while allowing a consolidated view.
+- **Architecture.** Single-Page Application with a decoupled REST API back end, real-time chat on Firestore, JWT authentication with the company's own roles, and a PostgreSQL model through Prisma where a movement and the balance it changes are written in one transaction.
 - **Front-end work.** Built the entire interface layer: custom design system, reusable React component library, real-time dashboards, permission-aware navigation, and a high-density UI designed for non-technical warehouse and sales operators.
 - **Impact.** Full stock traceability across entities · 60% faster inventory counts · pricing under 30 seconds · one paid communication tool removed · 100% adoption by the operations team.
 - **Differentiator.** Specified, architected and shipped solo — built in-house instead of buying an off-the-shelf ERP, giving full process fit and no vendor lock-in.
@@ -88,9 +88,9 @@ São Paulo, Brazil (UTC−3) · Open to relocation and international remote · R
 - **Stage.** Platform in homologation. Agents — receivables, commercial, purchasing, executive — in development, under a rule fixed before the first one was written: nothing critical executes without human approval.
 
 ### Full-Stack Web Application — *Graduation project · delivered solo · top grade*
-**JavaScript · HTML5 · CSS3 · Node.js · MySQL · REST API** · 2025
+**Next.js 15 · React 19 · TypeScript · Prisma · Tailwind · Docker** · 2025
 
-Owned 100% of the interface — layouts, component structure, navigation flow and responsive behavior — integrated with a Node.js and MySQL back end built in the same project. Delivered without a team across design, front end and back end; graded top of the class.
+Owned 100% of the interface — layouts, component structure, navigation flow and responsive behavior — integrated with the back end built in the same project on Next.js and Prisma. Delivered without a team across design, front end and back end; graded top of the class.
 
 ### Personal Portfolio — [benjaminmaciel.com.br](https://benjaminmaciel.com.br) · *Live in production*
 **Next.js · React.js · TypeScript · Tailwind CSS · Framer Motion · HTML5 · CSS3** · 2026

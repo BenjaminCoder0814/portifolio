@@ -51,7 +51,7 @@ export default function Roadmap() {
               { term: "Multi-entity inventory control", tone: "green", desc: "Entry, exit and transfer with full traceability across three legal entities." },
               { term: "Real-time dashboards", tone: "green", desc: "Consolidated and per-entity views, minimum-level alerts, live movement indicators." },
               { term: "Automated pricing", tone: "green", desc: "Cubic-weight calculation integrated with the freight table. 10–15 min → under 30 s." },
-              { term: "Internal chat over WebSocket", tone: "green", desc: "Replaced a paid third-party messaging platform." },
+              { term: "Internal chat on Firestore", tone: "green", desc: "Replaced a paid third-party messaging platform, and with it a recurring bill." },
               { term: "Role-based access control", tone: "green", desc: "Three tiers shaping both API permissions and navigation." },
             ]}
           />

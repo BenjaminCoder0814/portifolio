@@ -16,7 +16,7 @@
 ## Por que este documento importa mais do que qualquer edição adicional no currículo
 
 Seu currículo hoje afirma: ERP em produção, 100% de adoção, decisão de build-versus-buy,
-arquitetura com WebSocket e JWT, design system próprio, iniciativa de IA.
+arquitetura com Firestore e JWT, design system próprio, iniciativa de IA.
 
 **Nada disso é verificável por quem lê.** Um Staff Engineer avalia candidatos por evidência, e a
 evidência que ele aceita é código, arquitetura escrita, e trade-offs explicados. Currículo é
@@ -34,7 +34,7 @@ Nome, posicionamento, contatos, índice. Uma frase dizendo o que o leitor vai en
 ### Parte 1 — Engineering Profile (2 páginas)
 Como você trabalha, não o que você sabe. Três subseções:
 - **How I approach a problem** — mapear o processo antes de escrever código. Use um exemplo real.
-- **Technical decisions I've owned** — build-versus-buy, modelo de dados multi-entidade, SPA vs. server-rendered, WebSocket vs. polling.
+- **Technical decisions I've owned** — build-versus-buy, modelo de dados multi-entidade, SPA vs. server-rendered, comprar tempo real pronto (Firestore) vs. construir.
 - **What I'm still learning** — testes automatizados, CI/CD, acessibilidade. **Não pule.** Um candidato que declara lacunas com precisão é mais confiável que um que só lista forças.
 
 ### Parte 2 — Case Study: Enterprise Operations Platform (10–12 páginas) ⭐
@@ -47,7 +47,7 @@ O núcleo do documento. `CASE-STUDY-ERP.md` já cobre a espinha dorsal; expandir
 | Architecture | ✅ escrito | **Diagrama** |
 | Data model | ⬜ | Diagrama ER (mesmo simplificado) das entidades e da separação por CNPJ |
 | Auth & permissions | ✅ parcial | Fluxo do JWT, o que cada tier vê |
-| Real-time layer | ⬜ | Por que WebSocket e não polling. O que acontece quando cai a conexão |
+| Real-time layer | ⬜ | Por que Firestore para o chat e nada em tempo real para estoque. O que custa ter duas autenticações |
 | Interface | ✅ escrito | **Screenshots** — 4 a 6, com legendas explicando a decisão de design |
 | Design system | ⬜ | Lista de componentes, tokens, como um módulo novo é montado |
 | Impact | ✅ escrito | — |
