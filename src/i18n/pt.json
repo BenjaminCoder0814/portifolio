@@ -51,7 +51,10 @@
     "viewResume": "Ver Currículo",
     "engineering": "Engenharia",
     "systems": "Sistemas",
-    "achievements": "Trabalho selecionado"
+    "achievements": "Trabalho selecionado",
+    "experience": "Experiência",
+    "stack": "Stack",
+    "notes": "Notas"
   },
   "hero": {
     "greeting": "Olá, eu sou",
@@ -173,14 +176,14 @@
         "impact": "R$0 → R$10.000 em 3 meses"
       },
       {
-        "name": "TCC — Sistema Web Full Stack",
+        "name": "Muscle Levels — TCC full stack",
         "desc": "Plataforma de acompanhamento de treinos entregue como TCC, feita 100% solo — design, front-end e back-end. 181+ exercícios, construtor de treinos e detecção automática de recordes.",
         "tags": [
           "Next.js 15",
           "React 19",
           "TypeScript",
-          "Prisma",
-          "Docker"
+          "Tailwind",
+          "MDX"
         ],
         "year": "2025",
         "impact": "Nota máxima · 100% autônomo"
@@ -267,7 +270,15 @@
     "curriculum": "📄 Currículo PDF",
     "linkedinKit": "💼 LinkedIn Kit",
     "erp": "🛠️ Sistema ERP",
-    "engineering": "⚙️ Documentação Técnica"
+    "engineering": "⚙️ Documentação Técnica",
+    "notes": "Notas técnicas",
+    "now": "Agora",
+    "uses": "O que eu uso",
+    "principles": "Como eu trabalho",
+    "groupWork": "Trabalho",
+    "groupAbout": "Sobre",
+    "groupHire": "Contratar",
+    "faq": "FAQ"
   },
   "languages": [
     {
@@ -316,42 +327,42 @@
       {
         "name": "React",
         "category": "Frontend",
-        "desc": "Component-driven architecture, hooks, state management e otimização de re-renders."
+        "desc": "A SPA que a operação da Zenith usa todo dia: estoque, precificação, portaria, separações. Composição de componentes, hooks e estado de formulário em telas densas de dados."
       },
       {
         "name": "Next.js",
         "category": "Framework",
-        "desc": "App Router, SSR, SSG, otimização de imagens e rotas internacionalizadas (este portfolio)."
+        "desc": "App Router com rotas em três idiomas geradas estaticamente, metadata e canonical por idioma, e geração de assets no build. Este site e o Muscle Levels."
       },
       {
         "name": "TypeScript",
         "category": "Language",
-        "desc": "Tipagem estática para sistemas escaláveis com menos bugs em produção."
+        "desc": "Neste portfólio e no Muscle Levels. Uso tipos para tornar estado impossível de representar — o que evita a classe de bug que testes só encontram tarde."
       },
       {
         "name": "Tailwind CSS",
         "category": "Styling",
-        "desc": "Utility-first styling. Design system consistente e responsivo em escala de projeto."
+        "desc": "Sempre com tokens próprios, nunca com a paleta padrão. Nos três projetos, o design system vem antes das classes."
       },
       {
         "name": "Node.js",
         "category": "Backend",
-        "desc": "REST APIs em Express, autenticação JWT e regras de negócio no servidor (ERP em produção)."
+        "desc": "A API do ERP em Express: rotas REST, JWT com guarda por papel, e as regras que não podem viver no cliente — como recusar saldo negativo antes de escrever."
       },
       {
         "name": "PostgreSQL",
         "category": "Database",
-        "desc": "Modelagem relacional via Prisma. Banco em produção no Neon, com movimentações escritas em transação."
+        "desc": "Modelado com Prisma e em produção no Neon. A movimentação e o saldo que ela altera são escritos na mesma transação, para que histórico e número nunca discordem."
       },
       {
         "name": "Figma",
         "category": "Design",
-        "desc": "Prototipagem, design system, fluxos de UX e handoff para desenvolvimento."
+        "desc": "Protótipos e fluxos antes do código, e todo o material do rebranding da Zenith — identidade, catálogo e as fotos de produto que foram para 5 marketplaces."
       },
       {
         "name": "Git",
         "category": "DevOps",
-        "desc": "Controle de versão, branching estratégico e colaboração em projetos reais."
+        "desc": "Branches por mudança e commits que explicam o porquê, não o quê. É o que torna possível reconstruir uma decisão um ano depois."
       }
     ]
   },

@@ -119,7 +119,7 @@ export const resume = {
       {
         name: "Sistema Web Full Stack — TCC",
         year: "2025 · Entregue sozinho, nota máxima",
-        stack: "Next.js 15 · React 19 · TypeScript · Prisma · Tailwind · Docker",
+        stack: "Next.js 15 · React 19 · TypeScript · Tailwind CSS · MDX",
         bullets: [
           "Responsável por 100% da interface — layouts, estrutura de componentes, fluxo de navegação e responsividade — integrada ao back-end construído no mesmo projeto com Next.js e Prisma.",
         ],
@@ -248,7 +248,7 @@ export const resume = {
       {
         name: "Full-Stack Web Application — Graduation project",
         year: "2025 · Delivered solo, top grade",
-        stack: "Next.js 15 · React 19 · TypeScript · Prisma · Tailwind · Docker",
+        stack: "Next.js 15 · React 19 · TypeScript · Tailwind CSS · MDX",
         bullets: [
           "Owned 100% of the interface — layouts, component structure, navigation flow and responsive behavior — integrated with the back end built in the same project on Next.js and Prisma.",
         ],
@@ -377,7 +377,7 @@ export const resume = {
       {
         name: "Sistema Web Full Stack — Proyecto final",
         year: "2025 · Entregado en solitario, nota máxima",
-        stack: "Next.js 15 · React 19 · TypeScript · Prisma · Tailwind · Docker",
+        stack: "Next.js 15 · React 19 · TypeScript · Tailwind CSS · MDX",
         bullets: [
           "Responsable del 100% de la interfaz — layouts, estructura de componentes, flujo de navegación y responsividad — integrada al back-end construido en el mismo proyecto con Next.js y Prisma.",
         ],

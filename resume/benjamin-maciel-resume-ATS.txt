@@ -145,7 +145,7 @@ reporting are in development, under a rule fixed before the first one was writte
 executes without human approval.
 
 Full-Stack Web Application - Graduation project, delivered solo, top grade
-Next.js 15, React 19, TypeScript, Prisma, Tailwind, Docker
+Next.js 15, React 19, TypeScript, Tailwind CSS, MDX
 2025
 Owned 100% of the interface including layouts, component structure, navigation flow and
 responsive behavior, integrated with the back end built in the same project on Next.js and Prisma.

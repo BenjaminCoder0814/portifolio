@@ -93,7 +93,7 @@ export function DataModelDiagram() {
       {t(289, 30, "Product", ["id", "code", "stockCurrent"])}
       {t(538, 30, "User", ["id", "email", "role"], "#fbbf24")}
 
-      {t(40, 178, "AuditLog", ["→ userId", "entity · action", "beforeJson → afterJson"], "#a78bfa")}
+      {t(40, 178, "MediaAsset", ["→ uploadedById", "type · url", "description"], "#a78bfa")}
       {t(330, 178, "Movement", ["→ productId", "→ userId", "type · quantity"], "#00d4ff")}
 
       {/* relations */}

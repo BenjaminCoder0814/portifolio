@@ -88,7 +88,7 @@ São Paulo, Brazil (UTC−3) · Open to relocation and international remote · R
 - **Stage.** Platform in homologation. Agents — receivables, commercial, purchasing, executive — in development, under a rule fixed before the first one was written: nothing critical executes without human approval.
 
 ### Full-Stack Web Application — *Graduation project · delivered solo · top grade*
-**Next.js 15 · React 19 · TypeScript · Prisma · Tailwind · Docker** · 2025
+**Next.js 15 · React 19 · TypeScript · Tailwind CSS · MDX** · 2025
 
 Owned 100% of the interface — layouts, component structure, navigation flow and responsive behavior — integrated with the back end built in the same project on Next.js and Prisma. Delivered without a team across design, front end and back end; graded top of the class.
 

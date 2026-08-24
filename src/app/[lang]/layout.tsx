@@ -5,23 +5,23 @@ import { SITE_URL } from "@/lib/site";
 
 const LANG_SEO: Record<Lang, { title: string; description: string; locale: string; ogLocale: string }> = {
   pt: {
-    title: `${personal.name} — Desenvolvedor Front-End & Arquiteto de Sistemas`,
+    title: `${personal.name} — Software Engineer · Full-Stack`,
     description:
-      "Desenvolvedor Front-End que constrói os sistemas internos com que as empresas operam. React.js, TypeScript, ERP interno em produção e automação com IA. São Paulo, Brasil.",
+      "Software Engineer que constrói os sistemas internos com que as empresas operam. React.js, TypeScript, ERP interno em produção e automação com IA. São Paulo, Brasil.",
     locale: "pt_BR",
     ogLocale: "pt_BR",
   },
   en: {
-    title: `${personal.name} — Front-End Developer & System Architect`,
+    title: `${personal.name} — Software Engineer · Full-Stack`,
     description:
-      "Front-End Developer building the internal business systems companies run on. React.js, TypeScript, an internal ERP in production, and AI-driven automation. São Paulo, Brazil.",
+      "Software Engineer building the internal business systems companies run on. React.js, TypeScript, an internal ERP in production, and AI-driven automation. São Paulo, Brazil.",
     locale: "en_US",
     ogLocale: "en_US",
   },
   es: {
-    title: `${personal.name} — Desarrollador Front-End & Arquitecto de Sistemas`,
+    title: `${personal.name} — Software Engineer · Full-Stack`,
     description:
-      "Desarrollador Front-End que construye los sistemas internos con los que operan las empresas. React.js, TypeScript, ERP interno en producción y automatización con IA. São Paulo, Brasil.",
+      "Software Engineer que construye los sistemas internos con los que operan las empresas. React.js, TypeScript, ERP interno en producción y automatización con IA. São Paulo, Brasil.",
     locale: "es_ES",
     ogLocale: "es_ES",
   },

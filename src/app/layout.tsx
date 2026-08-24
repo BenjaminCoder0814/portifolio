@@ -26,13 +26,15 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${personal.name} — Front-End Developer · React.js · TypeScript`,
+    default: `${personal.name} — Software Engineer · React · TypeScript · Node.js`,
     template: `%s | ${personal.name}`,
   },
   description:
-    "Front-End Developer building the internal business systems companies run on. React.js, TypeScript, an internal ERP in production, and AI-driven process automation. São Paulo, Brazil.",
+    "Software Engineer building the internal business systems companies run on. React.js, TypeScript, an internal ERP in production, and AI-driven process automation. São Paulo, Brazil.",
     keywords: [
     "Benjamin Maciel",
+    "Software Engineer",
+    "Full-Stack Developer",
     "Front-End Developer",
     "React Developer",
     "React.js",
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: SITE_URL,
-    title: `${personal.name} — Front-End Developer · React.js · TypeScript`,
+    title: `${personal.name} — Software Engineer · React · TypeScript · Node.js`,
     description: "He built and runs the system his company operates on. React.js · TypeScript · Internal business systems · AI automation.",
     siteName: `${personal.name} Portfolio`,
     images: [
@@ -63,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${personal.name} — Front-End Developer · React.js · TypeScript`,
+    title: `${personal.name} — Software Engineer · React · TypeScript · Node.js`,
     description:
       "He built and runs the system his company operates on. React.js · TypeScript · Internal business systems · AI automation.",
     images: ["/og-image.png"],
@@ -101,7 +103,7 @@ export default function RootLayout({
               name: personal.name,
               url: SITE_URL,
               image: siteUrl("/og-image.png"),
-              jobTitle: "Front-End Developer",
+              jobTitle: "Software Engineer",
               email: `mailto:${personal.email}`,
               telephone: "+55 19 97100-3115",
               worksFor: { "@type": "Organization", name: "Zenith Lacres" },

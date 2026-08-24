@@ -7,7 +7,7 @@ export default function EngineeringIndex() {
         eyebrow="Engineering"
         title="Systems, decisions, trade-offs"
         lead="Technical documentation for the software I've built — what the problem was, what I chose, what I rejected, and what it cost. Written the way I'd want to read someone else's."
-        meta={["Benjamin Maciel", "Front-End Developer · Internal Business Systems", "São Paulo, Brazil"]}
+        meta={["Benjamin Maciel", "Software Engineer · Internal Business Systems", "São Paulo, Brazil"]}
       />
 
       <StatGrid

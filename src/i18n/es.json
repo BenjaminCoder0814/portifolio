@@ -51,7 +51,10 @@
     "viewResume": "Ver Currículum",
     "engineering": "Ingeniería",
     "systems": "Sistemas",
-    "achievements": "Trabajo seleccionado"
+    "achievements": "Trabajo seleccionado",
+    "experience": "Experiencia",
+    "stack": "Stack",
+    "notes": "Notas"
   },
   "hero": {
     "greeting": "Hola, soy",
@@ -173,14 +176,14 @@
         "impact": "R$0 → R$10.000 en 3 meses"
       },
       {
-        "name": "TFG — Sistema Web Full Stack",
+        "name": "Muscle Levels — TFG full stack",
         "desc": "Plataforma de seguimiento de entrenamientos entregada como proyecto de graduación, hecha 100% en solitario — diseño, front-end y back-end. 181+ ejercicios, constructor de rutinas y detección automática de récords.",
         "tags": [
           "Next.js 15",
           "React 19",
           "TypeScript",
-          "Prisma",
-          "Docker"
+          "Tailwind",
+          "MDX"
         ],
         "year": "2025",
         "impact": "Nota máxima · 100% autónomo"
@@ -267,7 +270,15 @@
     "curriculum": "📄 Currículum PDF",
     "linkedinKit": "💼 LinkedIn Kit",
     "erp": "🛠️ Sistema ERP",
-    "engineering": "⚙️ Documentación Técnica"
+    "engineering": "⚙️ Documentación Técnica",
+    "notes": "Notas técnicas",
+    "now": "Ahora",
+    "uses": "Lo que uso",
+    "principles": "Cómo trabajo",
+    "groupWork": "Trabajo",
+    "groupAbout": "Sobre mí",
+    "groupHire": "Contratar",
+    "faq": "FAQ"
   },
   "languages": [
     {
@@ -316,42 +327,42 @@
       {
         "name": "React",
         "category": "Frontend",
-        "desc": "Arquitectura component-driven, hooks, gestión de estado y re-renders optimizados."
+        "desc": "La SPA que la operación de Zenith usa a diario: inventario, precios, portería, separaciones. Composición de componentes, hooks y estado de formularios en pantallas densas."
       },
       {
         "name": "Next.js",
         "category": "Framework",
-        "desc": "App Router, SSR, SSG, optimización de imágenes y rutas internacionalizadas (este portfolio)."
+        "desc": "App Router con rutas en tres idiomas generadas estáticamente, metadata y canonical por idioma, y generación de assets en el build. Este sitio y Muscle Levels."
       },
       {
         "name": "TypeScript",
         "category": "Language",
-        "desc": "Tipado estático para sistemas escalables con menos bugs en producción."
+        "desc": "En este portafolio y en Muscle Levels. Uso tipos para hacer irrepresentable el estado inválido, lo que elimina la clase de bug que los tests solo encuentran tarde."
       },
       {
         "name": "Tailwind CSS",
         "category": "Styling",
-        "desc": "Utility-first styling. Sistema de diseño consistente y responsive a escala de proyecto."
+        "desc": "Siempre con tokens propios, nunca la paleta por defecto. En los tres proyectos el design system va antes que las clases."
       },
       {
         "name": "Node.js",
         "category": "Backend",
-        "desc": "REST APIs en Express, autenticación JWT y reglas de negocio en el servidor (ERP en producción)."
+        "desc": "La API del ERP en Express: rutas REST, JWT con guarda por rol, y las reglas que no pueden vivir en el cliente, como rechazar saldo negativo antes de escribir."
       },
       {
         "name": "PostgreSQL",
         "category": "Database",
-        "desc": "Modelado relacional vía Prisma. Base de datos en producción en Neon, con movimientos escritos en transacción."
+        "desc": "Modelado con Prisma y en producción en Neon. El movimiento y el saldo que altera se escriben en la misma transacción, para que historial y número nunca difieran."
       },
       {
         "name": "Figma",
         "category": "Design",
-        "desc": "Prototipado, design system, flujos de UX y handoff para desarrollo."
+        "desc": "Prototipos y flujos antes del código, más todo el rebranding de Zenith: identidad, catálogo y la fotografía de producto que salió a 5 marketplaces."
       },
       {
         "name": "Git",
         "category": "DevOps",
-        "desc": "Control de versiones, branching estratégico y colaboración en proyectos reales."
+        "desc": "Una rama por cambio y commits que explican el porqué, no el qué. Es lo que hace reconstruible una decisión un año después."
       }
     ]
   },

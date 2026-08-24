@@ -1,8 +1,9 @@
 "use client";
 
 import { useScrollY } from "@/hooks";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
+import { usePathname } from "next/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import dynamic from "next/dynamic";
 
@@ -11,28 +12,24 @@ const PdfViewerModal = dynamic(() => import("@/components/PdfViewerModal"), { ss
 export default function Navbar() {
   const scrollY = useScrollY();
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("");
   const [pdfOpen, setPdfOpen] = useState(false);
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  // Nav items are routes now, so the active state comes from the URL rather
+  // than from a scroll observer.
+  const pathname = usePathname();
 
   const scrolled = scrollY > 20;
 
+  // The site outgrew a single-page nav: these are real routes now, so the
+  // desktop bar and the mobile menu share one list and one active rule.
   const NAV_ITEMS = [
-    { label: t.nav.systems,      href: "#systems"      },
-    { label: t.nav.achievements, href: "#achievements" },
-    { label: t.nav.projects,     href: "#projects"     },
-    { label: t.nav.contact,      href: "#contact"      },
+    { label: t.nav.projects,     href: `/${lang}/projetos`  },
+    { label: t.nav.about,        href: `/${lang}/sobre`     },
+    { label: t.nav.experience,   href: `/${lang}/experiencia` },
+    { label: t.nav.stack,        href: `/${lang}/skills`    },
+    { label: t.nav.notes,        href: `/${lang}/notas`     },
+    { label: t.nav.contact,      href: `/${lang}/contato`   },
   ];
-
-  // Active section detection
-  useEffect(() => {
-    const ids = ["systems","achievements","projects","contact"];
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) setActive("#" + e.target.id); });
-    }, { threshold: 0.35 });
-    ids.forEach((id) => { const el = document.getElementById(id); if (el) obs.observe(el); });
-    return () => obs.disconnect();
-  }, []);
 
   // Open dev mode terminal via custom event
   const openTerminal = () => {
@@ -61,13 +58,13 @@ export default function Navbar() {
                 <a
                   href={item.href}
                   className={`text-xs font-medium uppercase tracking-[0.06em] transition-colors duration-200 relative group ${
-                    active === item.href ? "text-[#00d4ff]" : "text-[#8b949e] hover:text-[#00d4ff]"
+                    pathname === item.href ? "text-[#00d4ff]" : "text-[#8b949e] hover:text-[#00d4ff]"
                   }`}
                 >
                   {item.label}
                   <span
                     className={`absolute -bottom-1 left-0 h-px bg-[#00d4ff] transition-all duration-300 ${
-                      active === item.href ? "w-full" : "w-0 group-hover:w-full"
+                      pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   />
                 </a>

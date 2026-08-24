@@ -17,7 +17,7 @@ export const personal = {
   whatsapp:  "5519971003115",
   phone:     "+55 19 97100-3115",
   roles: [
-    "Front-End Developer",
+    "Software Engineer",
     "Internal Systems Developer",
     "Business Software Engineer",
     "AI Automation",
@@ -83,7 +83,7 @@ export const timeline = [
     title: "TCC — Feito 100% solo",
     description: "Projeto de conclusão do técnico que era em trio. Desenvolveu sozinho: design, frontend e backend completos. Aprovado. Formado em dezembro de 2025.",
     current: false,
-    tech: ["Next.js", "React", "TypeScript", "Prisma", "Docker"],
+    tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind", "MDX"],
   },
   {
     year: "2026",
@@ -185,7 +185,7 @@ export const projects = [
   {
     title: "Muscle Levels — TCC full stack (solo)",
     description: "Plataforma de acompanhamento de treinos entregue como TCC do curso técnico, feita 100% solo — design, front-end e back-end. Catálogo de 181+ exercícios, construtor de treinos, timer de descanso, detecção automática de recordes pessoais e análise de progressão. O projeto era para ser em trio; foi entregue individualmente com nota máxima.",
-    stack: ["Next.js 15", "React 19", "TypeScript", "Prisma", "Tailwind", "Docker"],
+    stack: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "MDX"],
     metrics: [
       { value: "100%",  label: "Desenvolvido solo" },
       { value: "10",    label: "Nota final" },

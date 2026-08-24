@@ -93,7 +93,7 @@ Software developer who builds the internal systems companies actually run on. Th
 - **Stage.** Platform in homologation. Agents — receivables, commercial, purchasing, executive — in development, under a rule fixed before the first one was written: nothing critical executes without human approval.
 
 ### Full-Stack Web Application — *Graduation project · delivered solo · top grade*
-**Next.js 15 · React 19 · TypeScript · Prisma · Tailwind · Docker** · 2025
+**Next.js 15 · React 19 · TypeScript · Tailwind CSS · MDX** · 2025
 
 Built a complete web application end to end — interface, back end and relational data model — and defended it as the final project of the technical degree. Delivered without a team; graded top of the class.
 

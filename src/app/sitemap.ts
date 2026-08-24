@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
 import { SITE_URL } from "@/lib/site";
+import { notes } from "@/content/notas";
+import { caseStudies } from "@/content/projects";
 
 const BASE = SITE_URL;
 const LANGS = ["pt", "en", "es"] as const;
@@ -11,14 +13,19 @@ const LANGS = ["pt", "en", "es"] as const;
  * to search. Engineering docs are excluded until their content is verified.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const localized = ["", "/curriculo"];
+  const localized = [
+    "", "/sobre", "/experiencia", "/projetos", "/skills", "/como-trabalho",
+    "/notas", "/uses", "/now", "/faq", "/curriculo", "/contato",
+    ...caseStudies.map((p) => `/projetos/${p.slug}`),
+    ...notes.map((n) => `/notas/${n.slug}`),
+  ];
 
   const pages = LANGS.flatMap((lang) =>
     localized.map((path) => ({
       url: `${BASE}/${lang}${path}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
-      priority: path === "" ? 1 : 0.9,
+      priority: path === "" ? 1 : /^\/(notas|projetos)\//.test(path) ? 0.8 : 0.9,
       alternates: {
         languages: Object.fromEntries(LANGS.map((l) => [l, `${BASE}/${l}${path}`])),
       },

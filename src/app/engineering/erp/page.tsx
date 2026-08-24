@@ -214,9 +214,10 @@ export default function ErpCaseStudy() {
           Driver check-in at the gate and the queue that follows from it — the part of the
           operation that happens before anything is loaded.
         </Card>
-        <Card title="Audit log" tone="red">
-          Every change recorded with its before and after as JSON, attributed to a user. This is
-          what makes a wrong number answerable instead of merely wrong.
+        <Card title="Audit and counting" tone="red">
+          Physical counts, price history and an activity log, read live from Firestore. The
+          Postgres schema also carries an <code>AuditLog</code> model with before/after JSON —
+          modelled, never written to, and honest debt rather than a feature.
         </Card>
         <Card title="Users, media and extensions" meta="ADMIN · TI">
           Account and role management, a shared media library for product photography, and the

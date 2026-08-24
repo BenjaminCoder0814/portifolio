@@ -51,7 +51,10 @@
     "viewResume": "View Resume",
     "engineering": "Engineering",
     "systems": "Systems",
-    "achievements": "Selected work"
+    "achievements": "Selected work",
+    "experience": "Experience",
+    "stack": "Stack",
+    "notes": "Notes"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -173,14 +176,14 @@
         "impact": "R$0 → R$10,000 in 3 months"
       },
       {
-        "name": "Graduation Project — Full Stack",
+        "name": "Muscle Levels — Graduation project",
         "desc": "A workout-tracking platform delivered as the technical graduation project, built entirely solo — design, front end and back end. 181+ catalogued exercises, a workout builder and automatic personal-record detection.",
         "tags": [
           "Next.js 15",
           "React 19",
           "TypeScript",
-          "Prisma",
-          "Docker"
+          "Tailwind",
+          "MDX"
         ],
         "year": "2025",
         "impact": "Top grade · 100% autonomous"
@@ -267,7 +270,15 @@
     "curriculum": "📄 Resume PDF",
     "linkedinKit": "💼 LinkedIn Kit",
     "erp": "🛠️ ERP System",
-    "engineering": "⚙️ Engineering Docs"
+    "engineering": "⚙️ Engineering Docs",
+    "notes": "Engineering notes",
+    "now": "Now",
+    "uses": "What I use",
+    "principles": "How I work",
+    "groupWork": "Work",
+    "groupAbout": "About",
+    "groupHire": "Hiring",
+    "faq": "FAQ"
   },
   "languages": [
     {
@@ -316,42 +327,42 @@
       {
         "name": "React",
         "category": "Frontend",
-        "desc": "Component-driven architecture, hooks, state management, and optimized re-renders."
+        "desc": "The SPA the Zenith operation uses every day: inventory, pricing, gatehouse, separations. Component composition, hooks and form state on data-dense screens."
       },
       {
         "name": "Next.js",
         "category": "Framework",
-        "desc": "App Router, SSR, SSG, image optimization, and internationalized routes (this portfolio)."
+        "desc": "App Router with statically generated routes in three languages, per-locale metadata and canonicals, and asset generation at build time. This site and Muscle Levels."
       },
       {
         "name": "TypeScript",
         "category": "Language",
-        "desc": "Static typing for scalable systems with fewer production bugs."
+        "desc": "On this portfolio and on Muscle Levels. I use types to make invalid state unrepresentable — which removes the class of bug tests only catch late."
       },
       {
         "name": "Tailwind CSS",
         "category": "Styling",
-        "desc": "Utility-first styling. Consistent, responsive design system at project scale."
+        "desc": "Always with custom tokens, never the default palette. On all three projects the design system comes before the classes."
       },
       {
         "name": "Node.js",
         "category": "Backend",
-        "desc": "Express REST APIs, JWT authentication and server-side business rules (ERP in production)."
+        "desc": "The ERP API on Express: REST routes, JWT with a role guard, and the rules that cannot live in the client — such as refusing a negative balance before writing."
       },
       {
         "name": "PostgreSQL",
         "category": "Database",
-        "desc": "Relational modelling through Prisma. Production database on Neon, with stock movements written transactionally."
+        "desc": "Modelled with Prisma, in production on Neon. A movement and the balance it changes are written in the same transaction, so the history and the number can never disagree."
       },
       {
         "name": "Figma",
         "category": "Design",
-        "desc": "Prototyping, design systems, UX flows, and dev handoff."
+        "desc": "Prototypes and flows before code, plus the entire Zenith rebranding — identity, catalogue and the product photography that went out to 5 marketplaces."
       },
       {
         "name": "Git",
         "category": "DevOps",
-        "desc": "Version control, strategic branching, and collaboration in real projects."
+        "desc": "A branch per change and commits that explain why rather than what. It is what makes a decision reconstructable a year later."
       }
     ]
   },

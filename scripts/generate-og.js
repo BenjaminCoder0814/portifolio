@@ -24,7 +24,7 @@ const fs = require('fs');
 const OUTPUT_DIR = path.resolve(__dirname, '..', 'public');
 
 const NAME = 'Benjamin Maciel';
-const ROLE = 'Front-End Developer';
+const ROLE = 'Software Engineer';
 const STACK = 'React.js · TypeScript · Next.js · Node.js';
 const PROOF = 'ERP interno em produção · 3 CNPJs · São Paulo, BR';
 
